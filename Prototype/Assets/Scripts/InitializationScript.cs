@@ -25,7 +25,7 @@ public class InitializationScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
 
             //set to dungeon for now as its the most finnished part of the game currently
-            SceneManager.LoadScene("Prototype_Dungeon", LoadSceneMode.Single); 
+            //SceneManager.LoadScene("Prototype_Dungeon", LoadSceneMode.Single); 
             }
 		
 	}

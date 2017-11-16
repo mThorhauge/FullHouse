@@ -15,6 +15,7 @@ public class BattleScript : MonoBehaviour {
 	public UnityEngine.UI.Text goldCountDisplay;
 	public UnityEngine.UI.Text monsterDropCountDisplay;
 	public UnityEngine.UI.Text dropCountDisplay;
+    public UnityEngine.UI.Text enemyName;
 
     public Image img_attackEffect; //image for attack effect
 
@@ -31,7 +32,10 @@ public class BattleScript : MonoBehaviour {
     public int damagePerClick = 1; //how much damage is done per click
 
     int enemiesDefeated;
-	
+
+    public Image ImageComponent;
+    public Sprite[] enemies;
+
     /// <summary>
     /// Initializes game objects
     /// </summary>
@@ -63,22 +67,38 @@ public class BattleScript : MonoBehaviour {
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
 		monsterDropCountDisplay.text = "Monster Drops: "+ currentMonsterDrop;
 
+        if (enemiesDefeated == 0) { enemyName.text = "Sumola"; }
+        else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; }
+        else if (enemiesDefeated == 2) { enemyName.text = "Cheliscor"; }
+        else if (enemiesDefeated == 3) { enemyName.text = "Eusfish"; }
+        else if (enemiesDefeated == 4) { enemyName.text = "Ohminoco"; }
+        else if (enemiesDefeated == 5) { enemyName.text = "Lerinka"; }
+        else if (enemiesDefeated == 6) { enemyName.text = "Gallock"; }
+        else if (enemiesDefeated == 7) { enemyName.text = "Threskibis"; }
+        else if (enemiesDefeated == 8) { enemyName.text = "Luckidisae"; }
+        else if (enemiesDefeated == 9) { enemyName.text = "Bustrix"; }
+
+
         /////////////////ENEMY DEATH////////////////
-       
-        if (currentHealth <= 0) 
+
+        if (currentHealth <= 0)
         {
             enemiesDefeated += 1;
             currentHealth = fullHealth + (int)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
-			currentBits += (int)(fullHealth / baseHealth) * baseGold;
+            currentBits += (int)(fullHealth / baseHealth) * baseGold;
 
-			dropCount += currentHealth;
-			if(dropCount >= 100)
-			{
-				currentMonsterDrop += 1;
-				dropCount = 0;
-			}
+            dropCount += currentHealth;
+            if (dropCount >= 100)
+            {
+                currentMonsterDrop += 1;
+                dropCount = 0;
+            }
+
+            //change enemy image
+            ImageComponent.sprite = enemies[enemiesDefeated];
+            
         }
 	}
 
