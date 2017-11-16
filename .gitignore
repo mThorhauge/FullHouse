@@ -4,11 +4,11 @@
 [Tt]emp/
 [Oo]bj/
 [Bb]uild
-/[Bb]uilds/
+Prototype/[Bb]uilds/
 Prototype/[Ll]ibrary/
 sysinfo.txt
 *.stackdump
-/Assets/AssetStoreTools*
+Prototype/Assets/AssetStoreTools*
 *.apk
 *.unitypackage
  
@@ -17,18 +17,18 @@ sysinfo.txt
 # ===================================== #
 [Ee]xported[Oo]bj/
 .vs/
-/*.userprefs
-/*.csproj
-/*.pidb
+Prototype/*.userprefs
+Prototype/*.csproj
+Prototype/*.pidb
 *.pidb.meta
-/*.suo
-/*.sln*
-/*.user
-/*.unityproj
-/*.booproj
+Prototype/*.suo
+Prototype/*.sln*
+Prototype/*.user
+Prototype/*.unityproj
+Prototype/*.booproj
 .consulo/
-/*.tmp
-/*.svd
+Prototype/*.tmp
+Prototype/*.svd
  
 # ============ #
 # OS generated #
