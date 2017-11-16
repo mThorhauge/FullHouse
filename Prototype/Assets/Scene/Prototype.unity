@@ -919,7 +919,7 @@ MonoBehaviour:
   goldCountDisplay: {fileID: 62907746}
   monsterDropCountDisplay: {fileID: 1318682609}
   dropCountDisplay: {fileID: 808139363}
-  img_attackEffect: {fileID: 0}
+  img_attackEffect: {fileID: 1165283302}
   baseHealth: 5
   baseGold: 1
   damagePerClick: 1
