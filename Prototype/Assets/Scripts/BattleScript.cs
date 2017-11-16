@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 
@@ -22,7 +23,7 @@ public class BattleScript : MonoBehaviour {
 
     int fullHealth = 5; //saves previous full health
     int currentHealth = 5; //tracks current amount of monster health
-	int currentGold = 0; //tracks current amount of gold
+	int currentBits = 0; //tracks current amount of gold
 
 	int dropCount = 0; //calculate to drop a monster drop every X amount of damage
 	int currentMonsterDrop = 0; //total of monster drops
@@ -37,6 +38,16 @@ public class BattleScript : MonoBehaviour {
     void Start()
     {
         img_attackEffect.enabled = false;
+
+
+
+
+    //Update Game data
+    //fullHealth = gameStates.FHealth;      
+    //currentHealth = gameStates.CHealth;
+    //currentBits = gameStates.Bits;
+    //currentMonsterDrop = gameStates.MonsterDrops;
+
     }
 
 	/// <summary>
@@ -47,7 +58,7 @@ public class BattleScript : MonoBehaviour {
         /////////////////UI UPDATES////////////////
         healthDisplay.text = "Health: " + currentHealth;
         killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
-		goldCountDisplay.text = "Gold: " + currentGold;
+		goldCountDisplay.text = "Gold: " + currentBits;
 
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
 		monsterDropCountDisplay.text = "Monster Drops: "+ currentMonsterDrop;
@@ -60,7 +71,7 @@ public class BattleScript : MonoBehaviour {
             currentHealth = fullHealth + (int)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
-			currentGold += (int)(fullHealth / baseHealth) * baseGold;
+			currentBits += (int)(fullHealth / baseHealth) * baseGold;
 
 			dropCount += currentHealth;
 			if(dropCount >= 100)
@@ -86,6 +97,8 @@ public class BattleScript : MonoBehaviour {
     /// Performs actions when Button_ToTown is clicked
     /// </summary>
     public void toTownClicked() {
+
+        SceneManager.LoadScene("Prototype_Town", LoadSceneMode.Single);
 
     }
 

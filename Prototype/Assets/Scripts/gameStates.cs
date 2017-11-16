@@ -5,18 +5,21 @@ using UnityEngine;
 
 /// <summary>
 /// 
-/// A static class to keep track of player inventory and states between scenes
+/// A static class to keep track of player inventory and game states between scenes
 /// 
-///  -kills
 ///  -bits
 ///  -chuncks
 ///  -monsterdrops
-///  
+///  -buffs
+/// -current health
+/// -total defeated
+/// 
 /// </summary>
-public class playerStates : MonoBehaviour {
+/// 
+public class gameStates : MonoBehaviour
+{
 
-    private static int kills, bits, chunks, monsterDrops;
-
+    private static int kills, bits, chunks, monsterDrops, cHealth, fHealth;
 
     /// <summary>
     /// Update Kills
@@ -73,4 +76,35 @@ public class playerStates : MonoBehaviour {
             monsterDrops = value;
         }
     }
-}
+
+    /// <summary>
+    /// Update Monster current health
+    /// </summary>
+    public static int CHealth {
+
+        get {
+            return cHealth;
+            }
+
+        set {
+            cHealth = value;
+            }
+        }
+
+    /// <summary>
+    /// Update Monster full Health
+    /// </summary>
+    public static int FHealth {
+
+        get {
+            return fHealth;
+            }
+
+        set {
+            fHealth = value;
+            }
+        }
+
+
+    }
+
