@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 
@@ -13,6 +14,8 @@ public class BattleScript : MonoBehaviour {
 	public UnityEngine.UI.Text goldCountDisplay;
 	public UnityEngine.UI.Text monsterDropCountDisplay;
 	public UnityEngine.UI.Text dropCountDisplay;
+
+    public Image img_attackEffect; //image for attack effect
 
     public int baseHealth = 5; //health base number
 	public int baseGold = 1; //how much gold each monster drops to start
@@ -28,8 +31,20 @@ public class BattleScript : MonoBehaviour {
 
     int enemiesDefeated;
 	
-	// Update is called once per frame
+    /// <summary>
+    /// Initializes game objects
+    /// </summary>
+    void Start()
+    {
+        img_attackEffect.enabled = false;
+    }
+
+	/// <summary>
+    /// Called Once per Frame
+    /// </summary>
 	void Update () {
+
+        /////////////////UI UPDATES////////////////
         healthDisplay.text = "Health: " + currentHealth;
         killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
 		goldCountDisplay.text = "Gold: " + currentGold;
@@ -37,7 +52,9 @@ public class BattleScript : MonoBehaviour {
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
 		monsterDropCountDisplay.text = "Monster Drops: "+ currentMonsterDrop;
 
-        if (currentHealth <= 0)
+        /////////////////ENEMY DEATH////////////////
+       
+        if (currentHealth <= 0) 
         {
             enemiesDefeated += 1;
             currentHealth = fullHealth + (int)(fullHealth * 0.2);
@@ -54,10 +71,32 @@ public class BattleScript : MonoBehaviour {
         }
 	}
 
-    public void Clicked()
+    /// <summary>
+    /// Performs actions when Button_enemy is clicked
+    /// </summary>
+    public void enemyClicked()
     {
+        currentHealth -= damagePerClick; //enemy takes damage
+        img_attackEffect.transform.position = Input.mousePosition; //set image to click location 
+        StartCoroutine(Appear(img_attackEffect, 0.1F));
 
-        currentHealth -= damagePerClick;
+    }
 
+    /// <summary>
+    /// Performs actions when Button_ToTown is clicked
+    /// </summary>
+    public void toTownClicked() {
+
+    }
+
+    /// <summary>
+    /// Delays apperance and disapperance of an image
+    /// </summary>
+    /// <returns></returns>
+   IEnumerator Appear(Image img, float time) {
+
+        img.enabled = true; //makes image visable
+        yield return new WaitForSeconds(time); //wait for the specified time
+        img.enabled = false; //makes image dissapear
     }
 }
