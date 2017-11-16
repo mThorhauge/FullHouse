@@ -19,7 +19,11 @@ using UnityEngine;
 public class gameStates : MonoBehaviour
 {
 
+    //Dungeon states
     private static int kills, bits, chunks, monsterDrops, cHealth, fHealth;
+
+    //Town States
+    private static int apothecaryLvl, blacksmithLvl, tavernLvl;
 
     /// <summary>
     /// Update Kills
@@ -105,6 +109,43 @@ public class gameStates : MonoBehaviour
             }
         }
 
+    /// <summary>
+    /// Update Apothecary Level
+    /// </summary>
+    public static int ApothecaryLvl {
+
+        get {
+            return apothecaryLvl;
+            }
+        set {
+            apothecaryLvl = value;
+            }
+        }
+
+    /// <summary>
+    /// Update Blacksmith Level
+    /// </summary>
+    public static int BlacksmithLvl {
+        get {
+            return blacksmithLvl;
+            }
+        set {
+            blacksmithLvl = value;
+            }
+        }
+
+    /// <summary>
+    /// Update Tavern Level
+    /// </summary>
+    public static int TavernLvl {
+        get {
+            return tavernLvl;
+            }
+        set {
+            tavernLvl = value;
+            }
+
+        }
 
     }
 

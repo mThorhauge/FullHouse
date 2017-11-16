@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\BattleScript.cs" />
      <Compile Include="Assets\Scripts\gameStates.cs" />
      <Compile Include="Assets\Scripts\InitializationScript.cs" />
+     <Compile Include="Assets\Scripts\TownScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
