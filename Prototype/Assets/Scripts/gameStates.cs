@@ -25,6 +25,9 @@ public class gameStates : MonoBehaviour
     //Town States
     private static int apothecaryLvl, blacksmithLvl, tavernLvl, fortuneTellerLvl;
 
+	//Town Initial Costs
+	private static int blacksmithCost, tavernCost, apothecaryCost, fortuneTellerCost;
+
     /// <summary>
     /// Update Kills
     /// </summary>
@@ -159,6 +162,59 @@ public class gameStates : MonoBehaviour
             }
 
         }
+
+	/// <summary>
+	/// Update Blacksmith Cost
+	/// </summary>
+	public static int BlacksmithCost {
+
+		get {
+			return blacksmithCost;
+		}
+
+		set {
+			blacksmithCost = value;
+		}
+	}
+	/// <summary>
+	/// Update tavernCost
+	/// </summary>
+	public static int TavernCost {
+
+		get {
+			return tavernCost;
+		}
+
+		set {
+			tavernCost = value;
+		}
+	}
+	/// <summary>
+	/// Update apothecaryCost
+	/// </summary>
+	public static int ApothecaryCost {
+
+		get {
+			return apothecaryCost;
+		}
+
+		set {
+			apothecaryCost = value;
+		}
+	}
+	/// <summary>
+	/// Update fortuneTellerCost
+	/// </summary>
+	public static int FortuneTellerCost {
+
+		get {
+			return fortuneTellerCost;
+		}
+
+		set {
+			fortuneTellerCost = value;
+		}
+	}
 
     }
 
