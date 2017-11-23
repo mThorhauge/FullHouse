@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class InitializationScript : MonoBehaviour {
 
+
+    private bool loadScene = false;
+
+    [SerializeField]
+    private int scene;
+
+    [SerializeField]
+    private UnityEngine.UI.Text loadingText;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,15 +32,19 @@ public class InitializationScript : MonoBehaviour {
         gameStates.TavernLvl = 1;
         gameStates.FortuneTellerLvl = 1;
 
+        loadingText.text = "Click to Continue";
+
         }
 	
 	// Update is called once per frame
 	void Update () {
 
+        
+
         if (Input.GetMouseButtonDown(0)) {
 
             //set to dungeon for now as its the most finnished part of the game currently
-            SceneManager.LoadScene("Home", LoadSceneMode.Single); 
+            SceneManager.LoadScene("Town", LoadSceneMode.Single); 
             }
 		
 	}
