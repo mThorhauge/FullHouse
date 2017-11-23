@@ -17,6 +17,9 @@ public class BattleScript : MonoBehaviour {
 	public UnityEngine.UI.Text dropCountDisplay;
     public UnityEngine.UI.Text enemyName;
 
+	//adjust health bar
+	public RectTransform healthBar;
+
     public Image img_attackEffect; //image for attack effect
 
     public int baseHealth = 5; //health base number
@@ -43,9 +46,6 @@ public class BattleScript : MonoBehaviour {
     {
         img_attackEffect.enabled = false;
 
-
-
-
     //Update Game data
     //fullHealth = gameStates.FHealth;      
     //currentHealth = gameStates.CHealth;
@@ -60,8 +60,9 @@ public class BattleScript : MonoBehaviour {
 	void Update () {
 
         /////////////////UI UPDATES////////////////
-        healthDisplay.text = "Health: " + currentHealth;
-        killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
+        //healthDisplay.text = "Health: " + currentHealth;
+		healthDisplay.text = "Health: " + (fullHealth/currentHealth) ;
+        //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
 		goldCountDisplay.text = "Gold: " + currentBits;
 
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
@@ -84,6 +85,9 @@ public class BattleScript : MonoBehaviour {
         if (currentHealth <= 0)
         {
             enemiesDefeated += 1;
+
+
+
             currentHealth = fullHealth + (int)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
@@ -100,6 +104,8 @@ public class BattleScript : MonoBehaviour {
             ImageComponent.sprite = enemies[enemiesDefeated];
             
         }
+
+		healthBar.sizeDelta = new Vector2(300, healthBar.sizeDelta.y);
 	}
 
     /// <summary>
