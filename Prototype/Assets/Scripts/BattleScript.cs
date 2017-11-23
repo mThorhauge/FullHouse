@@ -25,8 +25,8 @@ public class BattleScript : MonoBehaviour {
     public int baseHealth = 5; //health base number
 	public int baseGold = 1; //how much gold each monster drops to start
 
-    int fullHealth = 5; //saves previous full health
-    int currentHealth = 5; //tracks current amount of monster health
+    float fullHealth = 5; //saves previous full health
+    float currentHealth = 5; //tracks current amount of monster health
 	int currentBits = 0; //tracks current amount of gold
 
 	int dropCount = 0; //calculate to drop a monster drop every X amount of damage
@@ -61,7 +61,7 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////UI UPDATES////////////////
         //healthDisplay.text = "Health: " + currentHealth;
-		healthDisplay.text = "Health: " + (fullHealth/currentHealth) ;
+		healthDisplay.text = "Health: " + (currentHealth*300.000/fullHealth)*1.000 ;
         //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
 		goldCountDisplay.text = "Gold: " + currentBits;
 
@@ -86,14 +86,16 @@ public class BattleScript : MonoBehaviour {
         {
             enemiesDefeated += 1;
 
+			if (enemiesDefeated == 10) {
+				enemiesDefeated = 0; // reset enemies in order
+			}
 
-
-            currentHealth = fullHealth + (int)(fullHealth * 0.2);
+            currentHealth = fullHealth + (float)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
             currentBits += (int)(fullHealth / baseHealth) * baseGold;
 
-            dropCount += currentHealth;
+			dropCount += (int)(currentHealth);
             if (dropCount >= 100)
             {
                 currentMonsterDrop += 1;
@@ -105,7 +107,7 @@ public class BattleScript : MonoBehaviour {
             
         }
 
-		healthBar.sizeDelta = new Vector2(300, healthBar.sizeDelta.y);
+		healthBar.sizeDelta = new Vector2((int)(currentHealth*300/fullHealth), healthBar.sizeDelta.y);
 	}
 
     /// <summary>
