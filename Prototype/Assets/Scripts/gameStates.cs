@@ -23,7 +23,7 @@ public class gameStates : MonoBehaviour
     private static int kills, bits, chunks, monsterDrops, cHealth, fHealth;
 
     //Town States
-    private static int apothecaryLvl, blacksmithLvl, tavernLvl;
+    private static int apothecaryLvl, blacksmithLvl, tavernLvl, fortuneTellerLvl;
 
     /// <summary>
     /// Update Kills
@@ -143,6 +143,19 @@ public class gameStates : MonoBehaviour
             }
         set {
             tavernLvl = value;
+            }
+
+        }
+
+    /// <summary>
+    /// Fortune Teller Level
+    /// </summary>
+    public static int FortuneTellerLvl {
+        get {
+            return fortuneTellerLvl;
+            }
+        set {
+            fortuneTellerLvl = value;
             }
 
         }

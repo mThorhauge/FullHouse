@@ -18,7 +18,12 @@ public class InitializationScript : MonoBehaviour {
         gameStates.CHealth = 5;
         gameStates.FHealth = 5;
 
-	}
+        gameStates.ApothecaryLvl = 1;
+        gameStates.BlacksmithLvl = 1;
+        gameStates.TavernLvl = 1;
+        gameStates.FortuneTellerLvl = 1;
+
+        }
 	
 	// Update is called once per frame
 	void Update () {
