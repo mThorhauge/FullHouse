@@ -126,8 +126,13 @@ public class BattleScript : MonoBehaviour {
     /// </summary>
     public void toTownClicked() {
 
-        SceneManager.LoadScene("Prototype_Town", LoadSceneMode.Single);
 
+        // Save gave states
+
+        gameStates.Bits = currentBits;
+
+
+        SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
 
     /// <summary>

@@ -16,8 +16,6 @@ public class TownScript : MonoBehaviour {
 
     public GameObject town;
 
-	int BlacksmithLvl = 0;
-
     // Use this for initialization
     void Start () {
 		
@@ -52,7 +50,7 @@ public class TownScript : MonoBehaviour {
 
     public void toDungeonClick() {
 
-        SceneManager.LoadScene("Prototype_Dungeon", LoadSceneMode.Single);
+        SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
 
     }
 
