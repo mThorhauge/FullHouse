@@ -17,13 +17,16 @@ public class BattleScript : MonoBehaviour {
 	public UnityEngine.UI.Text dropCountDisplay;
     public UnityEngine.UI.Text enemyName;
 
+	//adjust health bar
+	public RectTransform healthBar;
+
     public Image img_attackEffect; //image for attack effect
 
     public int baseHealth = 5; //health base number
 	public int baseGold = 1; //how much gold each monster drops to start
 
-    int fullHealth = 5; //saves previous full health
-    int currentHealth = 5; //tracks current amount of monster health
+    float fullHealth = 5; //saves previous full health
+    float currentHealth = 5; //tracks current amount of monster health
 	int currentBits = 0; //tracks current amount of gold
 
 	int dropCount = 0; //calculate to drop a monster drop every X amount of damage
@@ -43,9 +46,6 @@ public class BattleScript : MonoBehaviour {
     {
         img_attackEffect.enabled = false;
 
-
-
-
     //Update Game data
     //fullHealth = gameStates.FHealth;      
     //currentHealth = gameStates.CHealth;
@@ -60,8 +60,9 @@ public class BattleScript : MonoBehaviour {
 	void Update () {
 
         /////////////////UI UPDATES////////////////
-        healthDisplay.text = "Health: " + currentHealth;
-        killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
+        //healthDisplay.text = "Health: " + currentHealth;
+		healthDisplay.text = "Health: " + (currentHealth*300.000/fullHealth)*1.000 ;
+        //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
 		goldCountDisplay.text = "Gold: " + currentBits;
 
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
@@ -84,12 +85,17 @@ public class BattleScript : MonoBehaviour {
         if (currentHealth <= 0)
         {
             enemiesDefeated += 1;
-            currentHealth = fullHealth + (int)(fullHealth * 0.2);
+
+			if (enemiesDefeated == 10) {
+				enemiesDefeated = 0; // reset enemies in order
+			}
+
+            currentHealth = fullHealth + (float)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
             currentBits += (int)(fullHealth / baseHealth) * baseGold;
 
-            dropCount += currentHealth;
+			dropCount += (int)(currentHealth);
             if (dropCount >= 100)
             {
                 currentMonsterDrop += 1;
@@ -100,6 +106,8 @@ public class BattleScript : MonoBehaviour {
             ImageComponent.sprite = enemies[enemiesDefeated];
             
         }
+
+		healthBar.sizeDelta = new Vector2((int)(currentHealth*300/fullHealth), healthBar.sizeDelta.y);
 	}
 
     /// <summary>

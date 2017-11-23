@@ -9,6 +9,11 @@ public class TownScript : MonoBehaviour {
     public UnityEngine.UI.Text bitsCountDisplay;
     public UnityEngine.UI.Text monsterDropCountDisplay;
 
+    public UnityEngine.UI.Text apothecaryLevelDisplay;
+    public UnityEngine.UI.Text blacksmithLevelDisplay;
+    public UnityEngine.UI.Text tavernLevelDisplay;
+    public UnityEngine.UI.Text fortuneTellerLevelDisplay;
+
     public GameObject town;
 
     // Use this for initialization
@@ -21,6 +26,11 @@ public class TownScript : MonoBehaviour {
 
         bitsCountDisplay.text = "Bits: " + gameStates.Bits;
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
+
+        apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl;
+        blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
+        tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
+        fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
 
         if (Input.GetMouseButton(0)) {
 
@@ -48,12 +58,16 @@ public class TownScript : MonoBehaviour {
         //Switch between chosen building
         switch(buildingID) {
             case 1:
+                gameStates.ApothecaryLvl += 1;
                 break;
             case 2:
+                gameStates.BlacksmithLvl += 1;
                 break;
             case 3:
+                gameStates.TavernLvl += 1;
                 break;
             case 4:
+                gameStates.FortuneTellerLvl += 1;
                 break;
             default:
                 break;
