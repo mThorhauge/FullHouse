@@ -5,24 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scene/Prototype_StartScreen.unity
-    guid: f35fcb179aceaf345b2a67a9f53e7dee
-  - enabled: 0
-    path: Assets/Scene/Prototype_Town.unity
-    guid: cf7f1dd01a9f1704d9b9200dcc5630dc
-  - enabled: 0
-    path: Assets/Scene/Prototype_Dungeon.unity
-    guid: d32490d471c5c824c998dc3e79fd8b9f
   - enabled: 1
-    path: Assets/Scene/S_LoadScreen.unity
-    guid: 46f3bffd15c5b244a9336e6b797cad90
+    path: Assets/Scene/LoadScreen.unity
+    guid: 605f6bd518d31b644abe5be26f292869
+  - enabled: 1
+    path: Assets/Scene/Town.unity
+    guid: cc69ba0161f09844b96708c1c17ab537
+  - enabled: 1
+    path: Assets/Scene/Dungeon.unity
+    guid: a458447c0dd5ef04fa3834b96caf0a0b
   - enabled: 1
     path: Assets/Scene/Home.unity
     guid: a36344f67aedb3d40b5c4b70692d0e1b
-  - enabled: 1
-    path: Assets/Scene/S_Town.unity
+  - enabled: 0
+    path: 
+    guid: f35fcb179aceaf345b2a67a9f53e7dee
+  - enabled: 0
+    path: 
+    guid: cf7f1dd01a9f1704d9b9200dcc5630dc
+  - enabled: 0
+    path: 
+    guid: d32490d471c5c824c998dc3e79fd8b9f
+  - enabled: 0
+    path: 
+    guid: 46f3bffd15c5b244a9336e6b797cad90
+  - enabled: 0
+    path: 
     guid: 3623d7b2c4967434c90df391e48a0bb8
-  - enabled: 1
-    path: Assets/Scene/S_Dungeon.unity
+  - enabled: 0
+    path: 
     guid: 16abb268aeddbf4408c926580e11fb46

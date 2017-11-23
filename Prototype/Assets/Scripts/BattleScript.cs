@@ -63,7 +63,7 @@ public class BattleScript : MonoBehaviour {
         //healthDisplay.text = "Health: " + currentHealth;
 		healthDisplay.text = "Health: " + (currentHealth*300.000/fullHealth)*1.000 ;
         //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
-		goldCountDisplay.text = "Gold: " + currentBits;
+		goldCountDisplay.text = "Bits: " + currentBits;
 
 		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
 		monsterDropCountDisplay.text = "Monster Drops: "+ currentMonsterDrop;

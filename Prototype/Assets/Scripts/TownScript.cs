@@ -27,7 +27,7 @@ public class TownScript : MonoBehaviour {
         bitsCountDisplay.text = "Bits: " + gameStates.Bits;
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
 
-        apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl;
+		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
 		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
         tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
         fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
@@ -58,21 +58,25 @@ public class TownScript : MonoBehaviour {
 
 		//Switch between chosen building
         switch(buildingID) {
-            case 1:
-                gameStates.ApothecaryLvl += 1;
-                break;
-            case 2:
-                gameStates.BlacksmithLvl += 1;
-                break;
-            case 3:
-                gameStates.TavernLvl += 1;
-                break;
-            case 4:
-                gameStates.FortuneTellerLvl += 1;
-                break;
-            default:
-                break;
-            }
+		case 1:
+			if (gameStates.Bits >= gameStates.ApothecaryCost) {
+				gameStates.ApothecaryLvl += 1;
+			} else {
+				gameStates.ApothecaryLvl -= 1;
+			}
+			break;
+        case 2:
+            gameStates.BlacksmithLvl += 1;
+            break;
+        case 3:
+            gameStates.TavernLvl += 1;
+            break;
+        case 4:
+            gameStates.FortuneTellerLvl += 1;
+            break;
+        default:
+            break;
+        }
 
     }
 }
