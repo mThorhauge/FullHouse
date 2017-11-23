@@ -18,7 +18,7 @@ public class TownScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -28,10 +28,9 @@ public class TownScript : MonoBehaviour {
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
 
 		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
-		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
-        tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
-        fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
-		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
+		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl+ " Upgrade Cost " + gameStates.BlacksmithCost;
+		tavernLevelDisplay.text = "Level " + gameStates.TavernLvl+ " Upgrade Cost " + gameStates.TavernCost;
+		fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl + " Upgrade Cost " + gameStates.FortuneTellerCost;
 
         if (Input.GetMouseButton(0)) {
 
@@ -59,10 +58,9 @@ public class TownScript : MonoBehaviour {
 		//Switch between chosen building
         switch(buildingID) {
 		case 1:
-			if (gameStates.Bits >= gameStates.ApothecaryCost) {
+			if (gameStates.Bits >= (gameStates.ApothecaryCost *(gameStates.ApothecaryLvl^2))) {
 				gameStates.ApothecaryLvl += 1;
-			} else {
-				gameStates.ApothecaryLvl -= 1;
+				gameStates.Bits -= gameStates.ApothecaryCost;
 			}
 			break;
         case 2:
