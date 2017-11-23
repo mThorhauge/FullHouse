@@ -31,8 +31,8 @@ public class TownScript : MonoBehaviour {
 
         apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl;
 		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
-        //tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
-        //fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
+        tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
+        fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
 		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
 
         if (Input.GetMouseButton(0)) {
@@ -75,7 +75,6 @@ public class TownScript : MonoBehaviour {
             default:
                 break;
             }
-		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
 
     }
 }
