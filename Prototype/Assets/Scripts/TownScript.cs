@@ -30,9 +30,9 @@ public class TownScript : MonoBehaviour {
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
 
         apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl;
-        blacksmithLevelDisplay.text = "Level " + BlacksmithLvl;
-        tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
-        fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
+		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
+        //tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
+        //fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
 		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
 
         if (Input.GetMouseButton(0)) {
@@ -55,14 +55,6 @@ public class TownScript : MonoBehaviour {
         SceneManager.LoadScene("Prototype_Dungeon", LoadSceneMode.Single);
 
     }
-
-	public void upgradeApothecary() {
-		gameStates.ApothecaryLvl += 1; //create single function to update level. works.
-	}
-
-	public void upgradeBlacksmith() {
-		BlacksmithLvl += 1; //testing if this worked. it didnt
-	}
 
     public void upgradeBuildingClick(int buildingID) {
 
