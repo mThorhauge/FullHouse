@@ -16,6 +16,8 @@ public class TownScript : MonoBehaviour {
 
     public GameObject town;
 
+	int BlacksmithLvl = 0;
+
     // Use this for initialization
     void Start () {
 		
@@ -28,9 +30,10 @@ public class TownScript : MonoBehaviour {
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
 
         apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl;
-        blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl;
+        blacksmithLevelDisplay.text = "Level " + BlacksmithLvl;
         tavernLevelDisplay.text = "Level " + gameStates.TavernLvl;
         fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl;
+		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
 
         if (Input.GetMouseButton(0)) {
 
@@ -53,9 +56,17 @@ public class TownScript : MonoBehaviour {
 
     }
 
+	public void upgradeApothecary() {
+		gameStates.ApothecaryLvl += 1; //create single function to update level. works.
+	}
+
+	public void upgradeBlacksmith() {
+		BlacksmithLvl += 1; //testing if this worked. it didnt
+	}
+
     public void upgradeBuildingClick(int buildingID) {
 
-        //Switch between chosen building
+		//Switch between chosen building
         switch(buildingID) {
             case 1:
                 gameStates.ApothecaryLvl += 1;
@@ -72,7 +83,7 @@ public class TownScript : MonoBehaviour {
             default:
                 break;
             }
- 
+		//fortuneTellerLevelDisplay.text = "BuildingID" + buildingID;
 
     }
 }
