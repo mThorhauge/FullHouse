@@ -7,7 +7,7 @@ public class InitializationScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		print ("initialization script");
 
         ////Set the gameStates to proper values
         /// will need to use save file data in future
@@ -38,7 +38,7 @@ public class InitializationScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
 
             //set to dungeon for now as its the most finnished part of the game currently
-            SceneManager.LoadScene("Home", LoadSceneMode.Single); 
+            SceneManager.LoadScene("Town", LoadSceneMode.Single); 
             }
 		
 	}

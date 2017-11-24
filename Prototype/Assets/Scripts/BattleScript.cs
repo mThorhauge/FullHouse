@@ -25,16 +25,16 @@ public class BattleScript : MonoBehaviour {
     public int baseHealth = 5; //health base number
 	public int baseGold = 1; //how much gold each monster drops to start
 
-    float fullHealth = 5; //saves previous full health
-    float currentHealth = 5; //tracks current amount of monster health
-	int currentBits = 0; //tracks current amount of gold
+	float fullHealth = gameStates.FHealth; //saves previous full health
+	float currentHealth = gameStates.CHealth; //tracks current amount of monster health
+	int currentBits = gameStates.Bits; //tracks current amount of gold
 
 	int dropCount = 0; //calculate to drop a monster drop every X amount of damage
-	int currentMonsterDrop = 0; //total of monster drops
+	int currentMonsterDrop = gameStates.MonsterDrops; //total of monster drops
 
     public int damagePerClick = 1; //how much damage is done per click
 
-    int enemiesDefeated;
+	int enemiesDefeated = gameStates.Kills;
 
     public Image ImageComponent;
     public Sprite[] enemies;

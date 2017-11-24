@@ -298,8 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932cebb99ca56f748be84171c2626da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 0
-  loadingText: {fileID: 681793925}
 --- !u!4 &422137574
 Transform:
   m_ObjectHideFlags: 0
