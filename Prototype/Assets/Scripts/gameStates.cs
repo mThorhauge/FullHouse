@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-/// <summary>
-/// 
-/// A static class to keep track of player inventory and game states between scenes
-/// 
-///  -bits
-///  -chuncks
-///  -monsterdrops
-///  -buffs
-/// -current health
-/// -total defeated
-/// 
-/// </summary>
-/// 
+// <summary>
+// 
+// A static class to keep track of player inventory and game states between scenes
+// 
+//  -bits
+//  -chuncks
+//  -monsterdrops
+//  -buffs
+// -current health
+// -total defeated
+// 
+// </summary>
+// 
 public class gameStates : MonoBehaviour
 {
+	
 
     //Dungeon states
     private static int kills, bits, chunks, monsterDrops, cHealth, fHealth;
@@ -31,7 +32,36 @@ public class gameStates : MonoBehaviour
     /// <summary>
     /// Update Kills
     /// </summary>
-    public static int Kills {
+	void Start () {
+
+
+		////Set the gameStates to proper values
+		/// will need to use save file data in future
+		Kills = 0;
+		Bits = 0;
+		Chunks = 0;
+		MonsterDrops = 0;
+		CHealth = 5;
+		FHealth = 5;
+
+		ApothecaryLvl = 1;
+		BlacksmithLvl = 1;
+		TavernLvl = 1;
+		FortuneTellerLvl = 1;
+
+		//Set starting building costs
+		//Values are set in time without upgrades to achieve
+		BlacksmithCost = 60;
+		TavernCost = 180;
+		ApothecaryCost = 300;
+		FortuneTellerCost = 720;
+
+	}
+
+
+
+
+	public static int Kills {
 
         get {
             return kills;
@@ -217,4 +247,7 @@ public class gameStates : MonoBehaviour
 	}
 
     }
+
+
+	
 
