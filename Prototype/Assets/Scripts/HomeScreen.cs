@@ -7,8 +7,10 @@ using System;
 
 public class HomeScreen : MonoBehaviour {
 
-    public Sprite img_popUp;
-    public Sprite img_mirror;
+	public GameObject appearancePopUp;
+
+	//public Sprite img_popUp;
+    //public Sprite img_mirror;
 
 
     // Use this for initialization
@@ -20,10 +22,22 @@ public class HomeScreen : MonoBehaviour {
 	void Update () {
 		
 	}
+		
+	/// <summary>
+	/// Performs actions when Button_ToTown is clicked
+	/// </summary>
+	public void toTownClicked() {
 
-    public void mirroPopUp ()
-    {
+		SceneManager.LoadScene("Town", LoadSceneMode.Single);
+	}
 
+	public void changeAppearance() {
+		appearancePopUp.SetActive(true);
+	}
 
-    }
+	public void closeAppearancePopUp(string choice) {
+		if( choice == "continue") {
+			appearancePopUp.SetActive(false);
+		}
+	}
 }
