@@ -12,61 +12,66 @@ public class BattleScript : MonoBehaviour {
 
     public UnityEngine.UI.Text healthDisplay;
     public UnityEngine.UI.Text killCountDisplay;
-	public UnityEngine.UI.Text goldCountDisplay;
-	public UnityEngine.UI.Text monsterDropCountDisplay;
-	public UnityEngine.UI.Text dropCountDisplay;
+    public UnityEngine.UI.Text goldCountDisplay;
+    public UnityEngine.UI.Text monsterDropCountDisplay;
+    public UnityEngine.UI.Text dropCountDisplay;
     public UnityEngine.UI.Text enemyName;
 
-	//adjust health bar
-	public RectTransform healthBar;
+    //adjust health bar
+    public RectTransform healthBar;
 
     public Image img_attackEffect; //image for attack effect
 
     public int baseHealth = 5; //health base number
-	public int baseGold = 1; //how much gold each monster drops to start
+    public int baseGold = 1; //how much gold each monster drops to start
 
-	float fullHealth = gameStates.FHealth; //saves previous full health
-	float currentHealth = gameStates.CHealth; //tracks current amount of monster health
-	int currentBits = gameStates.Bits; //tracks current amount of gold
+    float fullHealth = gameStates.FHealth; //saves previous full health
+    float currentHealth = gameStates.CHealth; //tracks current amount of monster health
+    int currentBits = gameStates.Bits; //tracks current amount of gold
 
-	int dropCount = 0; //calculate to drop a monster drop every X amount of damage
-	int currentMonsterDrop = gameStates.MonsterDrops; //total of monster drops
+    int dropCount = 0; //calculate to drop a monster drop every X amount of damage
+    int currentMonsterDrop = gameStates.MonsterDrops; //total of monster drops
 
     public int damagePerClick = 1; //how much damage is done per click
 
-	int enemiesDefeated = gameStates.Kills;
+    int enemiesDefeated = gameStates.Kills;
+
+    int i = 0; //for testing
 
     public Image ImageComponent;
     public Sprite[] enemies;
 
+    public Image poofImage;
+    public Sprite[] poofSprites;
+
     /// <summary>
     /// Initializes game objects
     /// </summary>
-    void Start()
-    {
+    void Start() {
         img_attackEffect.enabled = false;
+        poofImage.enabled = false;
 
-    //Update Game data
-    //fullHealth = gameStates.FHealth;      
-    //currentHealth = gameStates.CHealth;
-    //currentBits = gameStates.Bits;
-    //currentMonsterDrop = gameStates.MonsterDrops;
+        //Update Game data
+        //fullHealth = gameStates.FHealth;      
+        //currentHealth = gameStates.CHealth;
+        //currentBits = gameStates.Bits;
+        //currentMonsterDrop = gameStates.MonsterDrops;
 
-    }
+        }
 
-	/// <summary>
+    /// <summary>
     /// Called Once per Frame
     /// </summary>
-	void Update () {
+    void Update() {
 
         /////////////////UI UPDATES////////////////
         //healthDisplay.text = "Health: " + currentHealth;
-		healthDisplay.text = "Health: " + (currentHealth*300.000/fullHealth)*1.000 ;
+        healthDisplay.text = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
         //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
-		goldCountDisplay.text = "Bits: " + currentBits;
+        goldCountDisplay.text = "Bits: " + currentBits;
 
-		dropCountDisplay.text = "Until MD: " + dropCount + "/100";
-		monsterDropCountDisplay.text = "Monster Drops: "+ currentMonsterDrop;
+        dropCountDisplay.text = "Until MD: " + dropCount + "/100";
+        monsterDropCountDisplay.text = "Monster Drops: " + currentMonsterDrop;
 
         if (enemiesDefeated == 0) { enemyName.text = "Sumola"; }
         else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; }
@@ -82,44 +87,52 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////ENEMY DEATH////////////////
 
-        if (currentHealth <= 0)
-        {
+
+
+        if (currentHealth <= 0) {
             enemiesDefeated += 1;
 
-			if (enemiesDefeated == 10) {
-				enemiesDefeated = 0; // reset enemies in order
-			}
+
+            if (enemiesDefeated == 10) {
+                enemiesDefeated = 0; // reset enemies in order
+                }
 
             currentHealth = fullHealth + (float)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
             currentBits += (int)(fullHealth / baseHealth) * baseGold;
 
-			dropCount += (int)(currentHealth);
-            if (dropCount >= 100)
-            {
+            dropCount += (int)(currentHealth);
+            if (dropCount >= 100) {
                 currentMonsterDrop += 1;
                 dropCount = 0;
-            }
+                }
+
+            poofImage.enabled = true;
+            animatePoof();
 
             //change enemy image
             ImageComponent.sprite = enemies[enemiesDefeated];
-            
-        }
 
-		healthBar.sizeDelta = new Vector2((int)(currentHealth*300/fullHealth), healthBar.sizeDelta.y);
-	}
+            poofImage.enabled = false;
+
+
+
+
+            }
+
+        healthBar.sizeDelta = new Vector2((int)(currentHealth * 300 / fullHealth), healthBar.sizeDelta.y);
+        }
 
     /// <summary>
     /// Performs actions when Button_enemy is clicked
     /// </summary>
-    public void enemyClicked()
-    {
+    public void enemyClicked() {
         currentHealth -= damagePerClick; //enemy takes damage
         img_attackEffect.transform.position = Input.mousePosition; //set image to click location 
         StartCoroutine(Appear(img_attackEffect, 0.1F));
 
-    }
+        }
 
     /// <summary>
     /// Performs actions when Button_ToTown is clicked
@@ -130,19 +143,47 @@ public class BattleScript : MonoBehaviour {
         // Save gave states
 
         gameStates.Bits = currentBits;
+        gameStates.FHealth = (int)fullHealth; //saves previous full health
+        gameStates.CHealth = (int)currentHealth; //tracks current amount of monster health
+
+        gameStates.MonsterDrops = dropCount; //calculate to drop a monster drop every X amount of damage
+        //int currentMonsterDrop = gameStates.MonsterDrops;
 
 
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
-    }
+        }
 
     /// <summary>
     /// Delays apperance and disapperance of an image
     /// </summary>
     /// <returns></returns>
-   IEnumerator Appear(Image img, float time) {
+    IEnumerator Appear(Image img, float time) {
 
         img.enabled = true; //makes image visable
         yield return new WaitForSeconds(time); //wait for the specified time
         img.enabled = false; //makes image dissapear
+        }
+
+    IEnumerator WaitForFrames(int frameCount) {
+        if (frameCount <= 0) {
+
+            throw new ArgumentOutOfRangeException("frameCount", "cannot wait for less than 1 frame");
+            }
+        while (frameCount > 0) {
+            frameCount--;
+            yield return null;
+            }
+
+        }
+
+    IEnumerator animatePoof() {
+
+        for (int i = 0; i < 6; i++) {
+
+            poofImage.sprite = poofSprites[i];
+            yield return StartCoroutine(WaitForFrames(10));
+            }
+
+
+        }
     }
-}
