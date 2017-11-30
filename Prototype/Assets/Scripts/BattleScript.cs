@@ -181,7 +181,7 @@ public class BattleScript : MonoBehaviour {
         for (int i = 0; i < 6; i++) {
 
             poofImage.sprite = poofSprites[i];
-            yield return StartCoroutine(WaitForFrames(10));
+            yield return StartCoroutine(WaitForFrames(30));
             }
 
 
