@@ -37,24 +37,24 @@ public class gameStates : MonoBehaviour
 
 		////Set the gameStates to proper values
 		/// will need to use save file data in future
-		Kills = 0;
-		Bits = 0;
-		Chunks = 0;
-		MonsterDrops = 0;
-		CHealth = 5;
-		FHealth = 5;
+		kills = 0;
+		bits = 0;
+		chunks = 0;
+		monsterDrops = 0;
+		cHealth = 5;
+		fHealth = 5;
 
-		ApothecaryLvl = 1;
-		BlacksmithLvl = 1;
-		TavernLvl = 1;
-		FortuneTellerLvl = 1;
+		apothecaryLvl = 1;
+		blacksmithLvl = 1;
+		tavernLvl = 1;
+		fortuneTellerLvl = 1;
 
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
-		BlacksmithCost = 60;
-		TavernCost = 180;
-		ApothecaryCost = 300;
-		FortuneTellerCost = 720;
+		blacksmithCost = 60;
+		tavernCost = 180;
+		apothecaryCost = 300;
+		fortuneTellerCost = 720;
 
 	}
 
