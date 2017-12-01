@@ -64,13 +64,23 @@ public class TownScript : MonoBehaviour {
 			}
 			break;
         case 2:
-            gameStates.BlacksmithLvl += 1;
+
+			if (gameStates.Bits >= (gameStates.BlacksmithCost *(gameStates.BlacksmithLvl^2))) {
+				gameStates.BlacksmithLvl += 1;
+				gameStates.Bits -= gameStates.BlacksmithCost;
+			}
             break;
         case 3:
-            gameStates.TavernLvl += 1;
+			if (gameStates.Bits >= (gameStates.TavernCost *(gameStates.TavernLvl^2))) {
+				gameStates.TavernLvl += 1;
+				gameStates.Bits -= gameStates.TavernCost;
+			}
             break;
         case 4:
-            gameStates.FortuneTellerLvl += 1;
+			if (gameStates.Bits >= (gameStates.FortuneTellerCost *(gameStates.FortuneTellerLvl^2))) {
+				gameStates.FortuneTellerLvl += 1;
+				gameStates.Bits -= gameStates.FortuneTellerCost;
+			}
             break;
         default:
             break;
