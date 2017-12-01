@@ -10,6 +10,13 @@ public class HomeScreen : MonoBehaviour {
 	public GameObject appearancePopUp;
     public GameObject Clothing;
     private Animator ClothAnim;
+    public GameObject smFace;
+    private Animator smFaceAnim;
+    public GameObject smHair;
+    private Animator smHairAnim;
+    public GameObject smHairBot;
+    private Animator smHairBotAnim;
+    private Renderer smHairIsLong;
     public GameObject PopUp;
 
 
@@ -21,7 +28,8 @@ public class HomeScreen : MonoBehaviour {
     private Animator faceAnim;
     private Renderer hairIsLong;
 
-
+    private int colourVar;
+    private int smcolourVar;
     //public Sprite img_popUp;
     //public Sprite img_mirror;
 
@@ -34,7 +42,14 @@ public class HomeScreen : MonoBehaviour {
         hairLongAnim = HairLong.GetComponent<Animator>();
         faceAnim = Face.GetComponent<Animator>();
         hairIsLong = HairLong.GetComponent<Renderer>();
+        smFaceAnim = smFace.GetComponent<Animator>();
+        smHairAnim = smHair.GetComponent<Animator>();
+        smHairBotAnim = smHairBot.GetComponent<Animator>();
+        smHairIsLong = smHairBot.GetComponent<Renderer>();
 
+
+        colourVar = 0;
+        smcolourVar = 0;
     }
 	
 	// Update is called once per frame
@@ -75,24 +90,52 @@ public class HomeScreen : MonoBehaviour {
 
     public void hairshape()
     {
+        //pop up
         if (hairAnim.GetBool("HairShort")) { hairAnim.SetBool("HairShort", false); hairIsLong.enabled = true; }
         else { hairAnim.SetBool("HairShort", true); hairIsLong.enabled = false; }
-        
+
+        //main screen
+        if (smHairAnim.GetBool("HairShort")) { smHairAnim.SetBool("HairShort", false); smHairIsLong.enabled = true; }
+        else { smHairAnim.SetBool("HairShort", true); smHairIsLong.enabled = false; }
     }
 
     public void haircolour()
     {
-        if (hairAnim.GetInteger("HairColour") < 5) { hairAnim.SetInteger("HairColour", hairAnim.GetInteger("HairColour") + 1); }
-        else { hairAnim.SetInteger("HairColour", 0); }
+        //pop up
+        if (hairAnim.GetInteger("HairColour") < 5) { hairAnim.SetInteger("HairColour", hairAnim.GetInteger("HairColour") + 1); colourVar = colourVar + 1; }
+        else { hairAnim.SetInteger("HairColour", 0); colourVar = 0; }
+
+        if (colourVar <= 5) { hairLongAnim.SetInteger("hairColourBot", colourVar); }
+        else { hairLongAnim.SetInteger("hairColourBot", 0); }
+
+        //main screen
+        if (smHairAnim.GetInteger("HairColour") < 5) { smHairAnim.SetInteger("HairColour", smHairAnim.GetInteger("HairColour") + 1); smcolourVar = smcolourVar + 1; }
+        else { smHairAnim.SetInteger("HairColour", 0); smcolourVar = 0; }
+
+        if (smcolourVar <= 5) { smHairBotAnim.SetInteger("hairColourBot", smcolourVar); }
+        else { smHairBotAnim.SetInteger("hairColourBot", 0); }
+
     }
 
     public void faceshape()
     {
+        //pop up
+        if (faceAnim.GetInteger("FaceShape") < 2) { faceAnim.SetInteger("FaceShape", faceAnim.GetInteger("FaceShape") + 1); }
+        else { faceAnim.SetInteger("FaceShape", 0); }
 
+        //main screen
+        if (smFaceAnim.GetInteger("FaceShape") < 2) { smFaceAnim.SetInteger("FaceShape", smFaceAnim.GetInteger("FaceShape") + 1); }
+        else { smFaceAnim.SetInteger("FaceShape", 0); }
     }
 
     public void skincolour()
     {
+        //pop up
+        if(faceAnim.GetInteger("SkinColour") < 7) { faceAnim.SetInteger("SkinColour", faceAnim.GetInteger("SkinColour") + 1); }
+        else { faceAnim.SetInteger("SkinColour", 0); }
 
+        //main screen
+        if (smFaceAnim.GetInteger("SkinColour") < 7) { smFaceAnim.SetInteger("SkinColour", smFaceAnim.GetInteger("SkinColour") + 1); }
+        else { smFaceAnim.SetInteger("SkinColour", 0); }
     }
 }
