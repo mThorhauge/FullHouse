@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 using System;
 
 
-
 public class BattleScript : MonoBehaviour {
 
     public UnityEngine.UI.Text healthDisplay;
@@ -52,10 +51,10 @@ public class BattleScript : MonoBehaviour {
         poofImage.enabled = false;
 
         //Update Game data
-        //fullHealth = gameStates.FHealth;      
-        //currentHealth = gameStates.CHealth;
-        //currentBits = gameStates.Bits;
-        //currentMonsterDrop = gameStates.MonsterDrops;
+        fullHealth = gameStates.FHealth;      
+        currentHealth = gameStates.CHealth;
+        currentBits = gameStates.Bits;
+        currentMonsterDrop = gameStates.MonsterDrops;
 
         }
 
@@ -109,15 +108,12 @@ public class BattleScript : MonoBehaviour {
                 }
 
             poofImage.enabled = true;
-            animatePoof();
+            StartCoroutine(animatePoof());
 
             //change enemy image
             ImageComponent.sprite = enemies[enemiesDefeated];
 
             poofImage.enabled = false;
-
-
-
 
             }
 
@@ -173,7 +169,6 @@ public class BattleScript : MonoBehaviour {
             frameCount--;
             yield return null;
             }
-
         }
 
     IEnumerator animatePoof() {
@@ -181,9 +176,8 @@ public class BattleScript : MonoBehaviour {
         for (int i = 0; i < 6; i++) {
 
             poofImage.sprite = poofSprites[i];
-            yield return StartCoroutine(WaitForFrames(30));
-            }
-
+            yield return StartCoroutine(WaitForFrames(10));
 
         }
     }
+}
