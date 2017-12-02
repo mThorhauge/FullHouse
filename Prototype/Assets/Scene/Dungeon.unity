@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 857398356}
   - component: {fileID: 857398355}
   - component: {fileID: 857398354}
+  - component: {fileID: 857398357}
   m_Layer: 5
   m_Name: img_deathEffect
   m_TagString: Untagged
@@ -955,6 +956,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 462, y: 472}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!111 &857398357
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857398353}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 02821f5772de2fe409c1750a49c166f6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 02821f5772de2fe409c1750a49c166f6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1139435072
 GameObject:
   m_ObjectHideFlags: 0

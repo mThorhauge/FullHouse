@@ -86,8 +86,6 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////ENEMY DEATH////////////////
 
-
-
         if (currentHealth <= 0) {
             enemiesDefeated += 1;
 
@@ -135,7 +133,6 @@ public class BattleScript : MonoBehaviour {
     /// </summary>
     public void toTownClicked() {
 
-
         // Save gave states
 
         gameStates.Bits = currentBits;
@@ -144,7 +141,6 @@ public class BattleScript : MonoBehaviour {
 
         gameStates.MonsterDrops = dropCount; //calculate to drop a monster drop every X amount of damage
         //int currentMonsterDrop = gameStates.MonsterDrops;
-
 
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
         }
