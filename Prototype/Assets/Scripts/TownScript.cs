@@ -58,28 +58,33 @@ public class TownScript : MonoBehaviour {
 		//Switch between chosen building
         switch(buildingID) {
 		case 1:
-			if (gameStates.Bits >= (gameStates.ApothecaryCost *(gameStates.ApothecaryLvl^2))) {
+			if (gameStates.Bits >= (gameStates.ApothecaryCost)) {
 				gameStates.ApothecaryLvl += 1;
 				gameStates.Bits -= gameStates.ApothecaryCost;
+				gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl,2));
 			}
 			break;
         case 2:
 
-			if (gameStates.Bits >= (gameStates.BlacksmithCost *(gameStates.BlacksmithLvl^2))) {
+			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
 				gameStates.BlacksmithLvl += 1;
 				gameStates.Bits -= gameStates.BlacksmithCost;
+				gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl,2));
+				gameStates.ClickDmg += 1;
 			}
             break;
         case 3:
-			if (gameStates.Bits >= (gameStates.TavernCost *(gameStates.TavernLvl^2))) {
+			if (gameStates.Bits >= (gameStates.TavernCost)) {
 				gameStates.TavernLvl += 1;
 				gameStates.Bits -= gameStates.TavernCost;
+				gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl,2));
 			}
             break;
         case 4:
 			if (gameStates.Bits >= (gameStates.FortuneTellerCost *(gameStates.FortuneTellerLvl^2))) {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
+				gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl,2));
 			}
             break;
         default:

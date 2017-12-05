@@ -31,7 +31,7 @@ public class BattleScript : MonoBehaviour {
     int dropCount = 0; //calculate to drop a monster drop every X amount of damage
     int currentMonsterDrop = gameStates.MonsterDrops; //total of monster drops
 
-    public int damagePerClick = 1; //how much damage is done per click
+	public int damagePerClick = 1 + (int)(Mathf.Pow(gameStates.ClickDmg,2)); //how much damage is done per click
 
     int enemiesDefeated = gameStates.Kills;
 

@@ -29,6 +29,9 @@ public class gameStates : MonoBehaviour
 	//Town Initial Costs
 	private static int blacksmithCost, tavernCost, apothecaryCost, fortuneTellerCost;
 
+	//Building bonuses
+	private static int clickDmg, autoPDmg, autoMDmg, goldIncrease;
+
     /// <summary>
     /// Update Kills
     /// </summary>
@@ -51,15 +54,20 @@ public class gameStates : MonoBehaviour
 
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
-		blacksmithCost = 60;
+		blacksmithCost = 10;
 		tavernCost = 180;
 		apothecaryCost = 300;
 		fortuneTellerCost = 720;
 
+		//Set starting bonuses
+		//Values are all set to 0 at start
+		clickDmg = 0;
+		autoPDmg = 0;
+		autoMDmg = 0;
+		goldIncrease = 0;
+
 	}
-
-
-
+		
 
 	public static int Kills {
 
@@ -246,8 +254,60 @@ public class gameStates : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Update clickDmg
+	/// </summary>
+	public static int ClickDmg {
+
+		get {
+			return clickDmg;
+		}
+
+		set {
+			clickDmg = value;
+		}
+	}
+	/// <summary>
+	/// Update autoPDmg
+	/// </summary>
+	public static int AutoPDmg {
+
+		get {
+			return autoPDmg;
+		}
+
+		set {
+			autoPDmg = value;
+		}
+	}
+
+	/// <summary>
+	/// Update autoMDmg
+	/// </summary>
+	public static int AutoMDmg {
+
+		get {
+			return autoMDmg;
+		}
+
+		set {
+			autoMDmg = value;
+		}
+	}
+
+	/// <summary>
+	/// Update goldIncrease
+	/// </summary>
+	public static int GoldIncrease {
+
+		get {
+			return goldIncrease;
+		}
+
+		set {
+			goldIncrease = value;
+		}
+	}
+
+	//end
     }
-
-
-	
-
