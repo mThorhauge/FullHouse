@@ -26,16 +26,16 @@ public class InitializationScript : MonoBehaviour {
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
 		gameStates.BlacksmithCost = 10;
-		gameStates.TavernCost = 180;
-		gameStates.ApothecaryCost = 300;
+		gameStates.TavernCost = 50;
+		gameStates.ApothecaryCost = 200;
 		gameStates.FortuneTellerCost = 720;
 
 		//Set starting bonuses
-		//Values are all set to 0 at start
-		gameStates.ClickDmg = 0;
-		gameStates.AutoPDmg = 0;
-		gameStates.AutoMDmg = 0;
-		gameStates.GoldIncrease = 0;
+		//Values are all set to 100% aka 1 at start
+		gameStates.ClickDmg = 1;
+		gameStates.AutoPDmg = 1;
+		gameStates.AutoMDmg = 1;
+		gameStates.GoldIncrease = 1;
 
         }
 	

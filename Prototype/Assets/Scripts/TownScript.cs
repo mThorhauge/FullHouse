@@ -78,6 +78,8 @@ public class TownScript : MonoBehaviour {
 				gameStates.TavernLvl += 1;
 				gameStates.Bits -= gameStates.TavernCost;
 				gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl,2));
+				gameStates.AutoPDmg += 1;
+				gameStates.AutoMDmg += 1;
 			}
             break;
         case 4:
@@ -85,6 +87,7 @@ public class TownScript : MonoBehaviour {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
 				gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl,2));
+				gameStates.GoldIncrease += 1;
 			}
             break;
         default:

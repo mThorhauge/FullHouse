@@ -55,16 +55,16 @@ public class gameStates : MonoBehaviour
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
 		blacksmithCost = 10;
-		tavernCost = 180;
-		apothecaryCost = 300;
+		tavernCost = 50;
+		apothecaryCost = 200;
 		fortuneTellerCost = 720;
 
 		//Set starting bonuses
-		//Values are all set to 0 at start
-		clickDmg = 0;
-		autoPDmg = 0;
-		autoMDmg = 0;
-		goldIncrease = 0;
+		//Values are all set to 100% aka 1 at start
+		clickDmg = 1;
+		autoPDmg = 1;
+		autoMDmg = 1;
+		goldIncrease = 1;
 
 	}
 		
