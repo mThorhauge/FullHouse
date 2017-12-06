@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 79438eeda85e041f38c067e7518b3e76
+timeCreated: 1512573938
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Multicolore '
+  fontNames:
+  - 'Multicolore '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
