@@ -32,11 +32,14 @@ public class gameStates : MonoBehaviour
 	//Building bonuses
 	private static float clickDmg, autoPDmg, autoMDmg, goldIncrease;
 
+    // Home
+    private static int cloth, hairColor, skinColor, faceShape;
+    private static bool hairShort, changesMade;
+
     /// <summary>
     /// Update Kills
     /// </summary>
 	void Start () {
-
 
 		////Set the gameStates to proper values
 		/// will need to use save file data in future
@@ -66,6 +69,13 @@ public class gameStates : MonoBehaviour
 		autoMDmg            = 1;
 		goldIncrease        = 1;
 
+        //Set starting home stats
+        cloth = 0;
+        hairColor = 0;
+        skinColor = 4;
+        faceShape = 0;
+        hairShort = true;
+        changesMade = false;
 	}
 		
     /// <summary>
@@ -334,11 +344,113 @@ public class gameStates : MonoBehaviour
 		}
 	}
 
+    /// <summary>
+	/// Update cloth
+	/// </summary>
+	public static int Cloth
+    {
+
+        get
+        {
+            return cloth;
+        }
+
+        set
+        {
+            cloth = value;
+        }
+    }
+
+    /// <summary>
+	/// Update hair colour
+	/// </summary>
+	public static int HairColor
+    {
+
+        get
+        {
+            return hairColor;
+        }
+
+        set
+        {
+            hairColor = value;
+        }
+    }
+
+    /// <summary>
+    /// Update hair shape
+    /// </summary>
+    public static bool HairShort
+    {
+
+        get
+        {
+            return hairShort;
+        }
+
+        set
+        {
+            hairShort = value;
+        }
+    }
+
+    /// <summary>
+	/// Update skin colour
+	/// </summary>
+	public static int SkinColor
+    {
+
+        get
+        {
+            return skinColor;
+        }
+
+        set
+        {
+            skinColor = value;
+        }
+    }
+
+    /// <summary>
+    /// Update hair shape
+    /// </summary>
+    public static bool ChangesMade
+    {
+
+        get
+        {
+            return changesMade;
+        }
+
+        set
+        {
+            changesMade = value;
+        }
+    }
+
+    /// <summary>
+	/// Update skin colour
+	/// </summary>
+	public static int FaceShape
+    {
+
+        get
+        {
+            return faceShape;
+        }
+
+        set
+        {
+            faceShape = value;
+        }
+    }
+
     ///////////////////////
     /// Damage Calculations
     ///////////////////////
 
-   public static void UpdateDamage() {
+    public static void UpdateDamage() {
 
         ///////
         /////// Calculate Click Damage

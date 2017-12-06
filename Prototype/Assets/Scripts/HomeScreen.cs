@@ -61,8 +61,13 @@ public class HomeScreen : MonoBehaviour {
 	/// Performs actions when Button_ToTown is clicked
 	/// </summary>
 	public void toTownClicked() {
+        gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
+        gameStates.HairColor = hairAnim.GetInteger("HairColour");
+        gameStates.HairShort = hairAnim.GetBool("HairShort");
+        gameStates.SkinColor = faceAnim.GetInteger("SkinColour");
+        gameStates.FaceShape = faceAnim.GetInteger("FaceShape");
 
-		SceneManager.LoadScene("Town", LoadSceneMode.Single);
+        SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 
 	public void changeAppearance() {
@@ -86,6 +91,8 @@ public class HomeScreen : MonoBehaviour {
         if (ClothAnim.GetInteger("ClothNum") < 7) { ClothAnim.SetInteger("ClothNum", ClothAnim.GetInteger("ClothNum")+1); }
         else { ClothAnim.SetInteger("ClothNum", 0); }
 
+        gameStates.ChangesMade = true;
+
     }
 
     public void hairshape()
@@ -97,6 +104,8 @@ public class HomeScreen : MonoBehaviour {
         //main screen
         if (smHairAnim.GetBool("HairShort")) { smHairAnim.SetBool("HairShort", false); smHairIsLong.enabled = true; }
         else { smHairAnim.SetBool("HairShort", true); smHairIsLong.enabled = false; }
+
+        gameStates.ChangesMade = true;
     }
 
     public void haircolour()
@@ -115,6 +124,7 @@ public class HomeScreen : MonoBehaviour {
         if (smcolourVar <= 5) { smHairBotAnim.SetInteger("hairColourBot", smcolourVar); }
         else { smHairBotAnim.SetInteger("hairColourBot", 0); }
 
+        gameStates.ChangesMade = true;
     }
 
     public void faceshape()
@@ -126,6 +136,8 @@ public class HomeScreen : MonoBehaviour {
         //main screen
         if (smFaceAnim.GetInteger("FaceShape") < 2) { smFaceAnim.SetInteger("FaceShape", smFaceAnim.GetInteger("FaceShape") + 1); }
         else { smFaceAnim.SetInteger("FaceShape", 0); }
+
+        gameStates.ChangesMade = true;
     }
 
     public void skincolour()
@@ -137,5 +149,7 @@ public class HomeScreen : MonoBehaviour {
         //main screen
         if (smFaceAnim.GetInteger("SkinColour") < 7) { smFaceAnim.SetInteger("SkinColour", smFaceAnim.GetInteger("SkinColour") + 1); }
         else { smFaceAnim.SetInteger("SkinColour", 0); }
+
+        gameStates.ChangesMade = true;
     }
 }
