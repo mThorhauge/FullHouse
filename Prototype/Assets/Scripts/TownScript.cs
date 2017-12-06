@@ -53,12 +53,6 @@ public class TownScript : MonoBehaviour {
 
     }
 
-	public void toHomeClick() {
-
-		SceneManager.LoadScene("Home", LoadSceneMode.Single);
-
-	}
-
     public void upgradeBuildingClick(int buildingID) {
 
 		//Switch between chosen building

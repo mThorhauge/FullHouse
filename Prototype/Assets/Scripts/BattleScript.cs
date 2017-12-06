@@ -65,7 +65,7 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////UI UPDATES////////////////
         //healthDisplay.text = "Health: " + currentHealth;
-        //healthDisplay.text = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
+        healthDisplay.text = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
         //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
         goldCountDisplay.text = "Bits: " + currentBits;
 
