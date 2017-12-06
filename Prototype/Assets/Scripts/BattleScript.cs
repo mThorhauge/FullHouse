@@ -17,44 +17,49 @@ public class BattleScript : MonoBehaviour {
     public UnityEngine.UI.Text enemyName;
 
     //adjust health bar
-    public RectTransform healthBar;
+    public RectTransform    healthBar;
 
-    public Image img_attackEffect; //image for attack effect
+    public Image            img_attackEffect; //image for attack effect
 
-    public int baseHealth = 5; //health base number
-    public int baseGold = 1; //how much gold each monster drops to start
+    public int              baseHealth              = 5; //health base number
+    public int              baseGold                = 1; //how much gold each monster drops to start
 
-    float fullHealth = gameStates.FHealth; //saves previous full health
-    float currentHealth = gameStates.CHealth; //tracks current amount of monster health
-    int currentBits = gameStates.Bits; //tracks current amount of gold
+    float                   fullHealth              = gameStates.FHealth; //saves previous full health
+    float                   currentHealth           = gameStates.CHealth; //tracks current amount of monster health
+    int                     currentBits             = gameStates.Bits; //tracks current amount of gold
+    int                     currentChunks           = gameStates.Chunks; //track current amount of premium currency
 
-    int dropCount = 0; //calculate to drop a monster drop every X amount of damage
-    int currentMonsterDrop = gameStates.MonsterDrops; //total of monster drops
+    int                     dropCount               = gameStates.MDropCount; //calculate to drop a monster drop every X amount of damage
+    int                     currentMonsterDrop      = gameStates.MonsterDrops; //total of monster drops
 
-	public int damagePerClick = 1 * (int)(Mathf.Pow(gameStates.ClickDmg,2)); //how much damage is done per click
+	public int              damagePerClick          = 1 * (int)(Mathf.Pow(gameStates.ClickDmg,2)); //how much damage is done per click
 
-    int enemiesDefeated = gameStates.Kills;
+    int                     enemiesDefeated         = gameStates.Kills;
 
-    int i = 0; //for testing
+    public Image            ImageComponent;
+    public Sprite[]         enemies;
 
-    public Image ImageComponent;
-    public Sprite[] enemies;
-
-    public Image poofImage;
-    public Sprite[] poofSprites;
+    public Image            poofImage;
+    public Sprite[]         poofSprites;
 
     /// <summary>
     /// Initializes game objects
     /// </summary>
     void Start() {
-        img_attackEffect.enabled = false;
-        poofImage.enabled = false;
+        img_attackEffect.enabled    = false;
+        poofImage.enabled           = false;
 
         //Update Game data
-        fullHealth = gameStates.FHealth;      
-        currentHealth = gameStates.CHealth;
-        currentBits = gameStates.Bits;
-        currentMonsterDrop = gameStates.MonsterDrops;
+        fullHealth              = gameStates.FHealth;      
+        currentHealth           = gameStates.CHealth;
+        currentBits             = gameStates.Bits;
+        currentMonsterDrop      = gameStates.MonsterDrops;
+        dropCount               = gameStates.MDropCount;
+
+        gameStates.UpdateDamage();
+        gameStates.UpdateGoldBonus();
+
+        InvokeRepeating("autoDamage", 1.0f, 2.0f); //start suto damage after one second. Performe every 2 sec
 
         }
 
@@ -65,12 +70,13 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////UI UPDATES////////////////
         //healthDisplay.text = "Health: " + currentHealth;
-        healthDisplay.text = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
-        //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
-        goldCountDisplay.text = "Bits: " + currentBits;
+        healthDisplay.text              = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
 
-        dropCountDisplay.text = "Until MD: " + dropCount + "/100";
-        monsterDropCountDisplay.text = "Monster Drops: " + currentMonsterDrop;
+        //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
+        goldCountDisplay.text           = "Bits: " + currentBits;
+
+        dropCountDisplay.text           = "Until MD: " + dropCount + "/100";
+        monsterDropCountDisplay.text    = "Monster Drops: " + currentMonsterDrop;
 
         if (enemiesDefeated == 0) { enemyName.text = "Sumola"; }
         else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; }
@@ -97,7 +103,7 @@ public class BattleScript : MonoBehaviour {
             currentHealth = fullHealth + (float)(fullHealth * 0.2);
             fullHealth = currentHealth;
 
-			currentBits += (int)(fullHealth / baseHealth) * baseGold * gameStates.GoldIncrease;
+			currentBits += (int)(fullHealth / baseHealth) * (int)(baseGold * gameStates.GoldIncrease);
 
             dropCount += (int)(currentHealth);
             if (dropCount >= 100) {
@@ -122,6 +128,7 @@ public class BattleScript : MonoBehaviour {
     /// Performs actions when Button_enemy is clicked
     /// </summary>
     public void enemyClicked() {
+
         currentHealth -= damagePerClick; //enemy takes damage
         img_attackEffect.transform.position = Input.mousePosition; //set image to click location 
         StartCoroutine(Appear(img_attackEffect, 0.1F));
@@ -135,15 +142,23 @@ public class BattleScript : MonoBehaviour {
 
         // Save gave states
 
-        gameStates.Bits = currentBits;
-        gameStates.FHealth = (int)fullHealth; //saves previous full health
-        gameStates.CHealth = (int)currentHealth; //tracks current amount of monster health
+        //Currencies
+        gameStates.Bits             = currentBits; // save current amount of bits
+        gameStates.Chunks           = currentChunks; // save current amount of chunks
 
-        gameStates.MonsterDrops = dropCount; //calculate to drop a monster drop every X amount of damage
-        //int currentMonsterDrop = gameStates.MonsterDrops;
+        //Health stats
+        gameStates.FHealth          = (int)fullHealth; //saves previous full health
+        gameStates.CHealth          = (int)currentHealth; //tracks current amount of monster health
+
+        //Monster drops
+        gameStates.MDropCount       = dropCount; //calculate to drop a monster drop every X amount of damage
+        gameStates.MonsterDrops     = currentMonsterDrop; //amount of monster drops collected
+
+        //Kill count
+        gameStates.Kills            = enemiesDefeated; // number of monsters defeated
 
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
-        }
+    }
 
     /// <summary>
     /// Delays apperance and disapperance of an image
@@ -172,8 +187,20 @@ public class BattleScript : MonoBehaviour {
         for (int i = 0; i < 6; i++) {
 
             poofImage.sprite = poofSprites[i];
-            yield return StartCoroutine(WaitForFrames(10));
+            yield return new WaitForSeconds(0.1f);
 
         }
+    }
+
+    /// <summary>
+    /// AUtomatically damage enemies
+    /// </summary>
+    /// <returns></returns>
+    void autoDamage() {
+
+        if (gameStates.TavernLvl > 1) { //only if the tavern has been upgraded
+            currentHealth -= gameStates.AutoMDmg + gameStates.AutoPDmg;
+        }
+
     }
 }

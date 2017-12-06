@@ -21,7 +21,7 @@ public class gameStates : MonoBehaviour
 	
 
     //Dungeon states
-    private static int kills, bits, chunks, monsterDrops, cHealth, fHealth;
+    private static int kills, bits, chunks, monsterDrops, mDropCount, cHealth, fHealth;
 
     //Town States
     private static int apothecaryLvl, blacksmithLvl, tavernLvl, fortuneTellerLvl;
@@ -30,7 +30,7 @@ public class gameStates : MonoBehaviour
 	private static int blacksmithCost, tavernCost, apothecaryCost, fortuneTellerCost;
 
 	//Building bonuses
-	private static int clickDmg, autoPDmg, autoMDmg, goldIncrease;
+	private static float clickDmg, autoPDmg, autoMDmg, goldIncrease;
 
     /// <summary>
     /// Update Kills
@@ -40,35 +40,39 @@ public class gameStates : MonoBehaviour
 
 		////Set the gameStates to proper values
 		/// will need to use save file data in future
-		kills = 0;
-		bits = 0;
-		chunks = 0;
-		monsterDrops = 0;
-		cHealth = 5;
-		fHealth = 5;
+		kills               = 0;
+		bits                = 0;
+		chunks              = 0;
+		monsterDrops        = 0;
+		cHealth             = 5;
+		fHealth             = 5;
 
-		apothecaryLvl = 1;
-		blacksmithLvl = 1;
-		tavernLvl = 1;
-		fortuneTellerLvl = 1;
+		apothecaryLvl       = 1;
+		blacksmithLvl       = 1;
+		tavernLvl           = 1;
+		fortuneTellerLvl    = 1;
 
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
-		blacksmithCost = 10;
-		tavernCost = 50;
-		apothecaryCost = 200;
-		fortuneTellerCost = 720;
+		blacksmithCost      = 10;
+		tavernCost          = 50;
+		apothecaryCost      = 200;
+		fortuneTellerCost   = 720;
 
 		//Set starting bonuses
 		//Values are all set to 100% aka 1 at start
-		clickDmg = 1;
-		autoPDmg = 1;
-		autoMDmg = 1;
-		goldIncrease = 1;
+		clickDmg            = 1;
+		autoPDmg            = 1;
+		autoMDmg            = 1;
+		goldIncrease        = 1;
 
 	}
 		
-
+    /// <summary>
+    /// ////////////
+    /// ////////////External Access Functions
+    /// ////////////
+    /// </summary>
 	public static int Kills {
 
         get {
@@ -119,6 +123,23 @@ public class gameStates : MonoBehaviour
 
         set {
             monsterDrops = value;
+        }
+    }
+
+    /// <summary>
+    /// Update Monster Drop Count
+    /// </summary>
+    public static int MDropCount
+    {
+
+        get
+        {
+            return mDropCount;
+        }
+
+        set
+        {
+            mDropCount = value;
         }
     }
 
@@ -214,6 +235,7 @@ public class gameStates : MonoBehaviour
 			blacksmithCost = value;
 		}
 	}
+
 	/// <summary>
 	/// Update tavernCost
 	/// </summary>
@@ -227,6 +249,7 @@ public class gameStates : MonoBehaviour
 			tavernCost = value;
 		}
 	}
+
 	/// <summary>
 	/// Update apothecaryCost
 	/// </summary>
@@ -240,6 +263,7 @@ public class gameStates : MonoBehaviour
 			apothecaryCost = value;
 		}
 	}
+
 	/// <summary>
 	/// Update fortuneTellerCost
 	/// </summary>
@@ -257,7 +281,7 @@ public class gameStates : MonoBehaviour
 	/// <summary>
 	/// Update clickDmg
 	/// </summary>
-	public static int ClickDmg {
+	public static float ClickDmg {
 
 		get {
 			return clickDmg;
@@ -267,10 +291,11 @@ public class gameStates : MonoBehaviour
 			clickDmg = value;
 		}
 	}
+
 	/// <summary>
 	/// Update autoPDmg
 	/// </summary>
-	public static int AutoPDmg {
+	public static float AutoPDmg {
 
 		get {
 			return autoPDmg;
@@ -284,7 +309,7 @@ public class gameStates : MonoBehaviour
 	/// <summary>
 	/// Update autoMDmg
 	/// </summary>
-	public static int AutoMDmg {
+	public static float AutoMDmg {
 
 		get {
 			return autoMDmg;
@@ -298,7 +323,7 @@ public class gameStates : MonoBehaviour
 	/// <summary>
 	/// Update goldIncrease
 	/// </summary>
-	public static int GoldIncrease {
+	public static float GoldIncrease {
 
 		get {
 			return goldIncrease;
@@ -309,5 +334,38 @@ public class gameStates : MonoBehaviour
 		}
 	}
 
-	//end
+    ///////////////////////
+    /// Damage Calculations
+    ///////////////////////
+
+   public static void UpdateDamage() {
+
+        ///////
+        /////// Calculate Click Damage
+        ///////
+        float tempD = 1 * (0.01f * (blacksmithLvl - 1)); // base dmg * dmg multiplier
+        clickDmg = tempD;
+
+
+        ///////
+        /////// Calculate Physical Auto Damage
+        ///////
+        float tempPD = 1 * (0.5f * (tavernLvl - 1)); // base dmg * dmg multiplier
+        autoPDmg = tempPD;
+
     }
+
+    ///////////////////////////
+    /// Gold Bonus Calculations
+    ///////////////////////////
+    public static void UpdateGoldBonus() {
+
+        float tempSmallGB = 1 * (0.01f * (fortuneTellerLvl - 1)); // base gold * gold multiplier
+        goldIncrease = tempSmallGB;
+
+    }
+
+
+
+    //end
+}

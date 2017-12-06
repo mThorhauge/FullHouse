@@ -49,6 +49,8 @@ public class TownScript : MonoBehaviour {
 
     public void toDungeonClick() {
 
+
+
         SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
 
     }

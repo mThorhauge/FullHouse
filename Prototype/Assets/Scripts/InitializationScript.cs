@@ -14,7 +14,9 @@ public class InitializationScript : MonoBehaviour {
         gameStates.Kills = 0;
         gameStates.Bits = 0;
         gameStates.Chunks = 0;
+        gameStates.Chunks = 0;
         gameStates.MonsterDrops = 0;
+        gameStates.MDropCount = 0;
         gameStates.CHealth = 5;
         gameStates.FHealth = 5;
 
