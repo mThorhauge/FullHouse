@@ -8,6 +8,7 @@ public class StoreScript : MonoBehaviour {
 
 	public UnityEngine.UI.Text bitsCountDisplay;
 	public UnityEngine.UI.Text monsterDropCountDisplay;
+	public UnityEngine.UI.Text chunkCountDisplay;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,8 @@ public class StoreScript : MonoBehaviour {
 	void Update () {
 
 		bitsCountDisplay.text ="" + gameStates.Bits;
-		monsterDropCountDisplay.text = "MDs: " + gameStates.MonsterDrops;
+		monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
+		chunkCountDisplay.text = "" + gameStates.Chunks;
 
 	}
 

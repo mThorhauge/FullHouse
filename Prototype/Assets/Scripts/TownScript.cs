@@ -8,6 +8,7 @@ public class TownScript : MonoBehaviour {
 
     public UnityEngine.UI.Text bitsCountDisplay;
     public UnityEngine.UI.Text monsterDropCountDisplay;
+	public UnityEngine.UI.Text chunkCountDisplay;
 	public UnityEngine.UI.Text townNameDisplay;
 
     public UnityEngine.UI.Text apothecaryLevelDisplay;
@@ -26,7 +27,8 @@ public class TownScript : MonoBehaviour {
 	void Update () {
 
         bitsCountDisplay.text = ""+ gameStates.Bits;
-        monsterDropCountDisplay.text = "MDs: " + gameStates.MonsterDrops;
+        monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
+		chunkCountDisplay.text = "" + gameStates.Chunks;
 		townNameDisplay.text = (string)(gameStates.TownName);
 
 		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
@@ -53,6 +55,11 @@ public class TownScript : MonoBehaviour {
        
 		SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
     }
+
+	public void toLeaderboardClick() {
+
+		SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
+	}
 
     public void toHomeClicked()
     {
