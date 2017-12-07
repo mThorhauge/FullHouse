@@ -7,12 +7,19 @@ public class hoverTavern : MonoBehaviour {
     public Rect windowRect = new Rect(0, 0, 0, 0);
     public bool lookingat = false;
 
-	void OnMouseOver()
+
+    void Update()
+    {
+        OnMouseOver();
+    }
+
+    void OnMouseOver()
     {
 
 
         lookingat = true;
-       // EditorWindow window = ScriptableObject.CreateInstance<hoverTavern>();
+        OnGUI();
+        //EditorWindow window = ScriptableObject.CreateInstance<hoverTavern>();
        // window.Show();
         
 
@@ -21,7 +28,7 @@ public class hoverTavern : MonoBehaviour {
     void OnGUI()
     {
 
-        if (!lookingat) return;
+        if (!lookingat) { return; }
 
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
 
