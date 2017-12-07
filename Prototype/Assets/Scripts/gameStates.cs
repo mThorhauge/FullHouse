@@ -13,6 +13,7 @@ using UnityEngine;
 //  -buffs
 // -current health
 // -total defeated
+// -prestige level
 // 
 // </summary>
 // 
@@ -39,6 +40,8 @@ public class gameStates : MonoBehaviour
     private static int cloth, hairColor, skinColor, faceShape;
     private static bool hairShort, changesMade;
 
+    private static int prestigeLvl;
+
     /// <summary>
     /// Update Kills
     /// </summary>
@@ -58,6 +61,7 @@ public class gameStates : MonoBehaviour
         tavernLvl = 1;
         fortuneTellerLvl = 1;
 
+        prestigeLvl = 0;
         //Set starting building costs
         //Values are set in time without upgrades to achieve
         blacksmithCost = 10;
@@ -291,6 +295,22 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    // <summary>
+    // Update Prestige Level
+    // </summary>
+    public static int PrestigeLvl
+    {
+
+        get
+        {
+            return prestigeLvl;
+        }
+
+        set
+        {
+            prestigeLvl = value;
+        }
+    }
     /// <summary>
     /// Update clickDmg
     /// </summary>
