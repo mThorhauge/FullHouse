@@ -51,11 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\hoverTavern.cs" />
      <Compile Include="Assets\Scripts\BattleScript.cs" />
      <Compile Include="Assets\Scripts\gameStates.cs" />
      <Compile Include="Assets\Scripts\HomeScreen.cs" />
      <Compile Include="Assets\Scripts\InitializationScript.cs" />
      <Compile Include="Assets\Scripts\LeaderboardScript.cs" />
+     <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\StoreScript.cs" />
      <Compile Include="Assets\Scripts\TownScript.cs" />
  <Reference Include="UnityEngine.UI">
