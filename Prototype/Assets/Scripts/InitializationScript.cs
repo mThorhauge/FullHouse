@@ -34,7 +34,7 @@ public class InitializationScript : MonoBehaviour {
 
 		//Set starting bonuses
 		//Values are all set to 100% aka 1 at start
-		gameStates.ClickDmg             = 1;
+		gameStates.ClickDmg             = 2;
 		gameStates.AutoPDmg             = 1;
 		gameStates.AutoMDmg             = 1;
 		gameStates.GoldIncrease         = 1;
