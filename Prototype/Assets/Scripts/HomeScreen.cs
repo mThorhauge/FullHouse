@@ -50,7 +50,7 @@ public class HomeScreen : MonoBehaviour {
 
         colourVar = 0;
         smcolourVar = 0;
-
+        /*
         if (gameStates.ChangesMade == true)
         {
             ClothAnim.SetInteger("ClothNum", gameStates.Cloth); // main clothing
@@ -67,12 +67,15 @@ public class HomeScreen : MonoBehaviour {
             faceAnim.SetInteger("FaceShape", gameStates.FaceShape); // pop up face shape 5
             print(smHairAnim.GetBool("HairShort"));
 
-            if (!smHairAnim.GetBool("HairShort"))
+            colourVar = gameStates.HairColor;
+            smcolourVar = gameStates.HairColor;
+
+            if (gameStates.HairShort == false)
             {
-                smHairIsLong.enabled = false;
-                hairIsLong.enabled = false;
+                smHairIsLong.enabled = true;
+                hairIsLong.enabled = true;
             }
-        }
+        }*/
     }
 	
 	// Update is called once per frame
@@ -84,12 +87,12 @@ public class HomeScreen : MonoBehaviour {
 	/// Performs actions when Button_ToTown is clicked
 	/// </summary>
 	public void toTownClicked() {
-        gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
+       /* gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
         gameStates.HairColor = hairAnim.GetInteger("HairColour");
         gameStates.HairShort = hairAnim.GetBool("HairShort");
         gameStates.SkinColor = faceAnim.GetInteger("SkinColour");
         gameStates.FaceShape = faceAnim.GetInteger("FaceShape");
-        print(gameStates.HairShort);
+        print(gameStates.HairShort);*/
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 
@@ -111,9 +114,11 @@ public class HomeScreen : MonoBehaviour {
 
     public void WardrobeSwitch()
     {
-        if (ClothAnim.GetInteger("ClothNum") < 7) { ClothAnim.SetInteger("ClothNum", ClothAnim.GetInteger("ClothNum")+1); }
+        if (gameStates.Cloth < 7) { gameStates.Cloth = gameStates.Cloth + 1; }
+        else { gameStates.Cloth = 0; }
+        /*if (ClothAnim.GetInteger("ClothNum") < 7) { ClothAnim.SetInteger("ClothNum", ClothAnim.GetInteger("ClothNum")+1); }
         else { ClothAnim.SetInteger("ClothNum", 0); }
-
+        */
         gameStates.ChangesMade = true;
 
     }
