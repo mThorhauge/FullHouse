@@ -8,6 +8,7 @@ public class TownScript : MonoBehaviour {
 
     public UnityEngine.UI.Text bitsCountDisplay;
     public UnityEngine.UI.Text monsterDropCountDisplay;
+	public UnityEngine.UI.Text townNameDisplay;
 
     public UnityEngine.UI.Text apothecaryLevelDisplay;
     public UnityEngine.UI.Text blacksmithLevelDisplay;
@@ -25,7 +26,8 @@ public class TownScript : MonoBehaviour {
 	void Update () {
 
         bitsCountDisplay.text = ""+ gameStates.Bits;
-        monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
+        monsterDropCountDisplay.text = "MDs: " + gameStates.MonsterDrops;
+		townNameDisplay.text = (string)(gameStates.TownName);
 
 		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
 		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl+ " Upgrade Cost " + gameStates.BlacksmithCost;
