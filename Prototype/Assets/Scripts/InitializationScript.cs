@@ -11,33 +11,33 @@ public class InitializationScript : MonoBehaviour {
 
         ////Set the gameStates to proper values
         /// will need to use save file data in future
-        gameStates.Kills = 0;
-        gameStates.Bits = 0;
-        gameStates.Chunks = 0;
-        gameStates.Chunks = 0;
-        gameStates.MonsterDrops = 0;
-        gameStates.MDropCount = 0;
-        gameStates.CHealth = 5;
-        gameStates.FHealth = 5;
+        gameStates.Kills                = 0;
+        gameStates.Bits                 = 0;
+        gameStates.Chunks               = 0;
+        gameStates.Chunks               = 0;
+        gameStates.MonsterDrops         = 0;
+        gameStates.MDropCount           = 0;
+        gameStates.CHealth              = 5;
+        gameStates.FHealth              = 5;
 
-        gameStates.ApothecaryLvl = 1;
-        gameStates.BlacksmithLvl = 1;
-        gameStates.TavernLvl = 1;
-        gameStates.FortuneTellerLvl = 1;
+        gameStates.ApothecaryLvl        = 1;
+        gameStates.BlacksmithLvl        = 1;
+        gameStates.TavernLvl            = 1;
+        gameStates.FortuneTellerLvl     = 1;
 
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
-		gameStates.BlacksmithCost = 10;
-		gameStates.TavernCost = 50;
-		gameStates.ApothecaryCost = 200;
-		gameStates.FortuneTellerCost = 720;
+		gameStates.BlacksmithCost       = 10;
+		gameStates.TavernCost           = 50;
+		gameStates.ApothecaryCost       = 200;
+		gameStates.FortuneTellerCost    = 720;
 
 		//Set starting bonuses
 		//Values are all set to 100% aka 1 at start
-		gameStates.ClickDmg = 1;
-		gameStates.AutoPDmg = 1;
-		gameStates.AutoMDmg = 1;
-		gameStates.GoldIncrease = 1;
+		gameStates.ClickDmg             = 1;
+		gameStates.AutoPDmg             = 1;
+		gameStates.AutoMDmg             = 1;
+		gameStates.GoldIncrease         = 1;
 
         }
 	

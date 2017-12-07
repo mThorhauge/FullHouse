@@ -455,14 +455,14 @@ public class gameStates : MonoBehaviour
         ///////
         /////// Calculate Click Damage
         ///////
-        float tempD = 1 * (0.01f * (blacksmithLvl - 1)); // base dmg * dmg multiplier
+        float tempD = 1 * (0.01f * (blacksmithLvl)); // base dmg * dmg multiplier
         clickDmg = 1 + tempD;
 
 
         ///////
         /////// Calculate Physical Auto Damage
         ///////
-        float tempPD = 1 * (0.5f * (tavernLvl - 1)); // base dmg * dmg multiplier
+        float tempPD = 1 * (0.5f * (tavernLvl)); // base dmg * dmg multiplier
         autoPDmg = 1 + tempPD;
 
     }
@@ -472,7 +472,7 @@ public class gameStates : MonoBehaviour
     ///////////////////////////
     public static void UpdateGoldBonus() {
 
-        float tempSmallGB = 1 * (0.01f * (fortuneTellerLvl - 1)); // base gold * gold multiplier
+        float tempSmallGB = 1 * (0.01f * (fortuneTellerLvl)); // base gold * gold multiplier
         goldIncrease = 1 + tempSmallGB;
 
     }
