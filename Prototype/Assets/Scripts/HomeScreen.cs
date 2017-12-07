@@ -121,8 +121,8 @@ public class HomeScreen : MonoBehaviour {
 
 	public void changeAppearance() {
         
-        if (PopUp.transform.position.x > 0) { PopUp.transform.position = new Vector3(-631, -348, 0); appearancePopUp.SetActive(false); } //remove this line and the if statement when switching to the confirmation thing.
-        else { PopUp.transform.position = new Vector3(321, 608, 0); appearancePopUp.SetActive(true); } //keep this line just remove the else statment
+        if (PopUp.transform.position.x > 0) { PopUp.transform.position = new Vector3(-631, -348, 0); appearancePopUp.SetActive(false); } 
+        else { PopUp.transform.position = new Vector3(321, 608, 0); appearancePopUp.SetActive(true); } 
         
 
     }
@@ -131,7 +131,7 @@ public class HomeScreen : MonoBehaviour {
         PopUp.transform.position = new Vector3(0, 0, 0);
         if ( choice == "continue") {
             appearancePopUp.SetActive(false);
-            PopUp.transform.position = new Vector3(-631, -348, 0); //this is the line that will be removed above
+            PopUp.transform.position = new Vector3(-631, -348, 0); 
         }
 	}
 
