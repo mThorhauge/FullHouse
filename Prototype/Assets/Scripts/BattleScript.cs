@@ -59,7 +59,7 @@ public class BattleScript : MonoBehaviour {
         gameStates.UpdateDamage();
         gameStates.UpdateGoldBonus();
 
-        InvokeRepeating("autoDamage", 1.0f, 2.0f); //start suto damage after one second. Performe every 2 sec
+        InvokeRepeating("autoDamage", 1.0f, 1.0f); //start suto damage after one second. Performe every 1 sec
 
         }
 
