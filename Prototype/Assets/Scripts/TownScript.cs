@@ -24,7 +24,7 @@ public class TownScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        bitsCountDisplay.text = "Bits: " + gameStates.Bits;
+        bitsCountDisplay.text = ""+ gameStates.Bits;
         monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
 
 		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
