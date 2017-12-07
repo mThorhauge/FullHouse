@@ -12,6 +12,7 @@ public class BattleScript : MonoBehaviour {
     public UnityEngine.UI.Text healthDisplay;
     public UnityEngine.UI.Text killCountDisplay;
     public UnityEngine.UI.Text goldCountDisplay;
+	public UnityEngine.UI.Text chunkCountDisplay;
     public UnityEngine.UI.Text monsterDropCountDisplay;
     public UnityEngine.UI.Text dropCountDisplay;
     public UnityEngine.UI.Text enemyName;
@@ -70,13 +71,15 @@ public class BattleScript : MonoBehaviour {
 
         /////////////////UI UPDATES////////////////
         //healthDisplay.text = "Health: " + currentHealth;
-        healthDisplay.text              = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
+        //healthDisplay.text              = "Health: " + (currentHealth * 300.000 / fullHealth) * 1.000;
 
         //killCountDisplay.text = "Enemies Defeated: " + enemiesDefeated;
-        goldCountDisplay.text           = "Bits: " + currentBits;
+        goldCountDisplay.text           = "" + currentBits;
 
-        dropCountDisplay.text           = "Until MD: " + dropCount + "/100";
-        monsterDropCountDisplay.text    = "Monster Drops: " + currentMonsterDrop;
+        //dropCountDisplay.text           = "Until MD: " + dropCount + "/100";
+        monsterDropCountDisplay.text    = "" + currentMonsterDrop;
+
+		chunkCountDisplay.text = "" + gameStates.Chunks;
 
         if (enemiesDefeated == 0) { enemyName.text = "Sumola"; }
         else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; }
