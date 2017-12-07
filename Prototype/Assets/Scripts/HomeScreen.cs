@@ -7,6 +7,11 @@ using System;
 
 public class HomeScreen : MonoBehaviour {
 
+	//Set top bar information
+	public UnityEngine.UI.Text bitsCountDisplay;
+	public UnityEngine.UI.Text monsterDropCountDisplay;
+	public UnityEngine.UI.Text chunkCountDisplay;
+
 	public GameObject appearancePopUp;
     public GameObject Clothing;
     private Animator ClothAnim;
@@ -32,6 +37,8 @@ public class HomeScreen : MonoBehaviour {
     private int smcolourVar;
     //public Sprite img_popUp;
     //public Sprite img_mirror;
+
+
 
 
     // Use this for initialization
@@ -82,6 +89,12 @@ public class HomeScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//Set top bar information
+		bitsCountDisplay.text ="" + gameStates.Bits;
+		monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
+		chunkCountDisplay.text = "" + gameStates.Chunks;
+
         ClothAnim.SetInteger("ClothNum", gameStates.Cloth); // main clothing
         smHairAnim.SetBool("HairShort", gameStates.HairShort); // main hair shape 1 
         smHairAnim.SetInteger("HairColour", gameStates.HairColor); // main hair colour 2
