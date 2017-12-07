@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\HomeScreen.cs" />
      <Compile Include="Assets\Scripts\InitializationScript.cs" />
      <Compile Include="Assets\Scripts\LeaderboardScript.cs" />
+     <Compile Include="Assets\Scripts\StoreScript.cs" />
      <Compile Include="Assets\Scripts\TownScript.cs" />
      <Compile Include="Assets\Scripts\gameStates.cs" />
  <Reference Include="UnityEngine.Analytics">
