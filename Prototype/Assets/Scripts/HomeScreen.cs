@@ -50,6 +50,29 @@ public class HomeScreen : MonoBehaviour {
 
         colourVar = 0;
         smcolourVar = 0;
+
+        if (gameStates.ChangesMade == true)
+        {
+            ClothAnim.SetInteger("ClothNum", gameStates.Cloth); // main clothing
+            smHairAnim.SetBool("HairShort", gameStates.HairShort); // main hair shape 1 
+            smHairAnim.SetInteger("HairColour", gameStates.HairColor); // main hair colour 2
+            smHairBotAnim.SetInteger("hairColourBot", gameStates.HairColor); // main long hair bottom colour 3
+            smFaceAnim.SetInteger("SkinColour", gameStates.SkinColor); // main skin colour 4
+            smFaceAnim.SetInteger("FaceShape", gameStates.FaceShape); // main face shape 5s
+
+            hairAnim.SetInteger("HairColour", gameStates.HairColor); // pop up hair colour 1
+            hairAnim.SetBool("HairShort", gameStates.HairShort); // pop up hair shape 2
+            hairLongAnim.SetInteger("hairColourBot", gameStates.HairColor); // pop up long hair bottom colour 3
+            faceAnim.SetInteger("SkinColour", gameStates.SkinColor); // pop up hair skin colour 4
+            faceAnim.SetInteger("FaceShape", gameStates.FaceShape); // pop up face shape 5
+            print(smHairAnim.GetBool("HairShort"));
+
+            if (!smHairAnim.GetBool("HairShort"))
+            {
+                smHairIsLong.enabled = false;
+                hairIsLong.enabled = false;
+            }
+        }
     }
 	
 	// Update is called once per frame
@@ -66,7 +89,7 @@ public class HomeScreen : MonoBehaviour {
         gameStates.HairShort = hairAnim.GetBool("HairShort");
         gameStates.SkinColor = faceAnim.GetInteger("SkinColour");
         gameStates.FaceShape = faceAnim.GetInteger("FaceShape");
-
+        print(gameStates.HairShort);
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 
