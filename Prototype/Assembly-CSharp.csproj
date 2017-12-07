@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\HomeScreen.cs" />
      <Compile Include="Assets\Scripts\InitializationScript.cs" />
      <Compile Include="Assets\Scripts\LeaderboardScript.cs" />
+     <Compile Include="Assets\Scripts\PrestigeScript.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\StoreScript.cs" />
      <Compile Include="Assets\Scripts\TownScript.cs" />
