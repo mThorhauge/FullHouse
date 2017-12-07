@@ -66,6 +66,7 @@ public class gameStates : MonoBehaviour
         fortuneTellerLvl = 1;
 
         prestigeLvl = 0;
+
         //Set starting building costs
         //Values are set in time without upgrades to achieve
         blacksmithCost = 10;
