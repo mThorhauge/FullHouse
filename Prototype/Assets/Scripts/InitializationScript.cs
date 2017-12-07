@@ -9,7 +9,10 @@ public class InitializationScript : MonoBehaviour {
 	void Start () {
 		print ("initialization script");
 
-        ////Set the gameStates to proper values
+		//Adding a default town name
+		gameStates.TownName 			= "Bittania";
+        
+		////Set the gameStates to proper values
         /// will need to use save file data in future
         gameStates.Kills                = 0;
         gameStates.Bits                 = 0;
@@ -44,11 +47,12 @@ public class InitializationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButtonDown(0)) {
+        /*if (Input.GetMouseButtonDown(0)) {
 
             //set to dungeon for now as its the most finnished part of the game currently
             SceneManager.LoadScene("Town", LoadSceneMode.Single); 
             }
+        */
 		
 	}
 }

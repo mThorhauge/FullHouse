@@ -8,6 +8,7 @@ public class TownScript : MonoBehaviour {
 
     public UnityEngine.UI.Text bitsCountDisplay;
     public UnityEngine.UI.Text monsterDropCountDisplay;
+	public UnityEngine.UI.Text townNameDisplay;
 
     public UnityEngine.UI.Text apothecaryLevelDisplay;
     public UnityEngine.UI.Text blacksmithLevelDisplay;
@@ -24,8 +25,9 @@ public class TownScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        bitsCountDisplay.text = "Bits: " + gameStates.Bits;
-        monsterDropCountDisplay.text = "Monster Drops: " + gameStates.MonsterDrops;
+        bitsCountDisplay.text = ""+ gameStates.Bits;
+        monsterDropCountDisplay.text = "MDs: " + gameStates.MonsterDrops;
+		townNameDisplay.text = (string)(gameStates.TownName);
 
 		apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
 		blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl+ " Upgrade Cost " + gameStates.BlacksmithCost;
@@ -87,7 +89,7 @@ public class TownScript : MonoBehaviour {
 			}
             break;
         case 4:
-			if (gameStates.Bits >= (gameStates.FortuneTellerCost *(gameStates.FortuneTellerLvl^2))) {
+			if (gameStates.Bits >= (gameStates.FortuneTellerCost)) {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
 				gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl,2));
