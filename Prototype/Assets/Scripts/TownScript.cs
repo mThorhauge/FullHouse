@@ -56,6 +56,11 @@ public class TownScript : MonoBehaviour {
 		SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
     }
 
+	public void toLeaderboardClick() {
+
+		SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
+	}
+
     public void toHomeClicked()
     {
     	SceneManager.LoadScene("Home", LoadSceneMode.Single);
