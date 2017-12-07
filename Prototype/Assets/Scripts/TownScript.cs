@@ -48,16 +48,13 @@ public class TownScript : MonoBehaviour {
 	}
 
     public void toDungeonClick() {
-
-
-
-        SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
-
+       
+		SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
     }
 
     public void toHomeClicked()
     {
-       SceneManager.LoadScene("Home", LoadSceneMode.Single);
+    	SceneManager.LoadScene("Home", LoadSceneMode.Single);
     }
 
     public void upgradeBuildingClick(int buildingID) {
