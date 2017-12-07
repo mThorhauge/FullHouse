@@ -24,23 +24,28 @@ public class PrestigeScript : MonoBehaviour {
 
     public void prestigeClicked()
     {
-        if (currentBits >= 10) //low for testing purposes
+        totalBuildingLevels = gameStates.ApothecaryLvl + gameStates.BlacksmithLvl + gameStates.TavernLvl + gameStates.FortuneTellerLvl;
+
+        if (totalBuildingLevels >= 5)
         {
-            //add all the building levels together
-            totalBuildingLevels = gameStates.ApothecaryLvl + gameStates.BlacksmithLvl + gameStates.TavernLvl + gameStates.FortuneTellerLvl;
+            if (currentBits >= 10) //low for testing purposes
+            {
+                //add all the building levels together
 
-            prestigeLevel += (totalBuildingLevels + currentBits) / 10;//added prestige is a percentage of building levels and bits
-           
-            //need to reset bits and building levels
-            currentBits = 0;
-            gameStates.Bits = 0;
-            gameStates.PrestigeLvl = prestigeLevel;
+                prestigeLevel += (totalBuildingLevels + currentBits) / 10;//added prestige is a percentage of building levels and bits
 
-            gameStates.ApothecaryLvl = 1;
-            gameStates.BlacksmithLvl = 1;
-            gameStates.TavernLvl = 1;
-            gameStates.FortuneTellerLvl = 1;
+                //reset bits and and save bits and prestige in the game states
+                currentBits = 0;
+                gameStates.Bits = 0;
+                gameStates.PrestigeLvl = prestigeLevel;
 
+                //reset building levels in the games states to level 1
+                gameStates.ApothecaryLvl = 1;
+                gameStates.BlacksmithLvl = 1;
+                gameStates.TavernLvl = 1;
+                gameStates.FortuneTellerLvl = 1;
+
+            }
         }
     }
 }
