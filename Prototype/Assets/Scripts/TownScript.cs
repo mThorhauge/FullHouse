@@ -87,7 +87,7 @@ public class TownScript : MonoBehaviour {
 			}
             break;
         case 4:
-			if (gameStates.Bits >= (gameStates.FortuneTellerCost *(gameStates.FortuneTellerLvl^2))) {
+			if (gameStates.Bits >= (gameStates.FortuneTellerCost)) {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
 				gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl,2));

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoreScript : MonoBehaviour {
 
@@ -18,5 +20,10 @@ public class StoreScript : MonoBehaviour {
 		bitsCountDisplay.text ="" + gameStates.Bits;
 		monsterDropCountDisplay.text = "MDs: " + gameStates.MonsterDrops;
 
+	}
+
+	public void toHomeClicked()
+	{
+		SceneManager.LoadScene("Home", LoadSceneMode.Single);
 	}
 }
