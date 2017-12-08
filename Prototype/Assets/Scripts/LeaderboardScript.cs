@@ -30,12 +30,16 @@ public class LeaderboardScript : MonoBehaviour {
         {
             hairIsLong.enabled = true;
         }
+        if (gameStates.HairShort == true)
+        {
+            hairIsLong.enabled = false;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     public void toTownClicked()
     {
