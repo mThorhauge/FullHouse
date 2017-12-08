@@ -132,6 +132,19 @@ public class HomeScreen : MonoBehaviour {
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 
+	public void toStoreClick() {
+		gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
+		gameStates.HairColor = hairAnim.GetInteger("HairColour");
+		gameStates.HairShort = hairAnim.GetBool("HairShort");
+		gameStates.SkinColor = faceAnim.GetInteger("SkinColour");
+		gameStates.FaceShape = faceAnim.GetInteger("FaceShape");
+		print(gameStates.HairColor);
+		print(gameStates.SkinColor);
+
+		gameStates.LastScene = 2;
+		SceneManager.LoadScene("Store", LoadSceneMode.Single);
+	}
+
 	public void changeAppearance() {
         
         if (PopUp.transform.position.x > 0) { PopUp.transform.position = new Vector3(-631, -348, 0); appearancePopUp.SetActive(false); } 

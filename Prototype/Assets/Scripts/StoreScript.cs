@@ -26,6 +26,14 @@ public class StoreScript : MonoBehaviour {
 
 	public void toHomeClicked()
 	{
-		SceneManager.LoadScene("Home", LoadSceneMode.Single);
+		if (gameStates.LastScene == 1) {
+			SceneManager.LoadScene ("Town", LoadSceneMode.Single);
+		} else if (gameStates.LastScene == 2) {
+			SceneManager.LoadScene ("Home", LoadSceneMode.Single);
+		} else if (gameStates.LastScene == 3) {
+			SceneManager.LoadScene ("Dungeon", LoadSceneMode.Single);
+		} else {
+			SceneManager.LoadScene ("Town", LoadSceneMode.Single);
+		}
 	}
 }

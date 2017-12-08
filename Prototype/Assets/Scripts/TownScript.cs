@@ -61,6 +61,12 @@ public class TownScript : MonoBehaviour {
 		SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
 	}
 
+	public void toStoreClick() {
+
+		gameStates.LastScene = 1;
+		SceneManager.LoadScene("Store", LoadSceneMode.Single);
+	}
+
     public void toHomeClicked()
     {
     	SceneManager.LoadScene("Home", LoadSceneMode.Single);

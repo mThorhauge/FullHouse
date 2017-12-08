@@ -138,7 +138,7 @@ public class BattleScript : MonoBehaviour {
 
         }
 
-    /// <summary>
+	/// <summary>
     /// Performs actions when Button_ToTown is clicked
     /// </summary>
     public void toTownClicked() {
@@ -160,8 +160,32 @@ public class BattleScript : MonoBehaviour {
         //Kill count
         gameStates.Kills            = enemiesDefeated; // number of monsters defeated
 
-        SceneManager.LoadScene("Town", LoadSceneMode.Single);
+		gameStates.LastScene = 3;
+		SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
+
+	//sends player to the store
+	public void toStoreClick() {
+
+		// Save gave states
+
+		//Currencies
+		gameStates.Bits             = currentBits; // save current amount of bits
+		gameStates.Chunks           = currentChunks; // save current amount of chunks
+
+		//Health stats
+		gameStates.FHealth          = (int)fullHealth; //saves previous full health
+		gameStates.CHealth          = (int)currentHealth; //tracks current amount of monster health
+
+		//Monster drops
+		gameStates.MDropCount       = dropCount; //calculate to drop a monster drop every X amount of damage
+		gameStates.MonsterDrops     = currentMonsterDrop; //amount of monster drops collected
+
+		//Kill count
+		gameStates.Kills            = enemiesDefeated; // number of monsters defeated
+
+		//SceneManager.LoadScene("Store", LoadSceneMode.Single);
+	}
 
     /// <summary>
     /// Delays apperance and disapperance of an image
