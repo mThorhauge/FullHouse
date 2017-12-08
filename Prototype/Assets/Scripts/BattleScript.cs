@@ -184,7 +184,8 @@ public class BattleScript : MonoBehaviour {
 		//Kill count
 		gameStates.Kills            = enemiesDefeated; // number of monsters defeated
 
-		//SceneManager.LoadScene("Store", LoadSceneMode.Single);
+		gameStates.LastScene = 3;
+		SceneManager.LoadScene("Store", LoadSceneMode.Single);
 	}
 
     /// <summary>
