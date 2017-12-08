@@ -97,7 +97,7 @@ public class TownScript : MonoBehaviour {
 
 			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
 			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(gameStates.BlacksmithCost/600) + " Chunks";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.BlacksmithCost/600) + " Chunks";
 
 			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
 				gameStates.BlacksmithLvl += 1;
