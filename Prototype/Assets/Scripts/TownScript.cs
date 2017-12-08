@@ -16,7 +16,18 @@ public class TownScript : MonoBehaviour {
     public UnityEngine.UI.Text tavernLevelDisplay;
     public UnityEngine.UI.Text fortuneTellerLevelDisplay;
 
+	//information in the pop up window
+
+	public UnityEngine.UI.Text buildingName;
+	//public UnityEngine.UI.Text buildingLevel;
+	public UnityEngine.UI.Text bitUpgradeText;
+	public UnityEngine.UI.Text chunkUpgradeText;
+
+	public int buildingNum = 0;
+
     public GameObject town;
+	public GameObject blacksmithPopUp;
+
 
     // Use this for initialization
     void Start () {
@@ -61,6 +72,12 @@ public class TownScript : MonoBehaviour {
 		SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
 	}
 
+	public void toStoreClick() {
+
+		gameStates.LastScene = 1;
+		SceneManager.LoadScene("Store", LoadSceneMode.Single);
+	}
+
     public void toHomeClicked()
     {
     	SceneManager.LoadScene("Home", LoadSceneMode.Single);
@@ -77,7 +94,14 @@ public class TownScript : MonoBehaviour {
 				gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl,2));
 			}
 			break;
-        case 2:
+		case 2:
+
+			blacksmithPopUp.SetActive (true);
+			buildingNum = 2;
+
+			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
+			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.BlacksmithCost/600) + " Chunks";
 
 			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
 				gameStates.BlacksmithLvl += 1;
@@ -108,6 +132,46 @@ public class TownScript : MonoBehaviour {
         }
 
     }
+
+	public void upgradeWithBitsClick() {
+
+		//Switch between chosen building
+		switch(buildingNum) {
+		case 2:
+			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
+				gameStates.BlacksmithLvl += 1;
+				gameStates.Bits -= gameStates.BlacksmithCost;
+				gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl,2));
+				gameStates.ClickDmg += 1;
+				blacksmithPopUp.SetActive (false);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void upgradeWithChunksClick() {
+
+		//Switch between chosen building
+		switch(buildingNum) {
+		case 2:
+			if (gameStates.Chunks >= (int)(1+gameStates.BlacksmithCost/600)) {
+				gameStates.BlacksmithLvl += 1;
+				gameStates.Chunks -= (int)(1+gameStates.BlacksmithCost/600);
+				gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl,2));
+				gameStates.ClickDmg += 1;
+				blacksmithPopUp.SetActive (false);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void closePopUp(){
+		blacksmithPopUp.SetActive (false);
+	}
 
 
 }

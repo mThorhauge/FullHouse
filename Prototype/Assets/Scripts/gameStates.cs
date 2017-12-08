@@ -22,6 +22,9 @@ public class gameStates : MonoBehaviour
 	//Town Name
 	private static string townName;
 
+	//Last scene for store data
+	private static int lastScene;
+
     //Dungeon states
     private static int kills, bits, chunks, monsterDrops, mDropCount, cHealth, fHealth;
 
@@ -50,6 +53,7 @@ public class gameStates : MonoBehaviour
 
 		//Sets a default town name
 		townName = "Bittania";
+		lastScene = 0; // 0 is going to be the store location
 
         ////Set the gameStates to proper values
         /// will need to use save file data in future
@@ -101,6 +105,20 @@ public class gameStates : MonoBehaviour
 
 		set {
 			townName = value;
+		}
+	}
+
+	/// <summary>
+	/// Update town name
+	/// </summary>
+	public static int LastScene {
+
+		get {
+			return lastScene;
+		}
+
+		set {
+			lastScene = value;
 		}
 	}
 

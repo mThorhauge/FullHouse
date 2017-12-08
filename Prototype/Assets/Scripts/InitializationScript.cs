@@ -10,6 +10,8 @@ public class InitializationScript : MonoBehaviour {
 		print ("initialization script");
 
 		//Adding a default town name
+
+		gameStates.LastScene 			= 0;
 		gameStates.TownName 			= "Bittania";
         
 		////Set the gameStates to proper values
