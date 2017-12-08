@@ -16,8 +16,14 @@ public class TownScript : MonoBehaviour {
     public UnityEngine.UI.Text tavernLevelDisplay;
     public UnityEngine.UI.Text fortuneTellerLevelDisplay;
 
-    public GameObject town;
+	//information in the pop up window
 
+	public UnityEngine.UI.Text buildingName;
+	//public UnityEngine.UI.Text buildingLevel;
+	public UnityEngine.UI.Text bitUpgradeText;
+	public UnityEngine.UI.Text chunkUpgradeText;
+
+    public GameObject town;
 	public GameObject blacksmithPopUp;
 
     // Use this for initialization
@@ -85,9 +91,13 @@ public class TownScript : MonoBehaviour {
 				gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl,2));
 			}
 			break;
-        case 2:
+		case 2:
 
-			blacksmithPopUp.SetActive(true);
+			blacksmithPopUp.SetActive (true);
+
+			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
+			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(gameStates.BlacksmithCost/600) + " Chunks";
 
 			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
 				gameStates.BlacksmithLvl += 1;
@@ -118,6 +128,10 @@ public class TownScript : MonoBehaviour {
         }
 
     }
+
+	public void closePopUp(){
+		blacksmithPopUp.SetActive (false);
+	}
 
 
 }
