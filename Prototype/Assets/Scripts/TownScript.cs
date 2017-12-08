@@ -18,6 +18,8 @@ public class TownScript : MonoBehaviour {
 
     public GameObject town;
 
+	public GameObject blacksmithPopUp;
+
     // Use this for initialization
     void Start () {
 
@@ -84,6 +86,8 @@ public class TownScript : MonoBehaviour {
 			}
 			break;
         case 2:
+
+			blacksmithPopUp.SetActive(true);
 
 			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
 				gameStates.BlacksmithLvl += 1;
