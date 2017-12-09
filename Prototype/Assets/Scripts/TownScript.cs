@@ -28,7 +28,6 @@ public class TownScript : MonoBehaviour {
     public GameObject town;
 	public GameObject blacksmithPopUp;
 
-
     // Use this for initialization
     void Start () {
         
@@ -40,7 +39,7 @@ public class TownScript : MonoBehaviour {
         bitsCountDisplay.text = ""+ gameStates.Bits;
         monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
 		chunkCountDisplay.text = "" + gameStates.Chunks;
-		townNameDisplay.text = (string)(gameStates.TownName);
+		//townNameDisplay.text = (string)(gameStates.TownName);
 
 		//Testing code
 		//apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
@@ -151,11 +150,17 @@ public class TownScript : MonoBehaviour {
             break;
 
         case 7://general store
+<<<<<<< HEAD
                 
              blacksmithPopUp.SetActive(true);
              buildingNum = 3;
                
              buildingName.text = "General Store - Lvl " + gameStates.GeneralStoreLvl;
+=======
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 7;
+>>>>>>> 3cbdbafa23bb15b04121ef23022439edbb8d7a35
 
             if (gameStates.PrestigeLvl > 0)
             {
@@ -251,11 +256,12 @@ public class TownScript : MonoBehaviour {
                 gameStates.TavernLvl += 1;
                 gameStates.Bits -= gameStates.TavernCost;
                 gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
-                gameStates.ClickDmg += 1;
+                gameStates.AutoPDmg += 1;
+				gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
                 break;
-		case 3://apothecary cost
+		case 3://apothecary
             if (gameStates.Bits >= (gameStates.ApothecaryCost))
             {
                 gameStates.ApothecaryLvl += 1;
@@ -270,7 +276,7 @@ public class TownScript : MonoBehaviour {
 				gameStates.StableLvl += 1;
 				gameStates.Bits -= gameStates.StableCost;
 				gameStates.StableCost *= (int)(Mathf.Pow(gameStates.StableLvl, 2));
-				gameStates.ClickDmg += 1;
+				gameStates.AutoPDmg += 1;
 				blacksmithPopUp.SetActive (false);
 			}
 			break;
@@ -280,7 +286,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.WizardsTowerLvl += 1;
                 gameStates.Bits -= gameStates.WizardsTowerCost;
                 gameStates.WizardsTowerCost *= (int)(Mathf.Pow(gameStates.WizardsTowerLvl, 2));
-                gameStates.ClickDmg += 1;
+                gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -290,7 +296,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.FortuneTellerLvl += 1;
                 gameStates.Bits -= gameStates.FortuneTellerCost;
                 gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
-                gameStates.ClickDmg += 1;
+                gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -300,7 +306,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.GeneralStoreLvl += 1;
                 gameStates.Bits -= gameStates.GeneralStoreCost;
                 gameStates.GeneralStoreCost *= (int)(Mathf.Pow(gameStates.GeneralStoreLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -310,7 +316,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.TradingPostLvl += 1;
                 gameStates.Bits -= gameStates.TradingPostCost;
                 gameStates.TradingPostCost *= (int)(Mathf.Pow(gameStates.TradingPostLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -320,7 +326,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.TailorLvl += 1;
                 gameStates.Bits -= gameStates.TailorCost;
                 gameStates.TailorCost *= (int)(Mathf.Pow(gameStates.TailorLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.ClickDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -331,6 +337,8 @@ public class TownScript : MonoBehaviour {
                 gameStates.Bits -= gameStates.GuardPostCost;
                 gameStates.GuardPostCost *= (int)(Mathf.Pow(gameStates.GuardPostLvl, 2));
                 gameStates.ClickDmg += 1;
+				gameStates.AutoPDmg += 1;
+				gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -360,7 +368,8 @@ public class TownScript : MonoBehaviour {
                 gameStates.TavernLvl += 1;
                 gameStates.Chunks -= (int)(1 + gameStates.TavernCost / 600);
                 gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.AutoPDmg += 1;
+				gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -379,7 +388,7 @@ public class TownScript : MonoBehaviour {
 				gameStates.StableLvl += 1;
 				gameStates.Chunks -= (int)(1+gameStates.StableCost / 600);
 				gameStates.StableCost *= (int)(Mathf.Pow(gameStates.StableLvl, 2));
-				gameStates.ClickDmg += 1;
+				gameStates.AutoPDmg += 1;
 				blacksmithPopUp.SetActive (false);
 			}
 			break;
@@ -389,7 +398,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.WizardsTowerLvl += 1;
                 gameStates.Chunks -= (int)(1 + gameStates.WizardsTowerCost / 600);
                 gameStates.WizardsTowerCost *= (int)(Mathf.Pow(gameStates.WizardsTowerLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -399,7 +408,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.FortuneTellerLvl += 1;
                 gameStates.Chunks -= (int)(1 + gameStates.FortuneTellerCost / 600);
                 gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -409,7 +418,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.GeneralStoreLvl += 1;
                 gameStates.Chunks -= (int)(1 + gameStates.GeneralStoreCost / 600);
                 gameStates.GeneralStoreCost *= (int)(Mathf.Pow(gameStates.GeneralStoreLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -419,7 +428,7 @@ public class TownScript : MonoBehaviour {
                 gameStates.TradingPostLvl += 1;
                 gameStates.Chunks -= (int)(1 + gameStates.TradingPostCost / 600);
                 gameStates.TradingPostCost *= (int)(Mathf.Pow(gameStates.TradingPostLvl, 2));
-                gameStates.ClickDmg += 1;
+				gameStates.GoldIncrease += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
@@ -440,6 +449,8 @@ public class TownScript : MonoBehaviour {
                 gameStates.Chunks -= (int)(1 + gameStates.GuardPostCost / 600);
                 gameStates.GuardPostCost *= (int)(Mathf.Pow(gameStates.GuardPostLvl, 2));
                 gameStates.ClickDmg += 1;
+				gameStates.AutoPDmg += 1;
+				gameStates.AutoMDmg += 1;
                 blacksmithPopUp.SetActive(false);
             }
             break;
