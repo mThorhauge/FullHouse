@@ -93,7 +93,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 1;
 
 			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "I can improve your weapons, and teach you a few new tricks. (increaes your click damage)";
 			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.BlacksmithCost / 600) + " Chunks";
 
@@ -104,7 +104,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 2;
 
 			buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "Sit down, you never know what kind of adventurers you'll meet here. (increases your auto damage)";
 			bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.TavernCost / 600) + " Chunks";
 
@@ -115,7 +115,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 3;
 
 			buildingName.text = "Apothecary - Lvl " + gameStates.ApothecaryLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "Try one of my potions, you'll gain some extraordinary strength, mostly guaranteed. (increases click damage)";
 			bitUpgradeText.text = "Upgrade with " + gameStates.ApothecaryCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.ApothecaryCost / 600) + " Chunks";
 
@@ -126,7 +126,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 4;
 
 			buildingName.text = "Stable - Lvl " + gameStates.StableLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "I buy horses. Large? Small? Strange? Regular? I bought every horse I've ever seen. easy way to earn 'fast bits'. (increases  physical auto damage)";
 			bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.StableCost / 600) + " Chunks";
 
@@ -138,7 +138,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 5;
 
 			buildingName.text = "Wizard's Tower - Lvl " + gameStates.WizardsTowerLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "I can teach your companions the path of magic. (increase magic auto damage).";
 			bitUpgradeText.text = "Upgrade with " + gameStates.WizardsTowerCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.WizardsTowerCost / 600) + " Chunks";
 
@@ -149,7 +149,7 @@ public class TownScript : MonoBehaviour {
 			buildingNum = 6;
 
 			buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
+			buildingDescription.text = "I can see in the heart of the cards, many bits await you. (increases bit drop rate)";
 			bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
 
@@ -164,17 +164,16 @@ public class TownScript : MonoBehaviour {
 			{
 				bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
 				chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
+				buildingDescription.text = "Hello! I can help you increase your damage with my amazing wares!";
 			}
 			else
 			{
 				bitUpgradeText.text = "Prestige to Unlock!";
 				chunkUpgradeText.text = "Prestige to Unlock!";
+				buildingDescription.text = "If you gain some supporters by gaining some prestige, I can help you increase your damage";
 			}
 
 			buildingName.text = "General Store - Lvl " + gameStates.GeneralStoreLvl;
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
-			bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
 
 			break;
 		case 8://trading post
@@ -187,13 +186,14 @@ public class TownScript : MonoBehaviour {
 			{
 				bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
 				chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
+				buildingDescription.text = "Let me show you how to get more bits out of monsters.";
 			}
 			else
 			{
 				bitUpgradeText.text = "Prestige to Unlock!";
 				chunkUpgradeText.text = "Prestige to Unlock!";
+				buildingDescription.text = "If you gain some prestige, I'd be willing to show you how to make more bits.";
 			}
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
 			bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
 
@@ -209,13 +209,14 @@ public class TownScript : MonoBehaviour {
 			{
 				bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
 				chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
+				buildingDescription.text = "Super chic. I can help improve your clothes to increase your damage.";
 			}
 			else
 			{
 				bitUpgradeText.text = "Prestige to Unlock!";
 				chunkUpgradeText.text = "Prestige to Unlock!";
+				buildingDescription.text = "Oh my god, you wear that? Gain some prestige and some better clothing and maybe I'll show you how to dress for success.";
 			}
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
 			bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
 
@@ -230,13 +231,14 @@ public class TownScript : MonoBehaviour {
 			{
 				bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
 				chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
+				buildingDescription.text = "Good day Knight, let me show you and your friends some new fighting tricks.";
 			}
 			else
 			{
 				bitUpgradeText.text = "Prestige to Unlock!";
 				chunkUpgradeText.text = "Prestige to Unlock!";
+				buildingDescription.text = "If you were more respected, I'd show you and your companions how to fight.";
 			}
-			buildingDescription.text = "I can improve your weapons and increase your click damage if ya like.";
 			bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
 			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
 
