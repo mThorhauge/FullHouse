@@ -29,10 +29,10 @@ public class gameStates : MonoBehaviour
     private static int kills, bits, chunks, monsterDrops, mDropCount, cHealth, fHealth;
 
     //Town States
-    private static int apothecaryLvl, blacksmithLvl, tavernLvl, fortuneTellerLvl;
+    private static int apothecaryLvl, blacksmithLvl, tavernLvl, stableLvl, fortuneTellerLvl, wizardsTowerLvl, generalStoreLvl, tradingPostLvl, tailorLvl, guardPostLvl;
 
     //Town Initial Costs
-    private static int blacksmithCost, tavernCost, apothecaryCost, fortuneTellerCost;
+    private static int blacksmithCost, tavernCost, apothecaryCost, stableCost, fortuneTellerCost, wizardsTowerCost, generalStoreCost, tradingPostCost, tailorCost, guardPostCost;
 
     //Building bonuses
     private static float clickDmg, autoPDmg, autoMDmg, goldIncrease;
@@ -67,7 +67,14 @@ public class gameStates : MonoBehaviour
         apothecaryLvl = 1;
         blacksmithLvl = 1;
         tavernLvl = 1;
+        stableLvl = 1;
         fortuneTellerLvl = 1;
+        wizardsTowerLvl = 1;
+        generalStoreLvl = 1;
+        tradingPostLvl = 1;
+        tailorLvl = 1;
+        guardPostLvl = 1;
+
 
         prestigeLvl = 0;
 
@@ -76,7 +83,13 @@ public class gameStates : MonoBehaviour
         blacksmithCost = 10;
         tavernCost = 50;
         apothecaryCost = 200;
+        stableCost = 440;
+        wizardsTowerCost = 575;
         fortuneTellerCost = 720;
+        generalStoreCost = 1400;
+        tradingPostCost = 2000;
+        tailorCost = 3600;
+        guardPostCost = 5000;
 
         //Set starting bonuses
         //Values are all set to 100% aka 1 at start
@@ -262,6 +275,18 @@ public class gameStates : MonoBehaviour
         }
 
     }
+    public static int StableLvl
+    {
+        get
+        {
+            return stableLvl;
+        }
+        set
+        {
+            stableLvl = value;
+        }
+
+    }
 
     /// <summary>
     /// Fortune Teller Level
@@ -272,6 +297,71 @@ public class gameStates : MonoBehaviour
         }
         set {
             fortuneTellerLvl = value;
+        }
+
+    }
+
+    public static int WizardsTowerLvl
+    {
+        get
+        {
+            return wizardsTowerLvl;
+        }
+        set
+        {
+            wizardsTowerLvl = value;
+        }
+
+    }
+
+    public static int GeneralStoreLvl
+    {
+        get
+        {
+            return generalStoreLvl;
+        }
+        set
+        {
+            generalStoreLvl = value;
+        }
+
+    }
+
+    public static int TradingPostLvl
+    {
+        get
+        {
+            return tradingPostLvl;
+        }
+        set
+        {
+            tradingPostLvl = value;
+        }
+
+    }
+
+    public static int GuardPostLvl
+    {
+        get
+        {
+            return guardPostLvl;
+        }
+        set
+        {
+            guardPostLvl = value;
+        }
+
+    }
+
+    public static int TailorLvl
+    {
+        get
+        {
+            return tailorLvl;
+        }
+        set
+        {
+            tailorLvl = value;
         }
 
     }
@@ -329,6 +419,90 @@ public class gameStates : MonoBehaviour
 
         set {
             fortuneTellerCost = value;
+        }
+    }
+
+    public static int StableCost
+    {
+
+        get
+        {
+            return stableCost;
+        }
+
+        set
+        {
+            stableCost = value;
+        }
+    }
+
+    public static int WizardsTowerCost
+    {
+
+        get
+        {
+            return wizardsTowerCost;
+        }
+
+        set
+        {
+            wizardsTowerCost = value;
+        }
+    }
+
+    public static int GeneralStoreCost
+    {
+
+        get
+        {
+            return generalStoreCost;
+        }
+
+        set
+        {
+            generalStoreCost = value;
+        }
+    }
+
+    public static int TradingPostCost
+    {
+
+        get
+        {
+            return tradingPostCost;
+        }
+
+        set
+        {
+            tradingPostCost = value;
+        }
+    }
+
+    public static int TailorCost
+    {
+
+        get
+        {
+            return tailorCost;
+        }
+
+        set
+        {
+            tailorCost = value;
+        }
+    }
+
+    public static int GuardPostCost
+    {
+
+        get
+        {
+            return guardPostCost;
+        }
+
+        set
+        {
+            guardPostCost = value;
         }
     }
 
