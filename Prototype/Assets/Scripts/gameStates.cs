@@ -19,11 +19,11 @@ using UnityEngine;
 // 
 public class gameStates : MonoBehaviour
 {
-	//Town Name
-	private static string townName;
+    //Town Name
+    private static string townName;
 
-	//Last scene for store data
-	private static int lastScene;
+    //Last scene for store data
+    private static int lastScene;
 
     //Dungeon states
     private static int kills, bits, chunks, monsterDrops, mDropCount, cHealth, fHealth;
@@ -51,9 +51,9 @@ public class gameStates : MonoBehaviour
     /// </summary>
 	void Start() {
 
-		//Sets a default town name
-		townName = "Bittania";
-		lastScene = 0; // 0 is going to be the store location
+        //Sets a default town name
+        townName = "Bittania";
+        lastScene = 0; // 0 is going to be the store location
 
         ////Set the gameStates to proper values
         /// will need to use save file data in future
@@ -70,6 +70,8 @@ public class gameStates : MonoBehaviour
         stableLvl = 1;
         fortuneTellerLvl = 1;
         wizardsTowerLvl = 1;
+
+        //premium buildings
         generalStoreLvl = 1;
         tradingPostLvl = 1;
         tailorLvl = 1;
@@ -107,33 +109,33 @@ public class gameStates : MonoBehaviour
         changesMade = false;
     }
 
-	/// <summary>
-	/// Update town name
-	/// </summary>
-	public static string TownName {
+    /// <summary>
+    /// Update town name
+    /// </summary>
+    public static string TownName {
 
-		get {
-			return townName;
-		}
+        get {
+            return townName;
+        }
 
-		set {
-			townName = value;
-		}
-	}
+        set {
+            townName = value;
+        }
+    }
 
-	/// <summary>
-	/// Update town name
-	/// </summary>
-	public static int LastScene {
+    /// <summary>
+    /// Update town name
+    /// </summary>
+    public static int LastScene {
 
-		get {
-			return lastScene;
-		}
+        get {
+            return lastScene;
+        }
 
-		set {
-			lastScene = value;
-		}
-	}
+        set {
+            lastScene = value;
+        }
+    }
 
     /// <summary>
     /// ////////////
@@ -275,6 +277,10 @@ public class gameStates : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// Update Stable Level
+    /// </summary>
     public static int StableLvl
     {
         get
@@ -301,6 +307,9 @@ public class gameStates : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Update Wizard Tower Level
+    /// </summary>
     public static int WizardsTowerLvl
     {
         get
@@ -314,6 +323,9 @@ public class gameStates : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Update General Store Level
+    /// </summary>
     public static int GeneralStoreLvl
     {
         get
@@ -324,9 +336,12 @@ public class gameStates : MonoBehaviour
         {
             generalStoreLvl = value;
         }
-
     }
 
+
+    /// <summary>
+    /// Update Trading Post Level
+    /// </summary>
     public static int TradingPostLvl
     {
         get
@@ -340,6 +355,9 @@ public class gameStates : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Update Guard Post Level
+    /// </summary>
     public static int GuardPostLvl
     {
         get
@@ -353,6 +371,9 @@ public class gameStates : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Update Tailor Level
+    /// </summary>
     public static int TailorLvl
     {
         get
@@ -381,7 +402,7 @@ public class gameStates : MonoBehaviour
     }
 
     /// <summary>
-    /// Update tavernCost
+    /// Update Tavern Cost
     /// </summary>
     public static int TavernCost {
 
@@ -422,6 +443,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update stableCost
+    /// </summary>
     public static int StableCost
     {
 
@@ -436,6 +460,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update wizardsTowerCost
+    /// </summary>
     public static int WizardsTowerCost
     {
 
@@ -450,6 +477,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update generalStoreCost
+    /// </summary>
     public static int GeneralStoreCost
     {
 
@@ -464,6 +494,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update tradingPostCost
+    /// </summary>
     public static int TradingPostCost
     {
 
@@ -478,6 +511,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update tailorCost
+    /// </summary>
     public static int TailorCost
     {
 
@@ -492,6 +528,9 @@ public class gameStates : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update guardPostCost
+    /// </summary>
     public static int GuardPostCost
     {
 
@@ -715,6 +754,14 @@ public class gameStates : MonoBehaviour
 
     }
 
+    public static void UpdatePremiumDamage()
+    {
+        //float tempPBonus = 2 * ( 0.1f * (prestigeLvl) ); // base dmg * dmg multiplier
+        float tempPBonus = 2 + prestigeLvl;
+        clickDmg += tempPBonus;
+        autoPDmg += tempPBonus;
+    }
+
     ///////////////////////////
     /// Gold Bonus Calculations
     ///////////////////////////
@@ -724,8 +771,6 @@ public class gameStates : MonoBehaviour
         goldIncrease = 1 + tempSmallGB;
 
     }
-
-
 
     //end
 }
