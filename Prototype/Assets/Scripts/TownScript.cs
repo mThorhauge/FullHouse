@@ -311,34 +311,37 @@ public class TownScript : MonoBehaviour {
 
 		//Switch between chosen building
 		switch(buildingNum) {
-		case 1:
-			if (gameStates.Chunks >= (int)(1+gameStates.ApothecaryCost/600)) {
-				gameStates.ApothecaryLvl += 1;
-				gameStates.Chunks -= (int)(1+gameStates.ApothecaryCost/600);
-				gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 2:
-			if (gameStates.Chunks >= (int)(1+gameStates.BlacksmithCost/600)) {
-				gameStates.BlacksmithLvl += 1;
-				gameStates.Chunks -= (int)(1+gameStates.BlacksmithCost/600);
-				gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 3:
-			if (gameStates.Chunks >= (int)(1+gameStates.TavernCost/600)) {
-				gameStates.TavernLvl += 1;
-				gameStates.Chunks -= (int)(1+gameStates.TavernCost/600);
-				gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 4:
+		case 1://blacksmith
+            if (gameStates.Chunks >= (int)(1 + gameStates.BlacksmithCost / 600))
+            {
+                gameStates.BlacksmithLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.BlacksmithCost / 600);
+                gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+		case 2://tavern
+            if (gameStates.Chunks >= (int)(1 + gameStates.TavernCost / 600))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.TavernCost / 600);
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+		case 3://apothecary
+            if (gameStates.Chunks >= (int)(1 + gameStates.ApothecaryCost / 600))
+            {
+                gameStates.ApothecaryLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.ApothecaryCost / 600);
+                gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 4://stable
 			if (gameStates.Chunks >= (int)(1+gameStates.FortuneTellerCost/600)) {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Chunks -= (int)(1+gameStates.FortuneTellerCost/600);
@@ -347,7 +350,68 @@ public class TownScript : MonoBehaviour {
 				blacksmithPopUp.SetActive (false);
 			}
 			break;
-		default:
+        case 5://wizards tower
+            if (gameStates.Chunks >= (int)(1 + gameStates.ApothecaryCost / 600))
+            {
+                gameStates.ApothecaryLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.ApothecaryCost / 600);
+                gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 6://fortune teller
+            if (gameStates.Chunks >= (int)(1 + gameStates.FortuneTellerCost / 600))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.FortuneTellerCost / 600);
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 7://general store
+            if (gameStates.Chunks >= (int)(1 + gameStates.TavernCost / 600))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.TavernCost / 600);
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 8://trading post
+            if (gameStates.Chunks >= (int)(1 + gameStates.FortuneTellerCost / 600))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.FortuneTellerCost / 600);
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 9://tailor
+            if (gameStates.Chunks >= (int)(1 + gameStates.TavernCost / 600))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.TavernCost / 600);
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 10://guard post
+            if (gameStates.Chunks >= (int)(1 + gameStates.FortuneTellerCost / 600))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Chunks -= (int)(1 + gameStates.FortuneTellerCost / 600);
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+
+            default:
 			break;
 		}
 	}
