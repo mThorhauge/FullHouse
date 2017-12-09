@@ -11,7 +11,7 @@ public class townScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     // Use this for initialization
     void Start() {
         currentYpos = 0.0f;
-        print(this.transform.position.y);
+        //print(this.transform.position.y);
     }
 
     // Update is called once per frame
@@ -30,9 +30,9 @@ public class townScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         this.transform.position = new Vector3(320, eventData.position.y - currentYpos);
             
-        if (this.transform.position.y <= 113)
+        if (this.transform.position.y <= 173)
         {
-            this.transform.position = new Vector3(320, 113);
+            this.transform.position = new Vector3(320, 173);
             //print(">0");
         }
         if (this.transform.position.y >= 956)
