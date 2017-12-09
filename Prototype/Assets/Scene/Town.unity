@@ -1562,7 +1562,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b8916b58d0514844286eaa1ff6d2c64b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61a487a9f9bf4314ebe37213138c94de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1890,9 +1890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Apothecary
-
-'
+  m_Text: Tailor
 --- !u!222 &369737297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2976,9 +2974,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: 'Tailor
-
-'
+  m_Text: Trading Post
 --- !u!222 &828123963
 CanvasRenderer:
   m_ObjectHideFlags: 0

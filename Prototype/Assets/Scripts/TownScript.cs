@@ -151,6 +151,7 @@ public class TownScript : MonoBehaviour {
             break;
 
         case 7://general store
+<<<<<<< HEAD
                 
                     blacksmithPopUp.SetActive(true);
                     buildingNum = 3;
@@ -160,11 +161,21 @@ public class TownScript : MonoBehaviour {
                     bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
                     chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
                 }
+=======
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 7;
+
+            buildingName.text = "General Store - Lvl " + gameStates.GeneralStoreLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
+
+>>>>>>> b552f79affcd0be506f7f600510b62605e1cb8cb
             break;
         case 8://trading post
 
             blacksmithPopUp.SetActive(true);
-            buildingNum = 4;
+            buildingNum = 8;
 
             buildingName.text = "Trading Post - Lvl " + gameStates.TradingPostLvl;
             bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
@@ -175,7 +186,7 @@ public class TownScript : MonoBehaviour {
         case 9://tailor
 
             blacksmithPopUp.SetActive(true);
-            buildingNum = 5;
+            buildingNum = 9;
 
             buildingName.text = "Tailor - Lvl " + gameStates.TailorLvl;
             bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
@@ -185,7 +196,7 @@ public class TownScript : MonoBehaviour {
         case 10://guard post
 
             blacksmithPopUp.SetActive(true);
-            buildingNum = 6;
+            buildingNum = 10;
 
             buildingName.text = "Guard Post - Lvl " + gameStates.GuardPostLvl;
             bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
