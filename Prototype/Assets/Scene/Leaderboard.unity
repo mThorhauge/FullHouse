@@ -1208,6 +1208,8 @@ MonoBehaviour:
   Face: {fileID: 960730581}
   townNameDisplay: {fileID: 1194376272}
   prestigeDisplay: {fileID: 1104982999}
+  favouriteBuildingDisplay: {fileID: 978346166}
+  favouriteBuilding: 
 --- !u!114 &1561133258
 MonoBehaviour:
   m_ObjectHideFlags: 0
