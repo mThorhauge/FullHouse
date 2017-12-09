@@ -29,6 +29,12 @@ public class InitializationScript : MonoBehaviour {
         gameStates.BlacksmithLvl        = 1;
         gameStates.TavernLvl            = 1;
         gameStates.FortuneTellerLvl     = 1;
+		gameStates.StableLvl 			= 1;
+		gameStates.GeneralStoreLvl 		= 1;
+		gameStates.TradingPostLvl	 	= 1;
+		gameStates.TailorLvl 			= 1;
+		gameStates.GuardPostLvl 		= 1;
+		gameStates.WizardsTowerLvl 		= 1;
 
 		//Set starting building costs
 		//Values are set in time without upgrades to achieve
