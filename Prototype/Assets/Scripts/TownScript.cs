@@ -42,6 +42,11 @@ public class TownScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //setting the initial building costs
+        // not sure why stable and wizard tower arent being initialised from game states
+        //but it works if i put them here - AD
+        gameStates.StableCost = 440;
+        gameStates.WizardsTowerCost = 575;
+
         blacksmithCostI = gameStates.BlacksmithCost;
         tavernCostI = gameStates.TavernCost;
         apothecaryCostI = gameStates.ApothecaryCost;
@@ -145,11 +150,11 @@ public class TownScript : MonoBehaviour {
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 4;
-
+            
 			buildingName.text = "Stable - Lvl " + gameStates.StableLvl;
 			buildingDescription.text = "I buy horses. Large? Small? Strange? Regular? I bought every horse I've ever seen. easy way to earn 'fast bits'. (increases  physical auto damage)";
-			bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.StableCost / 600) + " Chunks";
+            bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+ gameStates.StableCost / 600) + " Chunks";
 
 			break;
 
