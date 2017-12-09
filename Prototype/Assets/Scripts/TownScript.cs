@@ -123,9 +123,9 @@ public class TownScript : MonoBehaviour {
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 4;
 
-			buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
-			bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.FortuneTellerCost/600) + " Chunks";
+			buildingName.text = "Fortune Teller - Lvl " + gameStates.StableLvl;
+			bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.StableCost / 600) + " Chunks";
 
             break;
 
@@ -134,9 +134,9 @@ public class TownScript : MonoBehaviour {
             blacksmithPopUp.SetActive(true);
             buildingNum = 5;
 
-            buildingName.text = "Wizard's Tower - Lvl " + gameStates.TavernLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+            buildingName.text = "Wizard's Tower - Lvl " + gameStates.WizardsTowerLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.WizardsTowerCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.WizardsTowerCost / 600) + " Chunks";
 
             break;
         case 6://fortune teller
@@ -155,9 +155,9 @@ public class TownScript : MonoBehaviour {
             blacksmithPopUp.SetActive(true);
             buildingNum = 3;
 
-            buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+            buildingName.text = "Tavern - Lvl " + gameStates.GeneralStoreLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
 
             break;
         case 8://trading post
@@ -165,9 +165,9 @@ public class TownScript : MonoBehaviour {
             blacksmithPopUp.SetActive(true);
             buildingNum = 4;
 
-            buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
+            buildingName.text = "Fortune Teller - Lvl " + gameStates.TradingPostLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
 
             break;
 
@@ -176,9 +176,9 @@ public class TownScript : MonoBehaviour {
             blacksmithPopUp.SetActive(true);
             buildingNum = 5;
 
-            buildingName.text = "Wizard's Tower - Lvl " + gameStates.TavernLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+            buildingName.text = "Wizard's Tower - Lvl " + gameStates.TailorLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
 
             break;
         case 10://guard post
@@ -186,9 +186,9 @@ public class TownScript : MonoBehaviour {
             blacksmithPopUp.SetActive(true);
             buildingNum = 6;
 
-            buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
+            buildingName.text = "Fortune Teller - Lvl " + gameStates.GuardPostLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
 
             break;
 
@@ -233,8 +233,8 @@ public class TownScript : MonoBehaviour {
             }
                 break;
 		case 4://stable
-			if (gameStates.Bits >= (gameStates.FortuneTellerCost)) {
-				gameStates.FortuneTellerLvl += 1;
+			if (gameStates.Bits >= (gameStates.StableCost)) {
+				gameStates.StableLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
 				gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl,2));
 				gameStates.ClickDmg += 1;
