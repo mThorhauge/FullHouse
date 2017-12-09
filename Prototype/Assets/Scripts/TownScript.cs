@@ -88,37 +88,37 @@ public class TownScript : MonoBehaviour {
 
 		//Switch between chosen building
         switch(buildingID) {
-		case 1:
+		case 1://blacksmith
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 1;
 
-			buildingName.text = "Apothecary - Lvl " + gameStates.ApothecaryLvl;
-			bitUpgradeText.text = "Upgrade with " + gameStates.ApothecaryCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.ApothecaryCost/600) + " Chunks";
+			buildingName.text = "Apothecary - Lvl " + gameStates.BlacksmithLvl;
+			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.BlacksmithCost / 600) + " Chunks";
 
 			break;
-		case 2:
+		case 2://tavern
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 2;
 
 			buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
 			bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.TavernCost/600) + " Chunks";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.TavernCost / 600) + " Chunks";
 
             break;
-        case 3:
+        case 3://apothecary
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 3;
 
-			buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
-			bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.TavernCost/600) + " Chunks";
+			buildingName.text = "Tavern - Lvl " + gameStates.ApothecaryLvl;
+			bitUpgradeText.text = "Upgrade with " + gameStates.ApothecaryCost + " Bits";
+			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.ApothecaryCost / 600) + " Chunks";
 
             break;
-        case 4:
+        case 4://stable
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 4;
@@ -128,7 +128,71 @@ public class TownScript : MonoBehaviour {
 			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.FortuneTellerCost/600) + " Chunks";
 
             break;
-        default:
+
+        case 5://wizards tower
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 5;
+
+            buildingName.text = "Wizard's Tower - Lvl " + gameStates.TavernLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+
+            break;
+        case 6://fortune teller
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 6;
+
+            buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
+
+            break;
+
+        case 7://general store
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 3;
+
+            buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+
+            break;
+        case 8://trading post
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 4;
+
+            buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
+
+            break;
+
+        case 9://tailor
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 5;
+
+            buildingName.text = "Wizard's Tower - Lvl " + gameStates.TavernLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.TavernCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TavernCost / 600) + " Chunks";
+
+            break;
+        case 10://guard post
+
+            blacksmithPopUp.SetActive(true);
+            buildingNum = 6;
+
+            buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.FortuneTellerCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.FortuneTellerCost / 600) + " Chunks";
+
+            break;
+
+            default:
             break;
         }
 
@@ -138,34 +202,37 @@ public class TownScript : MonoBehaviour {
 
 		//Switch between chosen building
 		switch(buildingNum) {
-		case 1:
-			if (gameStates.Bits >= (gameStates.ApothecaryCost)) {
-				gameStates.ApothecaryLvl += 1;
-				gameStates.Bits -= gameStates.ApothecaryCost;
-				gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 2:
-			if (gameStates.Bits >= (gameStates.BlacksmithCost)) {
-				gameStates.BlacksmithLvl += 1;
-				gameStates.Bits -= gameStates.BlacksmithCost;
-				gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 3:
-			if (gameStates.Bits >= (gameStates.TavernCost)) {
-				gameStates.TavernLvl += 1;
-				gameStates.Bits -= gameStates.TavernCost;
-				gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl,2));
-				gameStates.ClickDmg += 1;
-				blacksmithPopUp.SetActive (false);
-			}
-			break;
-		case 4:
+		case 1://blacksmith
+            if (gameStates.Bits >= (gameStates.BlacksmithCost))
+            {
+                gameStates.BlacksmithLvl += 1;
+                gameStates.Bits -= gameStates.BlacksmithCost;
+                gameStates.BlacksmithCost *= (int)(Mathf.Pow(gameStates.BlacksmithLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+                break;
+		case 2://tavern
+            if (gameStates.Bits >= (gameStates.TavernCost))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Bits -= gameStates.TavernCost;
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+                break;
+		case 3://apothecary cost
+            if (gameStates.Bits >= (gameStates.ApothecaryCost))
+            {
+                gameStates.ApothecaryLvl += 1;
+                gameStates.Bits -= gameStates.ApothecaryCost;
+                gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+                break;
+		case 4://stable
 			if (gameStates.Bits >= (gameStates.FortuneTellerCost)) {
 				gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
@@ -174,7 +241,68 @@ public class TownScript : MonoBehaviour {
 				blacksmithPopUp.SetActive (false);
 			}
 			break;
-		default:
+        case 5: //wizards tower
+            if (gameStates.Bits >= (gameStates.ApothecaryCost))
+            {
+                gameStates.ApothecaryLvl += 1;
+                gameStates.Bits -= gameStates.ApothecaryCost;
+                gameStates.ApothecaryCost *= (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 6: //Fortune Teller
+            if (gameStates.Bits >= (gameStates.FortuneTellerCost))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Bits -= gameStates.FortuneTellerCost;
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 7: //General store
+            if (gameStates.Bits >= (gameStates.TavernCost))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Bits -= gameStates.TavernCost;
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 8: //trading post
+            if (gameStates.Bits >= (gameStates.FortuneTellerCost))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Bits -= gameStates.FortuneTellerCost;
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 9: //Tailor
+            if (gameStates.Bits >= (gameStates.TavernCost))
+            {
+                gameStates.TavernLvl += 1;
+                gameStates.Bits -= gameStates.TavernCost;
+                gameStates.TavernCost *= (int)(Mathf.Pow(gameStates.TavernLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+        case 10: //guard post
+            if (gameStates.Bits >= (gameStates.FortuneTellerCost))
+            {
+                gameStates.FortuneTellerLvl += 1;
+                gameStates.Bits -= gameStates.FortuneTellerCost;
+                gameStates.FortuneTellerCost *= (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
+                gameStates.ClickDmg += 1;
+                blacksmithPopUp.SetActive(false);
+            }
+            break;
+
+            default:
 			break;
 		}
 	}
