@@ -93,10 +93,10 @@ public class TownScript : MonoBehaviour {
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 1;
 
-			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
-			bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.BlacksmithCost / 600) + " Chunks";
-
+			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;           
+            bitUpgradeText.text = "Upgrade with " + gameStates.BlacksmithCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.BlacksmithCost / 600) + " Chunks";
+               
 			break;
 		case 2://tavern
 
@@ -123,9 +123,9 @@ public class TownScript : MonoBehaviour {
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 4;
 
-			buildingName.text = "Stable - Lvl " + gameStates.StableLvl;
-			bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1+gameStates.StableCost / 600) + " Chunks";
+            buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
+            bitUpgradeText.text = "Upgrade with " + gameStates.StableCost + " Bits";
+            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.BlacksmithCost / 600) + " Chunks";
 
             break;
 
@@ -156,10 +156,17 @@ public class TownScript : MonoBehaviour {
              buildingNum = 3;
                
              buildingName.text = "General Store - Lvl " + gameStates.GeneralStoreLvl;
-             bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
-             chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
-                
 
+            if (gameStates.PrestigeLvl > 0)
+            {
+                bitUpgradeText.text = "Upgrade with " + gameStates.GeneralStoreCost + " Bits";
+                chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GeneralStoreCost / 600) + " Chunks";
+            }
+            else
+            {
+                bitUpgradeText.text = "Prestige to Unlock!";
+                chunkUpgradeText.text = "Prestige to Unlock!";
+            }
 
             break;
         case 8://trading post
@@ -168,8 +175,16 @@ public class TownScript : MonoBehaviour {
             buildingNum = 8;
 
             buildingName.text = "Trading Post - Lvl " + gameStates.TradingPostLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
+            if (gameStates.PrestigeLvl > 0)
+            {
+                bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
+                chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
+            }
+            else
+            {
+                bitUpgradeText.text = "Prestige to Unlock!";
+                chunkUpgradeText.text = "Prestige to Unlock!";
+            }
 
             break;
 
@@ -179,8 +194,16 @@ public class TownScript : MonoBehaviour {
             buildingNum = 9;
 
             buildingName.text = "Tailor - Lvl " + gameStates.TailorLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
+            if (gameStates.PrestigeLvl > 0)
+            {
+                bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
+                chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
+            }
+            else
+            {
+                bitUpgradeText.text = "Prestige to Unlock!";
+                chunkUpgradeText.text = "Prestige to Unlock!";
+            }
 
             break;
         case 10://guard post
@@ -189,10 +212,18 @@ public class TownScript : MonoBehaviour {
             buildingNum = 10;
 
             buildingName.text = "Guard Post - Lvl " + gameStates.GuardPostLvl;
-            bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
-            chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
+            if (gameStates.PrestigeLvl > 0)
+            {
+                bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
+                chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
+            }
+            else
+            {
+                bitUpgradeText.text = "Prestige to Unlock!";
+                chunkUpgradeText.text = "Prestige to Unlock!";
+            }
 
-            break;
+                break;
 
             default:
             break;
