@@ -24,7 +24,18 @@ public class PrestigeScript : MonoBehaviour {
 
     public void prestigeClicked()
     {
-        totalBuildingLevels = gameStates.ApothecaryLvl + gameStates.BlacksmithLvl + gameStates.TavernLvl + gameStates.FortuneTellerLvl;
+        totalBuildingLevels = (
+            gameStates.ApothecaryLvl +
+            gameStates.BlacksmithLvl +
+            gameStates.TavernLvl +
+            gameStates.StableLvl +
+            gameStates.FortuneTellerLvl +
+            gameStates.WizardsTowerLvl +
+            gameStates.GeneralStoreLvl +
+            gameStates.TradingPostLvl +
+            gameStates.TailorLvl +
+            gameStates.GuardPostLvl
+            );
 
         if (totalBuildingLevels >= 5)
         {
@@ -43,7 +54,13 @@ public class PrestigeScript : MonoBehaviour {
                 gameStates.ApothecaryLvl = 1;
                 gameStates.BlacksmithLvl = 1;
                 gameStates.TavernLvl = 1;
+                gameStates.StableLvl = 1;
+                gameStates.WizardsTowerLvl = 1;
                 gameStates.FortuneTellerLvl = 1;
+                gameStates.GeneralStoreLvl = 1;
+                gameStates.TradingPostLvl = 1;
+                gameStates.TailorLvl = 1;
+                gameStates.GuardPostLvl = 1;
 
             }
         }
