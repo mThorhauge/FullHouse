@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 93906471d1645ac45a14e70f7086340d
-timeCreated: 1512793549
+timeCreated: 1512800575
 licenseType: Pro
-=======
-<<<<<<< HEAD
-guid: a27710d7199c8fc479bfedaf05eae1e9
-timeCreated: 1512794176
-licenseType: Pro
-=======
-guid: f3c176bc5219f48e19952baa820ec5fa
-timeCreated: 1512794496
-licenseType: Free
->>>>>>> 3cbdbafa23bb15b04121ef23022439edbb8d7a35
->>>>>>> 631306da2bdc9a4739de7788e617946de33eef63
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
@@ -24,16 +12,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
-<<<<<<< HEAD
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
-=======
-<<<<<<< HEAD
-    mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 0.5
-=======
->>>>>>> 3cbdbafa23bb15b04121ef23022439edbb8d7a35
->>>>>>> 631306da2bdc9a4739de7788e617946de33eef63
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -49,7 +29,6 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
     serializedVersion: 2
     filterMode: -1
     aniso: -1
@@ -57,22 +36,6 @@ TextureImporter:
     wrapU: 1
     wrapV: 1
     wrapW: 1
-=======
-<<<<<<< HEAD
-    serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
-=======
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: 1
->>>>>>> 3cbdbafa23bb15b04121ef23022439edbb8d7a35
->>>>>>> 631306da2bdc9a4739de7788e617946de33eef63
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -104,14 +67,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-<<<<<<< HEAD
     physicsShape: []
-=======
-<<<<<<< HEAD
-    physicsShape: []
-=======
->>>>>>> 3cbdbafa23bb15b04121ef23022439edbb8d7a35
->>>>>>> 631306da2bdc9a4739de7788e617946de33eef63
   spritePackingTag: 
   userData: 
   assetBundleName: 
