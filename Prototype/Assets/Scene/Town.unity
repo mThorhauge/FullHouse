@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 267835871}
   - component: {fileID: 267835870}
   m_Layer: 5
-  m_Name: Button_WizardTower
+  m_Name: Button_WizardsTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3215,7 +3215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wizard Tower
+  m_Text: Wizard's Tower
 --- !u!222 &1167927739
 CanvasRenderer:
   m_ObjectHideFlags: 0
