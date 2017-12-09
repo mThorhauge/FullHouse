@@ -40,7 +40,7 @@ public class TownScript : MonoBehaviour {
         bitsCountDisplay.text = ""+ gameStates.Bits;
         monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
 		chunkCountDisplay.text = "" + gameStates.Chunks;
-		townNameDisplay.text = (string)(gameStates.TownName);
+		//townNameDisplay.text = (string)(gameStates.TownName);
 
 		//Testing code
 		//apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
