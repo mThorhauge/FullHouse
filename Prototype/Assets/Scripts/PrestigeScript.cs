@@ -62,6 +62,17 @@ public class PrestigeScript : MonoBehaviour {
                 gameStates.TailorLvl = 1;
                 gameStates.GuardPostLvl = 1;
 
+                //reset building cost
+                gameStates.BlacksmithCost = 10;
+                gameStates.TavernCost = 50;
+                gameStates.ApothecaryCost = 200;
+                gameStates.StableCost = 440;
+                gameStates.WizardsTowerCost = 575;
+                gameStates.FortuneTellerCost = 720;
+                gameStates.GeneralStoreCost = 1400;
+                gameStates.TradingPostCost = 2000;
+                gameStates.TailorCost = 3600;
+                gameStates.GuardPostCost = 5000;
             }
         }
     }
