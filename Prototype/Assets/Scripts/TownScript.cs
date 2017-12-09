@@ -194,8 +194,6 @@ public class TownScript : MonoBehaviour {
 				chunkUpgradeText.text = "Prestige to Unlock!";
 				buildingDescription.text = "If you gain some prestige, I'd be willing to show you how to make more bits.";
 			}
-			bitUpgradeText.text = "Upgrade with " + gameStates.TradingPostCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TradingPostCost / 600) + " Chunks";
 
 			break;
 
@@ -217,8 +215,6 @@ public class TownScript : MonoBehaviour {
 				chunkUpgradeText.text = "Prestige to Unlock!";
 				buildingDescription.text = "Oh my god, you wear that? Gain some prestige and some better clothing and maybe I'll show you how to dress for success.";
 			}
-			bitUpgradeText.text = "Upgrade with " + gameStates.TailorCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.TailorCost / 600) + " Chunks";
 
 			break;
 		case 10://guard post
@@ -239,8 +235,6 @@ public class TownScript : MonoBehaviour {
 				chunkUpgradeText.text = "Prestige to Unlock!";
 				buildingDescription.text = "If you were more respected, I'd show you and your companions how to fight.";
 			}
-			bitUpgradeText.text = "Upgrade with " + gameStates.GuardPostCost + " Bits";
-			chunkUpgradeText.text = "Upgrade with " + (int)(1 + gameStates.GuardPostCost / 600) + " Chunks";
 
 			break;
 
