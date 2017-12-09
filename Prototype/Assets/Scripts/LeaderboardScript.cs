@@ -18,6 +18,7 @@ public class LeaderboardScript : MonoBehaviour {
 
 	public UnityEngine.UI.Text townNameDisplay;
 	public UnityEngine.UI.Text prestigeDisplay;
+	public UnityEngine.UI.Text favouriteBuildingDisplay;
 
     // Use this for initialization
     void Start () {
