@@ -43,12 +43,22 @@ public class BattleScript : MonoBehaviour {
     public Image            poofImage;
     public Sprite[]         poofSprites;
 
+    private int previousBitzens = 0;
+
     /// <summary>
     /// Initializes game objects
     /// </summary>
     void Start() {
         img_attackEffect.enabled    = false;
         poofImage.enabled           = false;
+
+        if (previousBitzens != gameStates.PrestigeLvl)
+        {
+            //reset monsters
+            gameStates.FHealth = 5;
+            gameStates.CHealth = 5;
+            gameStates.Kills = 0;
+        }
 
         //Update Game data
         fullHealth              = gameStates.FHealth;      
@@ -62,7 +72,7 @@ public class BattleScript : MonoBehaviour {
 
         InvokeRepeating("autoDamage", 1.0f, 1.0f); //start suto damage after one second. Performe every 1 sec
 
-        }
+    }
 
     /// <summary>
     /// Called Once per Frame
@@ -161,6 +171,9 @@ public class BattleScript : MonoBehaviour {
         gameStates.Kills            = enemiesDefeated; // number of monsters defeated
 
 		gameStates.LastScene = 3;
+
+        previousBitzens = gameStates.PrestigeLvl;
+
 		SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
 
@@ -185,7 +198,8 @@ public class BattleScript : MonoBehaviour {
 		gameStates.Kills            = enemiesDefeated; // number of monsters defeated
 
 		gameStates.LastScene = 3;
-		SceneManager.LoadScene("Store", LoadSceneMode.Single);
+        previousBitzens = gameStates.PrestigeLvl;
+        SceneManager.LoadScene("Store", LoadSceneMode.Single);
 	}
 
     /// <summary>
