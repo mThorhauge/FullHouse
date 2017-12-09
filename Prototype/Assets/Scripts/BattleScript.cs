@@ -17,6 +17,9 @@ public class BattleScript : MonoBehaviour {
     public UnityEngine.UI.Text dropCountDisplay;
     public UnityEngine.UI.Text enemyName;
 
+    public GameObject BG;
+    private Animator BGanim;
+
     //adjust health bar
     public RectTransform    healthBar;
 
@@ -51,6 +54,8 @@ public class BattleScript : MonoBehaviour {
     void Start() {
         img_attackEffect.enabled    = false;
         poofImage.enabled           = false;
+
+        BGanim = BG.GetComponent<Animator>();
 
         if (previousBitzens != gameStates.PrestigeLvl)
         {
@@ -91,16 +96,16 @@ public class BattleScript : MonoBehaviour {
 
 		chunkCountDisplay.text = "" + gameStates.Chunks;
 
-        if (enemiesDefeated == 0) { enemyName.text = "Sumola"; }
-        else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; }
-        else if (enemiesDefeated == 2) { enemyName.text = "Cheliscor"; }
-        else if (enemiesDefeated == 3) { enemyName.text = "Eusfish"; }
-        else if (enemiesDefeated == 4) { enemyName.text = "Ohminoco"; }
-        else if (enemiesDefeated == 5) { enemyName.text = "Lerinka"; }
-        else if (enemiesDefeated == 6) { enemyName.text = "Gallock"; }
-        else if (enemiesDefeated == 7) { enemyName.text = "Threskibis"; }
-        else if (enemiesDefeated == 8) { enemyName.text = "Luckidisae"; }
-        else if (enemiesDefeated == 9) { enemyName.text = "Bustrix"; }
+        if (enemiesDefeated == 0) { enemyName.text = "Sumola"; BGanim.SetBool("fishOn", true); }
+        else if (enemiesDefeated == 1) { enemyName.text = "Nubrax"; BGanim.SetBool("fishOn", true); }
+        else if (enemiesDefeated == 2) { enemyName.text = "Cheliscor"; BGanim.SetBool("fishOn", true); }
+        else if (enemiesDefeated == 3) { enemyName.text = "Eusfish"; BGanim.SetBool("fishOn", true); }
+        else if (enemiesDefeated == 4) { enemyName.text = "Ohminoco"; BGanim.SetBool("fishOn", true); }
+        else if (enemiesDefeated == 5) { enemyName.text = "Lerinka"; BGanim.SetBool("fishOn", false); }
+        else if (enemiesDefeated == 6) { enemyName.text = "Gallock"; BGanim.SetBool("fishOn", false); }
+        else if (enemiesDefeated == 7) { enemyName.text = "Threskibis"; BGanim.SetBool("fishOn", false); }
+        else if (enemiesDefeated == 8) { enemyName.text = "Luckidisae"; BGanim.SetBool("fishOn", false); }
+        else if (enemiesDefeated == 9) { enemyName.text = "Bustrix"; BGanim.SetBool("fishOn", false); }
 
 
         /////////////////ENEMY DEATH////////////////
