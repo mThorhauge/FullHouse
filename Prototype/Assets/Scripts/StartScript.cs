@@ -11,8 +11,11 @@ public class StartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(townName != null)
-			townNameInput.text = townName;	
+		if(townNameInput.text != null)
+			townName = townNameInput.text;
+		else 
+			townName = "Bittania";
+		
 	}
 	
 	// Update is called once per frame
@@ -21,7 +24,7 @@ public class StartScript : MonoBehaviour {
 	}
 
 	public void SaveTownName(string newName) {
-		gameStates.TownName = townName;
+		gameStates.TownName = townNameInput.text;
 		SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 }
