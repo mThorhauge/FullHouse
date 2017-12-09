@@ -353,6 +353,19 @@ public class gameStates : MonoBehaviour
 
     }
 
+    public static int TailorLvl
+    {
+        get
+        {
+            return tailorLvl;
+        }
+        set
+        {
+            tailorLvl = value;
+        }
+
+    }
+
     /// <summary>
     /// Update Blacksmith Cost
     /// </summary>
@@ -409,7 +422,7 @@ public class gameStates : MonoBehaviour
         }
     }
 
-    public static int StabelCost
+    public static int StableCost
     {
 
         get
@@ -465,7 +478,7 @@ public class gameStates : MonoBehaviour
         }
     }
 
-    public static int FTailorCost
+    public static int TailorCost
     {
 
         get
