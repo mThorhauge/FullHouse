@@ -21,7 +21,7 @@ public class StartScript : MonoBehaviour {
 	}
 
 	public void SaveTownName(string newName) {
-		gameStates.TownName = newName;
+		gameStates.TownName = townName;
 		SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}
 }

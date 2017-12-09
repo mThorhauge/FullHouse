@@ -6,13 +6,21 @@ using UnityEngine.SceneManagement;
 using System;
 
 public class LeaderboardScript : MonoBehaviour {
-    public GameObject Hair;
+    
+	//Character customization states
+	public GameObject Hair;
     public GameObject HairLong;
     public GameObject Face;
     private Animator hairAnim;
     private Animator hairLongAnim;
     private Animator faceAnim;
     private Renderer hairIsLong;
+
+	public UnityEngine.UI.Text townNameDisplay;
+	public UnityEngine.UI.Text prestigeDisplay;
+	public UnityEngine.UI.Text favouriteBuildingDisplay;
+	public string favouriteBuilding;
+
     // Use this for initialization
     void Start () {
         hairAnim = Hair.GetComponent<Animator>();
@@ -34,11 +42,16 @@ public class LeaderboardScript : MonoBehaviour {
         {
             hairIsLong.enabled = false;
         }
+
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+
+		townNameDisplay.text = gameStates.TownName;
+		prestigeDisplay.text = ""+ gameStates.PrestigeLvl;
+		favouriteBuildingDisplay.text = "";
     }
 
     public void toTownClicked()
