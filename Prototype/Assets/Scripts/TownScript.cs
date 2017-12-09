@@ -28,7 +28,6 @@ public class TownScript : MonoBehaviour {
     public GameObject town;
 	public GameObject blacksmithPopUp;
 
-
     // Use this for initialization
     void Start () {
         
