@@ -11,6 +11,7 @@ public class HomeScreen : MonoBehaviour {
 	public UnityEngine.UI.Text bitsCountDisplay;
 	public UnityEngine.UI.Text monsterDropCountDisplay;
 	public UnityEngine.UI.Text chunkCountDisplay;
+    public UnityEngine.UI.Text prestigeDisplay;
 
 	public GameObject appearancePopUp;
     public GameObject Clothing;
@@ -23,6 +24,9 @@ public class HomeScreen : MonoBehaviour {
     private Animator smHairBotAnim;
     private Renderer smHairIsLong;
     public GameObject PopUp;
+
+    public GameObject prestige;
+    public GameObject social;
 
 
     public GameObject Hair;
@@ -147,8 +151,19 @@ public class HomeScreen : MonoBehaviour {
 
 	public void changeAppearance() {
         
-        if (PopUp.transform.position.x > 0) { PopUp.transform.position = new Vector3(-631, -348, 0); appearancePopUp.SetActive(false); } 
-        else { PopUp.transform.position = new Vector3(321, 608, 0); appearancePopUp.SetActive(true); } 
+        if (PopUp.transform.position.x > 0) {
+            PopUp.transform.position = new Vector3(-631, -348, 0);
+            appearancePopUp.SetActive(false);
+
+            prestige.transform.position = new Vector3(500, 650, 0);
+            prestigeDisplay.transform.position = new Vector3(525, 600, 0);
+        } 
+        else { PopUp.transform.position = new Vector3(321, 600, 0);
+            appearancePopUp.SetActive(true);
+
+            prestige.transform.position = new Vector3(-400, 0, 0);
+            prestigeDisplay.transform.position = new Vector3(-400, 0, 0);
+        } 
         
 
     }
@@ -157,7 +172,10 @@ public class HomeScreen : MonoBehaviour {
         PopUp.transform.position = new Vector3(0, 0, 0);
         if ( choice == "continue") {
             appearancePopUp.SetActive(false);
-            PopUp.transform.position = new Vector3(-631, -348, 0); 
+            PopUp.transform.position = new Vector3(-631, -348, 0);
+
+            prestige.transform.position = new Vector3(500, 650, 0);
+            prestigeDisplay.transform.position = new Vector3(525, 600, 0);
         }
 	}
 
