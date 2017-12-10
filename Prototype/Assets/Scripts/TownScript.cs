@@ -69,7 +69,7 @@ public class TownScript : MonoBehaviour {
         tradingPostCostI = gameStates.TradingPostCost;
         tailorCostI = gameStates.TailorCost;
         guardPostCostI = gameStates.GuardPostCost;
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -78,12 +78,6 @@ public class TownScript : MonoBehaviour {
 		monsterDropCountDisplay.text = "" + gameStates.MonsterDrops;
 		chunkCountDisplay.text = "" + gameStates.Chunks;
 		//townNameDisplay.text = (string)(gameStates.TownName);
-
-		//Testing code
-		//apothecaryLevelDisplay.text = "Level " + gameStates.ApothecaryLvl + " Upgrade Cost " + gameStates.ApothecaryCost;
-		//blacksmithLevelDisplay.text = "Level " + gameStates.BlacksmithLvl+ " Upgrade Cost " + gameStates.BlacksmithCost;
-		//tavernLevelDisplay.text = "Level " + gameStates.TavernLvl+ " Upgrade Cost " + gameStates.TavernCost;
-		//fortuneTellerLevelDisplay.text = "Level " + gameStates.FortuneTellerLvl + " Upgrade Cost " + gameStates.FortuneTellerCost;
 
 		if (Input.GetMouseButton(0)) {
 
@@ -152,6 +146,7 @@ public class TownScript : MonoBehaviour {
 		case 3://apothecary
 
 			blacksmithPopUp.SetActive (true);
+            buildingNum = 3;
             characterPopUp.GetComponent<Image>().sprite = apothecary;
 
 			buildingName.text = "Apothecary - Lvl " + gameStates.ApothecaryLvl;
@@ -163,6 +158,7 @@ public class TownScript : MonoBehaviour {
 		case 4://stable
 
 			blacksmithPopUp.SetActive (true);
+            buildingNum = 4;
             characterPopUp.GetComponent<Image>().sprite = stable;
             
 			buildingName.text = "Stable - Lvl " + gameStates.StableLvl;
@@ -175,6 +171,7 @@ public class TownScript : MonoBehaviour {
 		case 5://wizards tower
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 5;
             characterPopUp.GetComponent<Image>().sprite =  wizard;
 
 			buildingName.text = "Wizard's Tower - Lvl " + gameStates.WizardsTowerLvl;
@@ -186,6 +183,7 @@ public class TownScript : MonoBehaviour {
 		case 6://fortune teller
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 6;
             characterPopUp.GetComponent<Image>().sprite = fortuneTeller;
 
 			buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
@@ -198,6 +196,7 @@ public class TownScript : MonoBehaviour {
 		case 7://general store
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 7;
             characterPopUp.GetComponent<Image>().sprite = generalStore;
 
 			if (gameStates.PrestigeLvl > 0)
@@ -219,6 +218,7 @@ public class TownScript : MonoBehaviour {
 		case 8://trading post
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 8;
             characterPopUp.GetComponent<Image>().sprite = tradingPost;
 
 			buildingName.text = "Trading Post - Lvl " + gameStates.TradingPostLvl;
@@ -240,6 +240,7 @@ public class TownScript : MonoBehaviour {
 		case 9://tailor
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 9;
             characterPopUp.GetComponent<Image>().sprite = tailor;
 
 			buildingName.text = "Tailor - Lvl " + gameStates.TailorLvl;
@@ -260,6 +261,7 @@ public class TownScript : MonoBehaviour {
 		case 10://guard post
 
 			blacksmithPopUp.SetActive(true);
+            buildingNum = 10;
             characterPopUp.GetComponent<Image>().sprite = guard;
 
 			buildingName.text = "Guard Post - Lvl " + gameStates.GuardPostLvl;
@@ -318,8 +320,9 @@ public class TownScript : MonoBehaviour {
 				gameStates.Bits -= gameStates.ApothecaryCost;
                 int costIncrease = apothecaryCostI * (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
                 gameStates.ApothecaryCost += costIncrease;
-				gameStates.ClickDmg += 1;
+				gameStates.ClickDmg += 2;
 				blacksmithPopUp.SetActive(false);
+                    print(gameStates.ApothecaryLvl);
 			}
 			break;
 		case 4://stable
@@ -442,7 +445,8 @@ public class TownScript : MonoBehaviour {
                 gameStates.ApothecaryCost += costIncrease;
 				gameStates.ClickDmg += 1;
 				blacksmithPopUp.SetActive(false);
-			}
+                    print(gameStates.ApothecaryLvl);
+                }
 			break;
 		case 4://stable
 			if (gameStates.Chunks >= (int)(1+gameStates.StableCost/600)) {
