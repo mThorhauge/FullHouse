@@ -9,7 +9,7 @@ public class StartScript : MonoBehaviour {
 	public InputField townNameInput;
 	public static string townName;
     //private static string defaultName;
-
+    public AudioClip startGame;
 	// Use this for initialization
 	void Start () {
         string defaultName = "Bittania";
@@ -26,6 +26,7 @@ public class StartScript : MonoBehaviour {
 	}
 
 	public void SaveTownName(string newName) {
+        SoundManager.instance.PlayClip(startGame);
 		gameStates.TownName = townNameInput.text;
 		SceneManager.LoadScene("Town", LoadSceneMode.Single);
 	}

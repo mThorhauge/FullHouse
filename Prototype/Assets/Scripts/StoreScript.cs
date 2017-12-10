@@ -10,6 +10,9 @@ public class StoreScript : MonoBehaviour {
 	public UnityEngine.UI.Text monsterDropCountDisplay;
 	public UnityEngine.UI.Text chunkCountDisplay;
 
+    public AudioClip purchaseSFX;
+    public AudioClip sceneChange;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -25,23 +28,28 @@ public class StoreScript : MonoBehaviour {
 
 	//since we can't actually charge you money, please take it for free
 	public void purchaseOffer1() {
+        SoundManager.instance.PlayClip(purchaseSFX);
 		gameStates.Chunks += 10;
 	}
 
 	public void purchaseOffer2() {
-		gameStates.Chunks += 25;
+        SoundManager.instance.PlayClip(purchaseSFX);
+        gameStates.Chunks += 25;
 	}
 
 	public void purchaseOffer3() {
-		gameStates.Chunks += 50;
+        SoundManager.instance.PlayClip(purchaseSFX);
+        gameStates.Chunks += 50;
 	}
 
 	public void purchaseOffer4() {
-		gameStates.Chunks += 75;
+        SoundManager.instance.PlayClip(purchaseSFX);
+        gameStates.Chunks += 75;
 	}
 
 	public void toHomeClicked()
 	{
+        SoundManager.instance.PlayClip(sceneChange);
 		if (gameStates.LastScene == 1) {
 			SceneManager.LoadScene ("Town", LoadSceneMode.Single);
 		} else if (gameStates.LastScene == 2) {

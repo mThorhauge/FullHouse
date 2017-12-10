@@ -20,6 +20,8 @@ public class LeaderboardScript : MonoBehaviour {
 	public UnityEngine.UI.Text prestigeDisplay;
 	public UnityEngine.UI.Text favouriteBuildingDisplay;
 
+    public AudioClip sceneChange;
+
 	public string favouriteBuilding;
 
     // Use this for initialization
@@ -68,6 +70,7 @@ public class LeaderboardScript : MonoBehaviour {
 
     public void toTownClicked()
     {
+        SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
 

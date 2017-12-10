@@ -42,6 +42,8 @@ public class HomeScreen : MonoBehaviour {
     //public Sprite img_popUp;
     //public Sprite img_mirror;
 
+    public AudioClip clotheChange;
+    public AudioClip sceneChange;
 
 
 
@@ -126,6 +128,7 @@ public class HomeScreen : MonoBehaviour {
 	/// Performs actions when Button_ToTown is clicked
 	/// </summary>
 	public void toTownClicked() {
+        SoundManager.instance.PlayClip(sceneChange);
         gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
         gameStates.HairColor = hairAnim.GetInteger("HairColour");
         gameStates.HairShort = hairAnim.GetBool("HairShort");
@@ -137,6 +140,7 @@ public class HomeScreen : MonoBehaviour {
 	}
 
 	public void toStoreClick() {
+        SoundManager.instance.PlayClip(sceneChange);
 		gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
 		gameStates.HairColor = hairAnim.GetInteger("HairColour");
 		gameStates.HairShort = hairAnim.GetBool("HairShort");
@@ -181,6 +185,7 @@ public class HomeScreen : MonoBehaviour {
 
     public void WardrobeSwitch()
     {
+        SoundManager.instance.PlayClip(clotheChange);
         if (ClothAnim.GetInteger("ClothNum") < 7) { ClothAnim.SetInteger("ClothNum", ClothAnim.GetInteger("ClothNum") + 1); }
         else { ClothAnim.SetInteger("ClothNum", 0); }
 

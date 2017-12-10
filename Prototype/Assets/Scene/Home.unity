@@ -2228,6 +2228,8 @@ MonoBehaviour:
   Hair: {fileID: 139610209}
   HairLong: {fileID: 2114090426}
   Face: {fileID: 1719798272}
+  clotheChange: {fileID: 8300000, guid: 51cb2487a5aced34f9aa0ff52f28bfe9, type: 3}
+  sceneChange: {fileID: 8300000, guid: cd46db1a183e1cb4fbecef34a187d37b, type: 3}
 --- !u!114 &1314145617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,7 +2326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prestigeDisplay: {fileID: 758839510}
   prestigeLevel: 0
-  prestigeSFX: {fileID: 8300000, guid: 4bf2d2acf224dbc4d867cccd0e4db22c, type: 3}
+  prestigeSFX: {fileID: 8300000, guid: f561a46da8ea1344b87ed07357f15d19, type: 3}
 --- !u!1 &1322583943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2372,8 @@ MonoBehaviour:
   Hair: {fileID: 139610209}
   HairLong: {fileID: 0}
   Face: {fileID: 1719798272}
+  clotheChange: {fileID: 0}
+  sceneChange: {fileID: 0}
 --- !u!114 &1322583945
 MonoBehaviour:
   m_ObjectHideFlags: 0

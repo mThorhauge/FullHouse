@@ -6865,6 +6865,7 @@ MonoBehaviour:
   guard: {fileID: 21300000, guid: 0ec7552173787b34bbfe34c2d7cdeedb, type: 3}
   upgradeBitsSFX: {fileID: 8300000, guid: 9f85ef6ec40553e40a54c6179efd9f8e, type: 3}
   upgradeChunksSFX: {fileID: 8300000, guid: ee9c9e46f5978964093c0eeec64c30e0, type: 3}
+  sceneChange: {fileID: 8300000, guid: cd46db1a183e1cb4fbecef34a187d37b, type: 3}
 --- !u!1 &2042615001
 GameObject:
   m_ObjectHideFlags: 0

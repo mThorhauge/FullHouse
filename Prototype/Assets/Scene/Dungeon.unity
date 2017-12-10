@@ -1620,6 +1620,7 @@ MonoBehaviour:
   BG: {fileID: 842024184}
   attackSFX: {fileID: 8300000, guid: fdd17b4860a44e3498a1c7611363841f, type: 3}
   deathSFX: {fileID: 8300000, guid: cdb0c80397a80fa419b0c683208f174e, type: 3}
+  sceneChange: {fileID: 8300000, guid: cd46db1a183e1cb4fbecef34a187d37b, type: 3}
   healthBar: {fileID: 163566131}
   img_attackEffect: {fileID: 1165283302}
   baseHealth: 5

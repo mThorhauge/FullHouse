@@ -1,10 +1,26 @@
 fileFormatVersion: 2
 guid: 2cd8629195cc453469d2678a92b68fa2
-timeCreated: 1510861033
-licenseType: Pro
+timeCreated: 1512894676
+licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthDisplay: {instanceID: 0}
+  - killCountDisplay: {instanceID: 0}
+  - goldCountDisplay: {instanceID: 0}
+  - chunkCountDisplay: {instanceID: 0}
+  - monsterDropCountDisplay: {instanceID: 0}
+  - dropCountDisplay: {instanceID: 0}
+  - enemyName: {instanceID: 0}
+  - BG: {instanceID: 0}
+  - attackSFX: {instanceID: 0}
+  - deathSFX: {instanceID: 0}
+  - sceneChange: {fileID: 8300000, guid: 7cb09f3f7d1d1294fac855f0b4d1ce78, type: 3}
+  - healthBar: {instanceID: 0}
+  - img_attackEffect: {instanceID: 0}
+  - ImageComponent: {instanceID: 0}
+  - poofImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

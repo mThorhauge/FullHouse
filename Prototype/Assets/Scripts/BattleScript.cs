@@ -22,6 +22,7 @@ public class BattleScript : MonoBehaviour {
 
     public AudioClip attackSFX;
     public AudioClip deathSFX;
+    public AudioClip sceneChange;
 
     //adjust health bar
     public RectTransform    healthBar;
@@ -165,7 +166,7 @@ public class BattleScript : MonoBehaviour {
     public void toTownClicked() {
 
         // Save gave states
-
+        SoundManager.instance.PlayClip(sceneChange);
         //Currencies
         gameStates.Bits             = currentBits; // save current amount of bits
         gameStates.Chunks           = currentChunks; // save current amount of chunks
