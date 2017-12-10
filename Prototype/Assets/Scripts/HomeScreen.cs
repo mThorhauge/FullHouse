@@ -50,6 +50,8 @@ public class HomeScreen : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SoundManager.instance.PlayClip(sceneChange);
+
         //img_popUp.enabled = false;
         ClothAnim = Clothing.GetComponent<Animator>();
         hairAnim = Hair.GetComponent<Animator>();
@@ -129,7 +131,7 @@ public class HomeScreen : MonoBehaviour {
 	/// Performs actions when Button_ToTown is clicked
 	/// </summary>
 	public void toTownClicked() {
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
         gameStates.HairColor = hairAnim.GetInteger("HairColour");
         gameStates.HairShort = hairAnim.GetBool("HairShort");
@@ -141,7 +143,7 @@ public class HomeScreen : MonoBehaviour {
 	}
 
 	public void toStoreClick() {
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
 		gameStates.Cloth = ClothAnim.GetInteger("ClothNum");
 		gameStates.HairColor = hairAnim.GetInteger("HairColour");
 		gameStates.HairShort = hairAnim.GetBool("HairShort");

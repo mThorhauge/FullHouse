@@ -57,6 +57,8 @@ public class TownScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        SoundManager.instance.PlayClip(sceneChange);
+
         //setting the initial building costs
         // not sure why stable and wizard tower arent being initialised from game states
         //but it works if i put them here - AD
@@ -99,24 +101,24 @@ public class TownScript : MonoBehaviour {
 	}
 
 	public void toDungeonClick() {
-        SoundManager.instance.PlayClip(sceneChange);
+       // SoundManager.instance.PlayClip(sceneChange);
 		SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
 	}
 
 	public void toLeaderboardClick() {
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
 	}
 
 	public void toStoreClick() {
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         gameStates.LastScene = 1;
 		SceneManager.LoadScene("Store", LoadSceneMode.Single);
 	}
 
 	public void toHomeClicked()
 	{
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Home", LoadSceneMode.Single);
 	}
 

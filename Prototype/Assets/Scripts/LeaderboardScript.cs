@@ -26,6 +26,8 @@ public class LeaderboardScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SoundManager.instance.PlayClip(sceneChange);
+
         hairAnim = Hair.GetComponent<Animator>();
         hairLongAnim = HairLong.GetComponent<Animator>();
         faceAnim = Face.GetComponent<Animator>();
@@ -70,7 +72,7 @@ public class LeaderboardScript : MonoBehaviour {
 
     public void toTownClicked()
     {
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
 

@@ -56,6 +56,8 @@ public class BattleScript : MonoBehaviour {
     /// Initializes game objects
     /// </summary>
     void Start() {
+        SoundManager.instance.PlayClip(sceneChange);
+
         img_attackEffect.enabled    = false;
         poofImage.enabled           = false;
 
@@ -166,7 +168,7 @@ public class BattleScript : MonoBehaviour {
     public void toTownClicked() {
 
         // Save gave states
-        SoundManager.instance.PlayClip(sceneChange);
+        //SoundManager.instance.PlayClip(sceneChange);
         //Currencies
         gameStates.Bits             = currentBits; // save current amount of bits
         gameStates.Chunks           = currentChunks; // save current amount of chunks
@@ -192,10 +194,11 @@ public class BattleScript : MonoBehaviour {
 	//sends player to the store
 	public void toStoreClick() {
 
-		// Save gave states
+        // Save gave states
+        SoundManager.instance.PlayClip(sceneChange);
 
-		//Currencies
-		gameStates.Bits             = currentBits; // save current amount of bits
+        //Currencies
+        gameStates.Bits             = currentBits; // save current amount of bits
 		gameStates.Chunks           = currentChunks; // save current amount of chunks
 
 		//Health stats
