@@ -72,7 +72,6 @@ public class LeaderboardScript : MonoBehaviour {
 
     public void toTownClicked()
     {
-        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Town", LoadSceneMode.Single);
     }
 

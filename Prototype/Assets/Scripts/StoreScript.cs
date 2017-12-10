@@ -49,7 +49,6 @@ public class StoreScript : MonoBehaviour {
 
 	public void toHomeClicked()
 	{
-        //SoundManager.instance.PlayClip(sceneChange);
 		if (gameStates.LastScene == 1) {
 			SceneManager.LoadScene ("Town", LoadSceneMode.Single);
 		} else if (gameStates.LastScene == 2) {

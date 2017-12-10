@@ -57,11 +57,12 @@ public class BattleScript : MonoBehaviour {
     /// </summary>
     void Start() {
         SoundManager.instance.PlayClip(sceneChange);
-
+    
         img_attackEffect.enabled    = false;
         poofImage.enabled           = false;
 
         BGanim = BG.GetComponent<Animator>();
+        ImageComponent.sprite = enemies[enemiesDefeated];
 
         if (previousBitzens != gameStates.PrestigeLvl)
         {
@@ -141,7 +142,7 @@ public class BattleScript : MonoBehaviour {
 
             //change enemy image
             ImageComponent.sprite = enemies[enemiesDefeated];
-
+          
             poofImage.enabled = false;
 
             }
@@ -168,7 +169,7 @@ public class BattleScript : MonoBehaviour {
     public void toTownClicked() {
 
         // Save gave states
-        //SoundManager.instance.PlayClip(sceneChange);
+
         //Currencies
         gameStates.Bits             = currentBits; // save current amount of bits
         gameStates.Chunks           = currentChunks; // save current amount of chunks

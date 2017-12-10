@@ -101,24 +101,20 @@ public class TownScript : MonoBehaviour {
 	}
 
 	public void toDungeonClick() {
-       // SoundManager.instance.PlayClip(sceneChange);
 		SceneManager.LoadScene("Dungeon", LoadSceneMode.Single);
 	}
 
 	public void toLeaderboardClick() {
-        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Leaderboard", LoadSceneMode.Single);
 	}
 
 	public void toStoreClick() {
-        //SoundManager.instance.PlayClip(sceneChange);
         gameStates.LastScene = 1;
 		SceneManager.LoadScene("Store", LoadSceneMode.Single);
 	}
 
 	public void toHomeClicked()
 	{
-        //SoundManager.instance.PlayClip(sceneChange);
         SceneManager.LoadScene("Home", LoadSceneMode.Single);
 	}
 
