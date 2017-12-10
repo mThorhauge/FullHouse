@@ -10,6 +10,8 @@ public class PrestigeScript : MonoBehaviour {
     int currentBits;
     int totalBuildingLevels;
 
+    public AudioClip prestigeSFX;
+
 	// Use this for initialization
 	void Start () {
         prestigeLevel = gameStates.PrestigeLvl;
@@ -41,8 +43,9 @@ public class PrestigeScript : MonoBehaviour {
         {
             if (currentBits >= 10) //low for testing purposes
             {
-                //add all the building levels together
+                SoundManager.instance.PlayClip(prestigeSFX);
 
+                //add all the building levels together
                 prestigeLevel += (totalBuildingLevels + currentBits) / 10;//added prestige is a percentage of building levels and bits
 
                 //reset bits and and save bits and prestige in the game states

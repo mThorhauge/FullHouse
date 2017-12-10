@@ -51,6 +51,9 @@ public class TownScript : MonoBehaviour {
     int tailorCostI;
     int guardPostCostI;
 
+    public AudioClip upgradeBitsSFX;
+    public AudioClip upgradeChunksSFX;
+
 	// Use this for initialization
 	void Start () {
         //setting the initial building costs
@@ -293,6 +296,8 @@ public class TownScript : MonoBehaviour {
 		case 1://blacksmith
 			if (gameStates.Bits >= (gameStates.BlacksmithCost))
 			{
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+                
 				gameStates.BlacksmithLvl += 1;
 				gameStates.Bits -= gameStates.BlacksmithCost;
 				int costIncrease = blacksmithCostI * (int)(Mathf.Pow(gameStates.BlacksmithLvl, 2));
@@ -304,7 +309,9 @@ public class TownScript : MonoBehaviour {
 		case 2://tavern
 			if (gameStates.Bits >= (gameStates.TavernCost))
 			{
-				gameStates.TavernLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.TavernLvl += 1;
 				gameStates.Bits -= gameStates.TavernCost;
 				int costIncrease = tavernCostI * (int)(Mathf.Pow(gameStates.TavernLvl, 2));
                 gameStates.TavernCost += costIncrease;
@@ -316,7 +323,9 @@ public class TownScript : MonoBehaviour {
 		case 3://apothecary
 			if (gameStates.Bits >= (gameStates.ApothecaryCost))
 			{
-				gameStates.ApothecaryLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.ApothecaryLvl += 1;
 				gameStates.Bits -= gameStates.ApothecaryCost;
                 int costIncrease = apothecaryCostI * (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
                 gameStates.ApothecaryCost += costIncrease;
@@ -326,8 +335,11 @@ public class TownScript : MonoBehaviour {
 			}
 			break;
 		case 4://stable
-			if (gameStates.Bits >= (gameStates.StableCost)) {
-				gameStates.StableLvl += 1;
+			if (gameStates.Bits >= (gameStates.StableCost))
+            {
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.StableLvl += 1;
 				gameStates.Bits -= gameStates.StableCost;
                 int costIncrease = stableCostI * (int)(Mathf.Pow(gameStates.StableLvl, 2));
                 gameStates.StableCost += costIncrease;
@@ -338,7 +350,9 @@ public class TownScript : MonoBehaviour {
 		case 5: //wizards tower
 			if (gameStates.Bits >= (gameStates.WizardsTowerCost))
 			{
-				gameStates.WizardsTowerLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.WizardsTowerLvl += 1;
 				gameStates.Bits -= gameStates.WizardsTowerCost;
                 int costIncrease = wizardsTowerCostI * (int)(Mathf.Pow(gameStates.WizardsTowerLvl, 2));
                 gameStates.WizardsTowerCost += costIncrease;
@@ -349,7 +363,9 @@ public class TownScript : MonoBehaviour {
 		case 6: //Fortune Teller
 			if (gameStates.Bits >= (gameStates.FortuneTellerCost))
 			{
-				gameStates.FortuneTellerLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.FortuneTellerLvl += 1;
 				gameStates.Bits -= gameStates.FortuneTellerCost;
                 int costIncrease = fortuneTellerCostI * (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
                 gameStates.FortuneTellerCost += costIncrease;
@@ -360,7 +376,9 @@ public class TownScript : MonoBehaviour {
 		case 7: //General store
 			if (gameStates.Bits >= (gameStates.GeneralStoreCost))
 			{
-				gameStates.GeneralStoreLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.GeneralStoreLvl += 1;
 				gameStates.Bits -= gameStates.GeneralStoreCost;
                 int costIncrease = generalStoreCostI * (int)(Mathf.Pow(gameStates.GeneralStoreLvl, 2));
                 gameStates.GeneralStoreCost += costIncrease;
@@ -371,7 +389,9 @@ public class TownScript : MonoBehaviour {
 		case 8: //trading post
 			if (gameStates.Bits >= (gameStates.TradingPostCost))
 			{
-				gameStates.TradingPostLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.TradingPostLvl += 1;
 				gameStates.Bits -= gameStates.TradingPostCost;
                 int costIncrease = tradingPostCostI * (int)(Mathf.Pow(gameStates.TradingPostLvl, 2));
                 gameStates.TradingPostCost += costIncrease;
@@ -382,7 +402,9 @@ public class TownScript : MonoBehaviour {
 		case 9: //Tailor
 			if (gameStates.Bits >= (gameStates.TailorCost))
 			{
-				gameStates.TailorLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.TailorLvl += 1;
 				gameStates.Bits -= gameStates.TailorCost;
                 int costIncrease = tailorCostI * (int)(Mathf.Pow(gameStates.TailorLvl, 2));
                 gameStates.TailorCost += costIncrease;
@@ -393,7 +415,9 @@ public class TownScript : MonoBehaviour {
 		case 10: //guard post
 			if (gameStates.Bits >= (gameStates.GuardPostCost))
 			{
-				gameStates.GuardPostLvl += 1;
+                SoundManager.instance.PlayClip(upgradeBitsSFX);
+
+                gameStates.GuardPostLvl += 1;
 				gameStates.Bits -= gameStates.GuardPostCost;
                 int costIncrease = guardPostCostI * (int)(Mathf.Pow(gameStates.GuardPostLvl, 2));
                 gameStates.GuardPostCost += costIncrease;
@@ -416,7 +440,9 @@ public class TownScript : MonoBehaviour {
 		case 1://blacksmith
 			if (gameStates.Chunks >= (int)(1 + gameStates.BlacksmithCost / 600))
 			{
-				gameStates.BlacksmithLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.BlacksmithLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.BlacksmithCost / 600);
                 int costIncrease = blacksmithCostI * (int)(Mathf.Pow(gameStates.BlacksmithLvl, 2));
                 gameStates.BlacksmithCost += costIncrease;
@@ -427,7 +453,9 @@ public class TownScript : MonoBehaviour {
 		case 2://tavern
 			if (gameStates.Chunks >= (int)(1 + gameStates.TavernCost / 600))
 			{
-				gameStates.TavernLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.TavernLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.TavernCost / 600);
                 int costIncrease = tavernCostI * (int)(Mathf.Pow(gameStates.TavernLvl, 2));
                 gameStates.TavernCost += costIncrease;
@@ -439,7 +467,9 @@ public class TownScript : MonoBehaviour {
 		case 3://apothecary
 			if (gameStates.Chunks >= (int)(1 + gameStates.ApothecaryCost / 600))
 			{
-				gameStates.ApothecaryLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.ApothecaryLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.ApothecaryCost / 600);
                 int costIncrease = apothecaryCostI * (int)(Mathf.Pow(gameStates.ApothecaryLvl, 2));
                 gameStates.ApothecaryCost += costIncrease;
@@ -449,8 +479,11 @@ public class TownScript : MonoBehaviour {
                 }
 			break;
 		case 4://stable
-			if (gameStates.Chunks >= (int)(1+gameStates.StableCost/600)) {
-				gameStates.StableLvl += 1;
+			if (gameStates.Chunks >= (int)(1+gameStates.StableCost/600))
+            {
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.StableLvl += 1;
 				gameStates.Chunks -= (int)(1+gameStates.StableCost / 600);
                 int costIncrease = stableCostI * (int)(Mathf.Pow(gameStates.StableLvl, 2));
                 gameStates.StableCost += costIncrease;
@@ -461,7 +494,9 @@ public class TownScript : MonoBehaviour {
 		case 5://wizards tower
 			if (gameStates.Chunks >= (int)(1 + gameStates.WizardsTowerCost / 600))
 			{
-				gameStates.WizardsTowerLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.WizardsTowerLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.WizardsTowerCost / 600);
                 int costIncrease = wizardsTowerCostI * (int)(Mathf.Pow(gameStates.WizardsTowerLvl, 2));
                 gameStates.WizardsTowerCost += costIncrease;
@@ -472,7 +507,9 @@ public class TownScript : MonoBehaviour {
 		case 6://fortune teller
 			if (gameStates.Chunks >= (int)(1 + gameStates.FortuneTellerCost / 600))
 			{
-				gameStates.FortuneTellerLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.FortuneTellerLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.FortuneTellerCost / 600);
                 int costIncrease = fortuneTellerCostI * (int)(Mathf.Pow(gameStates.FortuneTellerLvl, 2));
                 gameStates.FortuneTellerCost += costIncrease;
@@ -483,7 +520,9 @@ public class TownScript : MonoBehaviour {
 		case 7://general store
 			if (gameStates.Chunks >= (int)(1 + gameStates.GeneralStoreCost / 600))
 			{
-				gameStates.GeneralStoreLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.GeneralStoreLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.GeneralStoreCost / 600);
                 int costIncrease = generalStoreCostI * (int)(Mathf.Pow(gameStates.GeneralStoreLvl, 2));
                 gameStates.GeneralStoreCost += costIncrease;
@@ -494,7 +533,9 @@ public class TownScript : MonoBehaviour {
 		case 8://trading post
 			if (gameStates.Chunks >= (int)(1 + gameStates.TradingPostCost / 600))
 			{
-				gameStates.TradingPostLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.TradingPostLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.TradingPostCost / 600);
                 int costIncrease = tradingPostCostI * (int)(Mathf.Pow(gameStates.TradingPostLvl, 2));
                 gameStates.TradingPostCost += costIncrease;
@@ -505,7 +546,9 @@ public class TownScript : MonoBehaviour {
 		case 9://tailor
 			if (gameStates.Chunks >= (int)(1 + gameStates.TailorCost / 600))
 			{
-				gameStates.TailorLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.TailorLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.TailorCost / 600);
                 int costIncrease = tailorCostI * (int)(Mathf.Pow(gameStates.TailorLvl, 2));
                 gameStates.TailorCost += costIncrease;
@@ -516,7 +559,9 @@ public class TownScript : MonoBehaviour {
 		case 10://guard post
 			if (gameStates.Chunks >= (int)(1 + gameStates.GuardPostCost / 600))
 			{
-				gameStates.GuardPostLvl += 1;
+                SoundManager.instance.PlayClip(upgradeChunksSFX);
+
+                gameStates.GuardPostLvl += 1;
 				gameStates.Chunks -= (int)(1 + gameStates.GuardPostCost / 600);
                 int costIncrease = guardPostCostI * (int)(Mathf.Pow(gameStates.GuardPostLvl, 2));
                 gameStates.GuardPostCost += costIncrease;

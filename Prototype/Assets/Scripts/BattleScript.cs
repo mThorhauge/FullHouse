@@ -21,6 +21,7 @@ public class BattleScript : MonoBehaviour {
     private Animator BGanim;
 
     public AudioClip attackSFX;
+    public AudioClip deathSFX;
 
     //adjust health bar
     public RectTransform    healthBar;
@@ -115,6 +116,7 @@ public class BattleScript : MonoBehaviour {
         if (currentHealth <= 0) {
             enemiesDefeated += 1;
 
+            SoundManager.instance.PlayClip(deathSFX);
 
             if (enemiesDefeated == 10) {
                 enemiesDefeated = 0; // reset enemies in order
