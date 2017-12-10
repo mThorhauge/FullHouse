@@ -2229,6 +2229,7 @@ MonoBehaviour:
   HairLong: {fileID: 2114090426}
   Face: {fileID: 1719798272}
   clotheChange: {fileID: 8300000, guid: 51cb2487a5aced34f9aa0ff52f28bfe9, type: 3}
+  appearanceChange: {fileID: 8300000, guid: 70ce09f257a8f804d9b5d0e3a413971f, type: 3}
   sceneChange: {fileID: 8300000, guid: cd46db1a183e1cb4fbecef34a187d37b, type: 3}
 --- !u!114 &1314145617
 MonoBehaviour:
@@ -2373,6 +2374,7 @@ MonoBehaviour:
   HairLong: {fileID: 0}
   Face: {fileID: 1719798272}
   clotheChange: {fileID: 0}
+  appearanceChange: {fileID: 0}
   sceneChange: {fileID: 0}
 --- !u!114 &1322583945
 MonoBehaviour:

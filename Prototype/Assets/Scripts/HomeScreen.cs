@@ -43,6 +43,7 @@ public class HomeScreen : MonoBehaviour {
     //public Sprite img_mirror;
 
     public AudioClip clotheChange;
+    public AudioClip appearanceChange;
     public AudioClip sceneChange;
 
 
@@ -154,7 +155,7 @@ public class HomeScreen : MonoBehaviour {
 	}
 
 	public void changeAppearance() {
-        
+        SoundManager.instance.PlayClip(sceneChange);
         if (PopUp.transform.position.x > 0) {
             PopUp.transform.position = new Vector3(-631, -348, 0);
             appearancePopUp.SetActive(false);
@@ -173,6 +174,7 @@ public class HomeScreen : MonoBehaviour {
     }
 
 	public void closeAppearancePopUp(string choice) {
+        SoundManager.instance.PlayClip(sceneChange);
         PopUp.transform.position = new Vector3(0, 0, 0);
         if ( choice == "continue") {
             appearancePopUp.SetActive(false);
@@ -196,6 +198,7 @@ public class HomeScreen : MonoBehaviour {
 
     public void hairshape()
     {
+        SoundManager.instance.PlayClip(appearanceChange);
         //pop up
         if (hairAnim.GetBool("HairShort")) { hairAnim.SetBool("HairShort", false); hairIsLong.enabled = true; }
         else { hairAnim.SetBool("HairShort", true); hairIsLong.enabled = false; }
@@ -210,6 +213,7 @@ public class HomeScreen : MonoBehaviour {
 
     public void haircolour()
     {
+        SoundManager.instance.PlayClip(appearanceChange);
         //pop up
         if (hairAnim.GetInteger("HairColour") < 5) { hairAnim.SetInteger("HairColour", hairAnim.GetInteger("HairColour") + 1); colourVar = colourVar + 1; }
         else { hairAnim.SetInteger("HairColour", 0); colourVar = 0; }
@@ -230,6 +234,7 @@ public class HomeScreen : MonoBehaviour {
 
     public void faceshape()
     {
+        SoundManager.instance.PlayClip(appearanceChange);
         //pop up
         if (faceAnim.GetInteger("FaceShape") < 2) { faceAnim.SetInteger("FaceShape", faceAnim.GetInteger("FaceShape") + 1); }
         else { faceAnim.SetInteger("FaceShape", 0); }
@@ -244,6 +249,7 @@ public class HomeScreen : MonoBehaviour {
 
     public void skincolour()
     {
+        SoundManager.instance.PlayClip(appearanceChange);
         //pop up
         if(faceAnim.GetInteger("SkinColour") < 7) { faceAnim.SetInteger("SkinColour", faceAnim.GetInteger("SkinColour") + 1); }
         else { faceAnim.SetInteger("SkinColour", 0); }
