@@ -27,6 +27,18 @@ public class TownScript : MonoBehaviour {
 
 	public GameObject town;
 	public GameObject blacksmithPopUp;
+    public GameObject characterPopUp;
+
+    public Sprite smith;
+    public Sprite tavern;
+    public Sprite apothecary;
+    public Sprite stable;
+    public Sprite wizard;
+    public Sprite fortuneTeller;
+    public Sprite generalStore;
+    public Sprite tradingPost;
+    public Sprite tailor;
+    public Sprite guard;
 
     int blacksmithCostI;
     int tavernCostI;
@@ -117,6 +129,7 @@ public class TownScript : MonoBehaviour {
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 1;
+            characterPopUp.GetComponent<Image>().sprite = smith;
 
 			buildingName.text = "Blacksmith - Lvl " + gameStates.BlacksmithLvl;
 			buildingDescription.text = "I can improve your weapons, and teach you a few new tricks. (increaes your click damage)";
@@ -128,6 +141,7 @@ public class TownScript : MonoBehaviour {
 
 			blacksmithPopUp.SetActive (true);
 			buildingNum = 2;
+            characterPopUp.GetComponent<Image>().sprite = tavern;
 
 			buildingName.text = "Tavern - Lvl " + gameStates.TavernLvl;
 			buildingDescription.text = "Sit down, you never know what kind of adventurers you'll meet here. (increases your auto damage)";
@@ -138,7 +152,7 @@ public class TownScript : MonoBehaviour {
 		case 3://apothecary
 
 			blacksmithPopUp.SetActive (true);
-			buildingNum = 3;
+            characterPopUp.GetComponent<Image>().sprite = apothecary;
 
 			buildingName.text = "Apothecary - Lvl " + gameStates.ApothecaryLvl;
 			buildingDescription.text = "Try one of my potions, you'll gain some extraordinary strength, mostly guaranteed. (increases click damage)";
@@ -149,7 +163,7 @@ public class TownScript : MonoBehaviour {
 		case 4://stable
 
 			blacksmithPopUp.SetActive (true);
-			buildingNum = 4;
+            characterPopUp.GetComponent<Image>().sprite = stable;
             
 			buildingName.text = "Stable - Lvl " + gameStates.StableLvl;
 			buildingDescription.text = "I buy horses. Large? Small? Strange? Regular? I bought every horse I've ever seen. easy way to earn 'fast bits'. (increases  physical auto damage)";
@@ -161,7 +175,7 @@ public class TownScript : MonoBehaviour {
 		case 5://wizards tower
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 5;
+            characterPopUp.GetComponent<Image>().sprite =  wizard;
 
 			buildingName.text = "Wizard's Tower - Lvl " + gameStates.WizardsTowerLvl;
 			buildingDescription.text = "I can teach your companions the path of magic. (increase magic auto damage).";
@@ -172,7 +186,7 @@ public class TownScript : MonoBehaviour {
 		case 6://fortune teller
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 6;
+            characterPopUp.GetComponent<Image>().sprite = fortuneTeller;
 
 			buildingName.text = "Fortune Teller - Lvl " + gameStates.FortuneTellerLvl;
 			buildingDescription.text = "I can see in the heart of the cards, many bits await you. (increases bit drop rate)";
@@ -184,7 +198,7 @@ public class TownScript : MonoBehaviour {
 		case 7://general store
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 7;
+            characterPopUp.GetComponent<Image>().sprite = generalStore;
 
 			if (gameStates.PrestigeLvl > 0)
 			{
@@ -205,7 +219,7 @@ public class TownScript : MonoBehaviour {
 		case 8://trading post
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 8;
+            characterPopUp.GetComponent<Image>().sprite = tradingPost;
 
 			buildingName.text = "Trading Post - Lvl " + gameStates.TradingPostLvl;
 			if (gameStates.PrestigeLvl > 0)
@@ -226,7 +240,7 @@ public class TownScript : MonoBehaviour {
 		case 9://tailor
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 9;
+            characterPopUp.GetComponent<Image>().sprite = tailor;
 
 			buildingName.text = "Tailor - Lvl " + gameStates.TailorLvl;
 			if (gameStates.PrestigeLvl > 0)
@@ -246,7 +260,7 @@ public class TownScript : MonoBehaviour {
 		case 10://guard post
 
 			blacksmithPopUp.SetActive(true);
-			buildingNum = 10;
+            characterPopUp.GetComponent<Image>().sprite = guard;
 
 			buildingName.text = "Guard Post - Lvl " + gameStates.GuardPostLvl;
 			if (gameStates.PrestigeLvl > 0)
