@@ -121,7 +121,7 @@ public class TownScript : MonoBehaviour {
 	}
 
 	public void upgradeBuildingClick(int buildingID) {
-
+        SoundManager.instance.PlayClip(sceneChange);
 		//Switch between chosen building
 		switch(buildingID) {
 		case 1://blacksmith
@@ -600,7 +600,8 @@ public class TownScript : MonoBehaviour {
 	}
 
 	public void closePopUp(){
-		blacksmithPopUp.SetActive (false);
+        SoundManager.instance.PlayClip(sceneChange);
+        blacksmithPopUp.SetActive (false);
 	}
 
 
