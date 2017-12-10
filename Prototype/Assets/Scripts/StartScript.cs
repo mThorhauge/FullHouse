@@ -8,14 +8,16 @@ public class StartScript : MonoBehaviour {
 
 	public InputField townNameInput;
 	public static string townName;
+    //private static string defaultName;
 
 	// Use this for initialization
 	void Start () {
-		if(townNameInput.text != null)
-			townName = townNameInput.text;
-		else 
-			townName = "Bittania";
-		
+        string defaultName = "Bittania";
+        if (townNameInput.text != null)
+            townName = townNameInput.text;
+        else
+            townName = defaultName;
+        
 	}
 	
 	// Update is called once per frame

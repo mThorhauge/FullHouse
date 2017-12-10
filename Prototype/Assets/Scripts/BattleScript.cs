@@ -20,6 +20,8 @@ public class BattleScript : MonoBehaviour {
     public GameObject BG;
     private Animator BGanim;
 
+    public AudioClip attackSFX;
+
     //adjust health bar
     public RectTransform    healthBar;
 
@@ -150,6 +152,8 @@ public class BattleScript : MonoBehaviour {
         currentHealth -= damagePerClick; //enemy takes damage
         img_attackEffect.transform.position = Input.mousePosition; //set image to click location 
         StartCoroutine(Appear(img_attackEffect, 0.1F));
+
+        SoundManager.instance.PlayClip(attackSFX);
 
         }
 
